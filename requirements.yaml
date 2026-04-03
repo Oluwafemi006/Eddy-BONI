@@ -1,0 +1,13 @@
+packages:
+  "framer-motion": "For premium fade-up animations and scroll reveals"
+  "clsx": "For conditional class name joining"
+  "tailwind-merge": "For merging tailwind classes safely"
+
+images:
+  - path: "artifacts/portfolio/public/images/hero-glow.png"
+    description: "Abstract subtle dark navy and neon mint green glowing atmospheric background, very minimalist and dark"
+    aspect_ratio: "16:9"
+
+notes:
+  - Contact form uses local state simulation with toast since there's no backend API specified
+  - Single page application structure with scroll-to-section navigation
