@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Send, Loader2 } from "lucide-react";
+import { Mail, MapPin, Send, Loader2, Globe } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const FORM_NAME = "contact";
@@ -108,8 +108,9 @@ export function Contact() {
               </div>
               <h3 className="text-xl font-bold text-foreground mb-2">Localisation</h3>
               <p className="text-muted-foreground mb-4">Disponible en 100% remote partout dans le monde.</p>
-              <span className="inline-flex px-3 py-1 rounded-full bg-secondary text-foreground text-sm font-medium border border-white/5">
-                🌍 Remote First
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-foreground text-sm font-medium border border-white/5">
+                <Globe size={14} className="text-primary" />
+                Remote First
               </span>
             </div>
           </motion.div>
