@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Code2, Smartphone, Database, Server, Layout, Terminal, Github, Container } from "lucide-react";
 
 const TECHNOLOGIES = [
+  { name: "JavaScript", icon: Code2, color: "text-yellow-300", desc: "Logique front-end et intégrations web" },
   { name: "React JS", icon: Layout, color: "text-blue-400", desc: "Front-end web SPA" },
   { name: "React Native", icon: Smartphone, color: "text-blue-500", desc: "Applications mobiles iOS & Android" },
   { name: "Python", icon: Terminal, color: "text-yellow-400", desc: "Scripting & Backend" },
