@@ -3,6 +3,12 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, Send, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
+const FORM_NAME = "contact";
+
+const encodeForm = (data: Record<string, string>) => {
+  return new URLSearchParams(data).toString();
+};
+
 export function Contact() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -15,18 +21,41 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    toast({
-      title: "Message envoyé !",
-      description: "Merci de m'avoir contacté. Je vous répondrai dans les plus brefs délais.",
-      variant: "default",
-    });
-    
-    setFormData({ name: "", email: "", message: "" });
-    setIsSubmitting(false);
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: encodeForm({
+          "form-name": FORM_NAME,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Netlify form submission failed");
+      }
+
+      toast({
+        title: "Message envoyé !",
+        description: "Merci de m'avoir contacté. Je vous répondrai dans les plus brefs délais.",
+        variant: "default",
+      });
+
+      setFormData({ name: "", email: "", message: "" });
+    } catch {
+      toast({
+        title: "Envoi impossible",
+        description: "Une erreur est survenue. Réessaie dans quelques instants ou contacte-moi par email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -68,8 +97,8 @@ export function Contact() {
               </div>
               <h3 className="text-xl font-bold text-foreground mb-2">Email</h3>
               <p className="text-muted-foreground mb-4">Contactez-moi directement à l'adresse suivante :</p>
-              <a href="mailto:eddybaoke@gmail.com.com" className="text-primary hover:underline font-semibold text-lg">
-                eddybaoke@gmail.com.com
+              <a href="mailto:eddybaoke@gmail.com" className="text-primary hover:underline font-semibold text-lg">
+                eddybaoke@gmail.com
               </a>
             </div>
 
@@ -92,7 +121,20 @@ export function Contact() {
             viewport={{ once: true }}
             className="lg:col-span-2 p-8 md:p-10 rounded-2xl bg-card border border-white/5 shadow-2xl relative"
           >
-            <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+            <form
+              name={FORM_NAME}
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
+              className="space-y-6 relative z-10"
+            >
+              <input type="hidden" name="form-name" value={FORM_NAME} />
+              <p className="hidden">
+                <label>
+                  Ne pas remplir ce champ: <input name="bot-field" />
+                </label>
+              </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium text-foreground">Nom complet</label>
