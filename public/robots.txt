@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Host: bonieddy.netlify.app
 
 Sitemap: https://bonieddy.netlify.app/sitemap.xml
