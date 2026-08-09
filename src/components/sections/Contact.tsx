@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Send, Loader2, Globe } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const FORM_NAME = "contact";
 
@@ -10,6 +11,7 @@ const encodeForm = (data: Record<string, string>) => {
 };
 
 export function Contact() {
+  const { t } = useLanguage();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -41,16 +43,16 @@ export function Contact() {
       }
 
       toast({
-        title: "Message envoyé !",
-        description: "Merci de m'avoir contacté. Je vous répondrai dans les plus brefs délais.",
+        title: t.contact.form.successTitle,
+        description: t.contact.form.successDesc,
         variant: "default",
       });
 
       setFormData({ name: "", email: "", message: "" });
     } catch {
       toast({
-        title: "Envoi impossible",
-        description: "Une erreur est survenue. Réessaie dans quelques instants ou contacte-moi par email.",
+        title: t.contact.form.errorTitle,
+        description: t.contact.form.errorDesc,
         variant: "destructive",
       });
     } finally {
@@ -76,10 +78,10 @@ export function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4">
-            Travaillons <span className="text-primary text-glow">Ensemble</span>
+            {t.contact.titlePrefix} <span className="text-primary text-glow">{t.contact.titleHighlight}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Vous avez un projet en tête ou vous recherchez un développeur freelance ? Discutons de vos besoins.
+            {t.contact.subtitle}
           </p>
         </motion.div>
 
@@ -95,8 +97,8 @@ export function Contact() {
               <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6">
                 <Mail size={24} />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-2">Email</h3>
-              <p className="text-muted-foreground mb-4">Contactez-moi directement à l'adresse suivante :</p>
+              <h3 className="text-xl font-bold text-foreground mb-2">{t.contact.emailTitle}</h3>
+              <p className="text-muted-foreground mb-4">{t.contact.emailDesc}</p>
               <a href="mailto:eddybaoke@gmail.com" className="text-primary hover:underline font-semibold text-lg">
                 eddybaoke@gmail.com
               </a>
@@ -106,11 +108,11 @@ export function Contact() {
               <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6">
                 <MapPin size={24} />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-2">Localisation</h3>
-              <p className="text-muted-foreground mb-4">Disponible en 100% remote partout dans le monde.</p>
+              <h3 className="text-xl font-bold text-foreground mb-2">{t.contact.locationTitle}</h3>
+              <p className="text-muted-foreground mb-4">{t.contact.locationDesc}</p>
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-foreground text-sm font-medium border border-white/5">
                 <Globe size={14} className="text-primary" />
-                Remote First
+                {t.contact.remoteFirst}
               </span>
             </div>
           </motion.div>
@@ -133,12 +135,12 @@ export function Contact() {
               <input type="hidden" name="form-name" value={FORM_NAME} />
               <p className="hidden">
                 <label>
-                  Ne pas remplir ce champ: <input name="bot-field" />
+                  {t.contact.form.honeypotLabel} <input name="bot-field" />
                 </label>
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-foreground">Nom complet</label>
+                  <label htmlFor="name" className="text-sm font-medium text-foreground">{t.contact.form.nameLabel}</label>
                   <input
                     type="text"
                     id="name"
@@ -147,11 +149,11 @@ export function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200"
-                    placeholder="Jean Dupont"
+                    placeholder={t.contact.form.namePlaceholder}
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-foreground">Adresse email</label>
+                  <label htmlFor="email" className="text-sm font-medium text-foreground">{t.contact.form.emailLabel}</label>
                   <input
                     type="email"
                     id="email"
@@ -160,13 +162,13 @@ export function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200"
-                    placeholder="jean@entreprise.com"
+                    placeholder={t.contact.form.emailPlaceholder}
                   />
                 </div>
               </div>
-              
+
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-foreground">Votre message</label>
+                <label htmlFor="message" className="text-sm font-medium text-foreground">{t.contact.form.messageLabel}</label>
                 <textarea
                   id="message"
                   name="message"
@@ -175,7 +177,7 @@ export function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200 resize-none"
-                  placeholder="Décrivez-moi votre projet..."
+                  placeholder={t.contact.form.messagePlaceholder}
                 />
               </div>
 
@@ -187,11 +189,11 @@ export function Contact() {
                 {isSubmitting ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin" />
-                    Envoi en cours...
+                    {t.contact.form.submitting}
                   </>
                 ) : (
                   <>
-                    Envoyer le message
+                    {t.contact.form.submit}
                     <Send className="w-5 h-5" />
                   </>
                 )}

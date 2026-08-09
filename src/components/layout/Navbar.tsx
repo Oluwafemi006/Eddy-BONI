@@ -2,17 +2,21 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-const NAV_LINKS = [
-  { name: "À propos", href: "#about" },
-  { name: "Compétences", href: "#skills" },
-  { name: "Projets", href: "#projects" },
-  { name: "Services", href: "#services" },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 
 export function Navbar() {
+  const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const NAV_LINKS = [
+    { name: t.nav.about, href: "#about" },
+    { name: t.nav.experience, href: "#experience" },
+    { name: t.nav.skills, href: "#skills" },
+    { name: t.nav.projects, href: "#projects" },
+    { name: t.nav.process, href: "#process" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,8 +62,9 @@ export function Navbar() {
             href="#contact"
             className="px-5 py-2.5 text-sm font-semibold rounded-lg bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-primary-foreground hover:box-glow transition-all duration-300"
           >
-            Contact
+            {t.nav.contact}
           </a>
+          <LanguageSwitcher />
         </nav>
 
         {/* Mobile Toggle */}
@@ -92,13 +97,14 @@ export function Navbar() {
                   {link.name}
                 </a>
               ))}
-              <div className="pt-4 border-t border-white/5">
+              <div className="pt-4 border-t border-white/5 flex flex-col gap-4">
+                <LanguageSwitcher className="self-start" />
                 <a
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-center w-full px-5 py-3 text-base font-semibold rounded-lg bg-primary text-primary-foreground shadow-[0_0_15px_rgba(0,255,180,0.3)]"
                 >
-                  Me contacter
+                  {t.nav.contactCta}
                 </a>
               </div>
             </nav>

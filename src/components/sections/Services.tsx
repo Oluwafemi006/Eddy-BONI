@@ -1,30 +1,13 @@
 import { motion } from "framer-motion";
 import { Globe, Smartphone, ServerCog, Lightbulb } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
-const SERVICES = [
-  {
-    title: "Développement Web Full-Stack",
-    description: "Création d'applications web robustes et réactives en utilisant l'écosystème React couplé à la puissance de Django.",
-    icon: Globe,
-  },
-  {
-    title: "Applications Mobiles",
-    description: "Développement d'applications natives iOS et Android avec React Native, partageant le code pour une livraison rapide.",
-    icon: Smartphone,
-  },
-  {
-    title: "API REST & Back-end",
-    description: "Architecture et développement d'APIs sécurisées et scalables avec Django REST Framework et PostgreSQL.",
-    icon: ServerCog,
-  },
-  {
-    title: "Consulting & Architecture",
-    description: "Accompagnement technique sur les choix d'architecture, la modélisation de données et l'optimisation des performances.",
-    icon: Lightbulb,
-  },
-];
+const SERVICE_ICONS = [Globe, Smartphone, ServerCog, Lightbulb];
 
 export function Services() {
+  const { t } = useLanguage();
+  const SERVICES = t.services.items.map((item, i) => ({ ...item, icon: SERVICE_ICONS[i] }));
+
   return (
     <section id="services" className="py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -36,18 +19,13 @@ export function Services() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
-              Mes <span className="text-primary text-glow">Services</span>
+              {t.services.titlePrefix} <span className="text-primary text-glow">{t.services.titleHighlight}</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              J'accompagne les entreprises de la conception à la mise en production de leurs produits digitaux. Mon approche Full-Stack garantit une cohérence technique sur l'ensemble de votre projet.
+              {t.services.intro}
             </p>
             <ul className="space-y-4">
-              {[
-                "Architecture technique sur-mesure",
-                "Code propre, documenté et testé",
-                "Communication transparente et agile",
-                "Déploiement et intégration continue (CI/CD)"
-              ].map((item, i) => (
+              {t.services.bullets.map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-foreground font-medium">
                   <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center text-primary">
                     <div className="w-2 h-2 rounded-full bg-primary" />
