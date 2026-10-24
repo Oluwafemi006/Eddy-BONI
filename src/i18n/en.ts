@@ -108,10 +108,21 @@ export const en: Translations = {
     showLess: "Show less",
     statusDone: "Completed",
     statusInProgress: "In Progress",
+    statusMobileTesting: "Mobile app in testing",
     liveDemo: "Live Demo",
     demoSoon: "Demo coming soon",
     code: "Code",
     items: [
+      {
+        title: "Axis Transport",
+        description:
+          "Web and mobile platform for a transport company on the Parakou – Cotonou route (Benin): ticket booking, parcel shipping and tracking, vehicle rental, and customer accounts. Website live in production, mobile app currently in testing.",
+      },
+      {
+        title: "SD International Group",
+        description:
+          "Bilingual FR/EN corporate website for a multi-sector Beninese group (construction, energy, import-export & logistics): service pages, HSE & quality, and a quote request flow.",
+      },
       {
         title: "TalenexPro",
         description:

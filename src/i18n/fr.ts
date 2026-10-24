@@ -109,10 +109,21 @@ export const fr = {
     showLess: "Voir moins",
     statusDone: "Terminé",
     statusInProgress: "En cours",
+    statusMobileTesting: "App mobile en test",
     liveDemo: "Live Demo",
     demoSoon: "Demo bientôt",
     code: "Code",
     items: [
+      {
+        title: "Axis Transport",
+        description:
+          "Plateforme web et mobile d'une compagnie de transport sur l'axe Parakou – Cotonou (Bénin) : réservation de billets, envoi et suivi de colis, location de véhicules et espace client. Site web en production, application mobile en phase de test.",
+      },
+      {
+        title: "SD International Group",
+        description:
+          "Site corporate bilingue FR/EN d'un groupe multisectoriel béninois (BTP, énergie, import-export & logistique) : pages services, HSE & qualité et parcours de demande de devis.",
+      },
       {
         title: "TalenexPro",
         description:

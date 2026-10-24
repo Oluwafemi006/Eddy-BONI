@@ -1,14 +1,33 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, ShoppingBag, LayoutDashboard, Users, Repeat, ChevronDown, ChevronUp } from "lucide-react";
+import { ExternalLink, Github, ShoppingBag, LayoutDashboard, Users, Repeat, Bus, Building2, Smartphone, ChevronDown, ChevronUp } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const PROJECTS_META = [
+  {
+    tags: ["Next.js", "React Native", "Caddy", "VPS"],
+    icon: Bus,
+    color: "from-amber-500/20 to-orange-500/20 text-amber-400 border-amber-500/30",
+    done: true,
+    mobileTesting: true,
+    demoUrl: "https://axistransportlogistique.com",
+    codeUrl: null,
+  },
+  {
+    tags: ["Next.js", "i18n FR/EN", "Vercel", "Cloudflare"],
+    icon: Building2,
+    color: "from-sky-500/20 to-indigo-500/20 text-sky-400 border-sky-500/30",
+    done: true,
+    mobileTesting: false,
+    demoUrl: "https://www.sd-internationalgroup.com",
+    codeUrl: null,
+  },
   {
     tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "AWS EC2"],
     icon: Repeat,
     color: "from-cyan-500/20 to-teal-400/20 text-cyan-400 border-cyan-500/30",
     done: true,
+    mobileTesting: false,
     demoUrl: "https://talenexpro.com",
     codeUrl: null,
   },
@@ -17,6 +36,7 @@ const PROJECTS_META = [
     icon: ShoppingBag,
     color: "from-primary/25 to-blue-500/20 text-primary border-primary/30",
     done: true,
+    mobileTesting: false,
     demoUrl: "https://afrirent.netlify.app",
     codeUrl: "https://github.com/Oluwafemi006/Afrirent",
   },
@@ -25,6 +45,7 @@ const PROJECTS_META = [
     icon: ShoppingBag,
     color: "from-blue-500/20 to-purple-500/20 text-blue-400 border-blue-500/30",
     done: false,
+    mobileTesting: false,
     demoUrl: null,
     codeUrl: "https://github.com/Oluwafemi006",
   },
@@ -33,6 +54,7 @@ const PROJECTS_META = [
     icon: LayoutDashboard,
     color: "from-primary/20 to-green-500/20 text-primary border-primary/30",
     done: false,
+    mobileTesting: false,
     demoUrl: null,
     codeUrl: "https://github.com/Oluwafemi006",
   },
@@ -41,6 +63,7 @@ const PROJECTS_META = [
     icon: Users,
     color: "from-orange-500/20 to-red-500/20 text-orange-400 border-orange-500/30",
     done: false,
+    mobileTesting: false,
     demoUrl: null,
     codeUrl: "https://github.com/Oluwafemi006",
   },
@@ -100,7 +123,7 @@ export function Projects() {
                       {project.title}
                     </h3>
 
-                    <div className="mb-4">
+                    <div className="mb-4 flex flex-wrap gap-2">
                       <span
                         className={`inline-flex px-3 py-1 text-xs font-semibold rounded-full border ${
                           project.done
@@ -110,6 +133,11 @@ export function Projects() {
                       >
                         {project.statusLabel}
                       </span>
+                      {project.mobileTesting && (
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full border bg-amber-500/10 text-amber-400 border-amber-500/30">
+                          <Smartphone size={12} /> {t.projects.statusMobileTesting}
+                        </span>
+                      )}
                     </div>
                     
                     <p className="text-muted-foreground mb-8 flex-grow">
@@ -130,6 +158,7 @@ export function Projects() {
                           href={project.demoUrl}
                           target="_blank"
                           rel="noreferrer noopener"
+                          aria-label={`${t.projects.liveDemo} – ${project.title}`}
                           className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors"
                         >
                           <ExternalLink size={16} /> {t.projects.liveDemo}

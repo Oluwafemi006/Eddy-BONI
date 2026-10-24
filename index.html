@@ -8,12 +8,13 @@
     <!-- SEO Primary Tags -->
     <title>Eddy Boni | Développeur Full-Stack React, React Native & Django</title>
     <meta name="description" content="BONI Adjé Oladjidé Kenneth Eddy (Eddy Boni), développeur expert en React JS, React Native et Django. Création d'applications web et mobiles performantes en freelance. Disponible en remote." />
-    <meta name="keywords" content="Eddy Boni Développeur, BONI Adjé Oladjidé Kenneth Eddy, Développeur Full-Stack React Django, Expert Python Django React, Développeur React Native, Création application mobile iOS Android, Freelance React JS, Développement API REST Django, Développeur Freelance Remote, Prestation informatique à distance" />
+    <meta name="keywords" content="Eddy Boni Développeur, BONI Adjé Oladjidé Kenneth Eddy, Développeur Full-Stack React Django, Développeur Next.js, Développeur web Bénin, Création site web Cotonou, Expert Python Django React, Développeur React Native, Création application mobile iOS Android, Freelance React JS, Développement API REST Django, Développeur Freelance Remote, Prestation informatique à distance" />
     <meta name="author" content="Eddy Boni" />
     <meta name="google-site-verification" content="pjtW-7YWPAXEmBRMstp0Jyjfe4kud_TMB79ewEIrSzI" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://bonieddy.netlify.app/" />
     <link rel="alternate" hreflang="fr" href="https://bonieddy.netlify.app/" />
+    <link rel="alternate" hreflang="x-default" href="https://bonieddy.netlify.app/" />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="https://bonieddy.netlify.app/sitemap.xml" />
 
     <!-- Open Graph / Social -->
@@ -37,17 +38,79 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "BONI Adjé Oladjidé Kenneth Eddy",
-      "alternateName": "Eddy Boni",
-      "url": "https://bonieddy.netlify.app/",
-      "jobTitle": "Développeur Full-Stack",
-      "description": "Développeur expert en React JS, React Native et Django.",
-      "knowsAbout": ["React JS", "JavaScript", "React Native", "Django", "Python", "Full-Stack Development"],
-      "image": "https://bonieddy.netlify.app/opengraph.jpg",
-      "sameAs": [
-        "https://github.com/Oluwafemi006",
-        "https://www.linkedin.com/in/adjé-oladjidé-kenneth-eddy-boni-6794512b3"
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://bonieddy.netlify.app/#person",
+          "name": "BONI Adjé Oladjidé Kenneth Eddy",
+          "alternateName": "Eddy Boni",
+          "url": "https://bonieddy.netlify.app/",
+          "jobTitle": "Développeur Full-Stack",
+          "description": "Développeur expert en React JS, Next.js, React Native et Django.",
+          "knowsAbout": ["React JS", "Next.js", "TypeScript", "JavaScript", "React Native", "Django", "Python", "PostgreSQL", "Full-Stack Development"],
+          "knowsLanguage": ["fr", "en"],
+          "image": "https://bonieddy.netlify.app/opengraph.jpg",
+          "sameAs": [
+            "https://github.com/Oluwafemi006",
+            "https://www.linkedin.com/in/adjé-oladjidé-kenneth-eddy-boni-6794512b3"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://bonieddy.netlify.app/#website",
+          "url": "https://bonieddy.netlify.app/",
+          "name": "Eddy Boni Portfolio",
+          "inLanguage": ["fr", "en"],
+          "author": { "@id": "https://bonieddy.netlify.app/#person" }
+        },
+        {
+          "@type": "ItemList",
+          "name": "Projets réalisés par Eddy Boni",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "Axis Transport",
+                "url": "https://axistransportlogistique.com/",
+                "description": "Plateforme web et mobile de transport (axe Parakou – Cotonou) : réservation de billets, envoi et suivi de colis, location de véhicules.",
+                "creator": { "@id": "https://bonieddy.netlify.app/#person" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "SD International Group",
+                "url": "https://www.sd-internationalgroup.com/",
+                "description": "Site corporate bilingue FR/EN d'un groupe multisectoriel béninois (BTP, énergie, logistique).",
+                "creator": { "@id": "https://bonieddy.netlify.app/#person" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "TalenexPro",
+                "url": "https://talenexpro.com/",
+                "creator": { "@id": "https://bonieddy.netlify.app/#person" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "AfriRent Marketplace",
+                "url": "https://afrirent.netlify.app/",
+                "creator": { "@id": "https://bonieddy.netlify.app/#person" }
+              }
+            }
+          ]
+        }
       ]
     }
     </script>
