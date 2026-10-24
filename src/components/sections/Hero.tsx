@@ -18,7 +18,7 @@ export function Hero() {
           {t.hero.badge}
         </span>
 
-        <h1 style={reveal("0.05s")} className="hero-reveal flex flex-col gap-3">
+        <h1 style={reveal("0.15s")} className="hero-reveal flex flex-col gap-3">
           <span className="text-base font-semibold text-muted-foreground sm:text-lg">
             {t.hero.name} — {t.hero.role}
           </span>
@@ -27,11 +27,11 @@ export function Hero() {
           </span>
         </h1>
 
-        <p style={reveal("0.1s")} className="hero-reveal max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+        <p style={reveal("0.3s")} className="hero-reveal max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
           {t.hero.description} <strong className="font-semibold text-white">{t.hero.descriptionStrong}</strong>
         </p>
 
-        <div style={reveal("0.15s")} className="hero-reveal flex flex-wrap items-center gap-3">
+        <div style={reveal("0.45s")} className="hero-reveal flex flex-wrap items-center gap-3">
           <a href="#projects" className="inline-flex h-12 items-center gap-2.5 rounded-lg bg-primary px-5 text-[15px] font-semibold text-white transition-colors hover:bg-[#3B74F0]">
             {t.hero.ctaProjects}
             <ArrowRight size={16} aria-hidden="true" />
@@ -46,7 +46,7 @@ export function Hero() {
           </a>
         </div>
 
-        <ul style={reveal("0.2s")} className="hero-reveal flex flex-wrap gap-2" aria-label="Stack">
+        <ul style={reveal("0.6s")} className="hero-reveal flex flex-wrap gap-2" aria-label="Stack">
           {HERO_TECHS.map((tech) => (
             <li key={tech} className="rounded-md bg-secondary px-3 py-1.5 text-[13px] font-medium text-secondary-foreground">
               {tech}
@@ -55,9 +55,9 @@ export function Hero() {
         </ul>
       </div>
 
-      <div className="relative mx-auto h-[330px] w-full max-w-[340px] sm:h-[420px] sm:max-w-[460px] lg:mr-0">
-        <div aria-hidden="true" className="absolute right-2 top-5 h-[280px] w-[250px] rotate-6 rounded-[32px] bg-[#1D3F99] sm:right-4 sm:h-[340px] sm:w-[300px]" />
-        <div className="absolute right-6 top-0 flex h-[300px] w-[250px] items-end justify-center overflow-hidden rounded-[28px] bg-primary sm:right-8 sm:h-[360px] sm:w-[300px]">
+      <div style={{ "--reveal-delay": "0.3s", "--reveal-duration": "1.6s", "--reveal-distance": "40px" } as CSSProperties} className="hero-reveal relative mx-auto h-[330px] w-full max-w-[340px] sm:h-[420px] sm:max-w-[460px] lg:mr-0">
+        <div aria-hidden="true" className="float-a absolute right-2 top-5 h-[280px] w-[250px] rotate-6 rounded-[32px] bg-[#1D3F99] sm:right-4 sm:h-[340px] sm:w-[300px]" />
+        <div className="float-b absolute right-6 top-0 flex h-[300px] w-[250px] items-end justify-center overflow-hidden rounded-[28px] bg-primary sm:right-8 sm:h-[360px] sm:w-[300px]">
           <picture>
             <source type="image/avif" srcSet={PORTRAIT.avif} sizes={PORTRAIT.sizes} />
             <source type="image/webp" srcSet={PORTRAIT.webp} sizes={PORTRAIT.sizes} />
@@ -73,7 +73,7 @@ export function Hero() {
             />
           </picture>
         </div>
-        <div aria-hidden="true" className="absolute bottom-0 left-0 hidden w-[320px] rounded-xl border border-[#22355A] bg-card px-4 py-3.5 font-mono text-[13px] leading-[1.7] text-secondary-foreground shadow-[0_20px_40px_rgba(0,0,0,0.35)] sm:block">
+        <div aria-hidden="true" className="float-c absolute bottom-0 left-0 hidden w-[320px] rounded-xl border border-[#22355A] bg-card px-4 py-3.5 font-mono text-[13px] leading-[1.7] text-secondary-foreground shadow-[0_20px_40px_rgba(0,0,0,0.35)] sm:block">
           <div><span className="text-[#FF9E64]">const</span> developer = {"{"}</div>
           <div className="pl-4">name: <span className="text-warning">'Eddy Boni'</span>,</div>
           <div className="pl-4">stack: [<span className="text-warning">'React'</span>, <span className="text-warning">'Django'</span>, <span className="text-warning">'API'</span>],</div>

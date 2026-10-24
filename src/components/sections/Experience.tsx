@@ -1,6 +1,7 @@
 import { Briefcase, Wrench } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Section, SectionHeader } from "@/components/sections/SectionHeader";
+import { stagger } from "@/components/layout/useReveal";
 
 const ICONS = [Briefcase, Wrench];
 
@@ -14,7 +15,7 @@ export function Experience() {
         {t.experience.items.map((exp, i) => {
           const Icon = ICONS[i] ?? Briefcase;
           return (
-            <article key={exp.company} className="flex gap-4 rounded-2xl border border-border bg-card p-5 sm:gap-5 sm:p-7">
+            <article key={exp.company} style={stagger(i, 0.15)} className="reveal lift flex gap-4 hover:border-[#2F4A7A] rounded-2xl border border-border bg-card p-5 sm:gap-5 sm:p-7">
               <span aria-hidden="true" className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary text-white">
                 <Icon size={22} />
               </span>

@@ -101,17 +101,75 @@
   }
 }
 
-/* Hero entrance animation in pure CSS: it runs as soon as the prerendered HTML paints, without waiting for JavaScript.
+/* ---------- Motion ----------
+   Slow, smooth easing used everywhere ("ease-out-expo"). */
+:root {
+  --ease-slow: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hero entrance in pure CSS: it runs as soon as the prerendered HTML paints, without waiting for JavaScript.
    It starts at 0.01 rather than 0 because Chrome ignores fully transparent elements for Largest Contentful Paint. */
 @keyframes hero-reveal {
   from {
     opacity: 0.01;
-    transform: translateY(var(--reveal-distance, 16px));
+    transform: translateY(var(--reveal-distance, 24px));
   }
 }
 
 .hero-reveal {
-  animation: hero-reveal var(--reveal-duration, 0.5s) ease-out var(--reveal-delay, 0s) both;
+  animation: hero-reveal var(--reveal-duration, 1.2s) var(--ease-slow) var(--reveal-delay, 0s) both;
+}
+
+/* Scroll reveal. Elements are only hidden once the inline script in index.html has added .motion to <html>
+   (JS available, motion allowed); if the app never hydrates, that script removes .motion and everything shows. */
+.motion .reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 1.4s var(--ease-slow) var(--d, 0s),
+    transform 1.4s var(--ease-slow) var(--d, 0s);
+}
+
+.motion .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Slow float for the hero portrait panels and code card (transform only, runs on the compositor). */
+@keyframes float-a {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+@keyframes float-b {
+  from { transform: translateY(0); }
+  to { transform: translateY(-12px); }
+}
+@keyframes float-c {
+  from { transform: translateY(0); }
+  to { transform: translateY(8px); }
+}
+.float-a { animation: float-a 9s ease-in-out infinite alternate; }
+.float-b { animation: float-b 7s ease-in-out infinite alternate; }
+.float-c { animation: float-c 8s ease-in-out 1s infinite alternate; }
+
+/* Slower, softer hovers. The lift uses the `translate` property, so it never fights the reveal `transform`. */
+.lift {
+  transition:
+    translate 0.6s var(--ease-slow),
+    border-color 0.6s var(--ease-slow),
+    box-shadow 0.6s var(--ease-slow);
+}
+.motion .reveal.lift {
+  transition:
+    opacity 1.4s var(--ease-slow) var(--d, 0s),
+    transform 1.4s var(--ease-slow) var(--d, 0s),
+    translate 0.6s var(--ease-slow),
+    border-color 0.6s var(--ease-slow),
+    box-shadow 0.6s var(--ease-slow);
+}
+.lift:hover {
+  translate: 0 -6px;
+  box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.6);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -119,8 +177,21 @@
     scroll-behavior: auto;
   }
 
-  .hero-reveal {
+  .hero-reveal,
+  .float-a,
+  .float-b,
+  .float-c {
     animation: none;
+  }
+
+  .motion .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .lift:hover {
+    translate: none;
   }
 
   *,

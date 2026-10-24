@@ -45,7 +45,7 @@ export function Contact() {
   return (
     <section id="contact" className="border-t border-line">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="rounded-3xl border border-border bg-card p-6 sm:p-10 lg:p-14">
+        <div className="reveal rounded-3xl border border-border bg-card p-6 sm:p-10 lg:p-14">
           <div className="mx-auto mb-10 flex max-w-xl flex-col items-center gap-4 text-center">
             <span aria-hidden="true" className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-brand">
               <Send size={22} />

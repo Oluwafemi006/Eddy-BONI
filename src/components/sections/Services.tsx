@@ -3,6 +3,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { pathFor } from "@/seo/routes";
 import { SERVICES as SERVICE_PAGES, type ServiceId } from "@/content/services";
 import { Section } from "@/components/sections/SectionHeader";
+import { stagger } from "@/components/layout/useReveal";
 
 const SERVICE_META: { icon: typeof Globe; page: ServiceId | null }[] = [
   { icon: Globe, page: "react-nextjs" },
@@ -18,7 +19,7 @@ export function Services() {
   return (
     <Section id="services">
       <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
-        <div className="flex flex-col gap-5">
+        <div className="reveal flex flex-col gap-5">
           <h2 className="text-[26px] font-extrabold leading-tight text-white sm:text-[32px]">
             {t.services.titlePrefix} {t.services.titleHighlight}
           </h2>
@@ -37,10 +38,10 @@ export function Services() {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          {services.map((service) => {
+          {services.map((service, i) => {
             const Icon = service.icon;
             return (
-              <div key={service.title} className="flex flex-col gap-3 rounded-2xl border border-border bg-card p-6">
+              <div key={service.title} style={stagger(i + 1, 0.12)} className="reveal lift flex flex-col gap-3 rounded-2xl hover:border-[#2F4A7A] border border-border bg-card p-6">
                 <span aria-hidden="true" className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary text-brand">
                   <Icon size={22} />
                 </span>

@@ -4,6 +4,7 @@ import { pathFor } from "@/seo/routes";
 import type { CaseStudyId } from "@/content/caseStudies";
 import { CONTACT } from "@/content/contact";
 import { Section, SectionHeader } from "@/components/sections/SectionHeader";
+import { stagger } from "@/components/layout/useReveal";
 
 type ProjectMeta = {
   tags: string[];
@@ -96,10 +97,10 @@ export function Projects() {
       />
 
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {featured.map((project) => {
+        {featured.map((project, i) => {
           const Icon = project.icon;
           return (
-            <article key={project.title} className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-[#2F4A7A]">
+            <article key={project.title} style={stagger(i, 0.15)} className="reveal lift flex flex-col overflow-hidden rounded-2xl border border-border bg-card hover:border-[#2F4A7A]">
               <div aria-hidden="true" className="flex h-28 items-center justify-center border-b border-border bg-[#0C1528]">
                 <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-brand">
                   <Icon size={24} />
@@ -151,7 +152,7 @@ export function Projects() {
       </div>
 
       {inProgress.length > 0 && (
-        <div className="mt-6 rounded-2xl border border-dashed border-[#2A3B5C] p-5 sm:p-6">
+        <div className="reveal mt-6 rounded-2xl border border-dashed border-[#2A3B5C] p-5 sm:p-6">
           <h3 className="mb-4 text-sm font-semibold text-white">{t.projects.inProgressTitle}</h3>
           <ul className="grid gap-5 md:grid-cols-3">
             {inProgress.map((project) => (

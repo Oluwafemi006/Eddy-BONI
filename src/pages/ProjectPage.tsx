@@ -9,7 +9,7 @@ import { pathFor } from "@/seo/routes";
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+    <section className="reveal rounded-2xl border border-border bg-card p-6 sm:p-8">
       <h2 className="mb-4 text-xl font-bold text-white sm:text-2xl">{title}</h2>
       {children}
     </section>
@@ -38,7 +38,7 @@ export default function ProjectPage({ id }: { id: CaseStudyId }) {
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <Breadcrumbs items={breadcrumbsFor({ kind: "project", id }, language)} />
 
-          <header className="mb-12">
+          <header className="hero-reveal mb-12">
             <span className="mb-6 inline-flex items-center gap-1.5 rounded-full border border-border bg-[#111E35] px-3 py-1.5 text-xs font-medium text-secondary-foreground">
               {id === "axis-transport" ? <Smartphone size={12} className="text-warning" aria-hidden="true" /> : <span className="h-1.5 w-1.5 rounded-full bg-success" aria-hidden="true" />}
               {content.status}

@@ -10,7 +10,7 @@ import { pathFor } from "@/seo/routes";
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+    <section className="reveal rounded-2xl border border-border bg-card p-6 sm:p-8">
       <h2 className="mb-4 text-xl font-bold text-white sm:text-2xl">{title}</h2>
       {children}
     </section>
@@ -80,7 +80,7 @@ export default function ServicePage({ id }: { id: ServiceId }) {
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <Breadcrumbs items={breadcrumbsFor({ kind: "service", id }, language)} />
 
-          <header className="mb-12">
+          <header className="hero-reveal mb-12">
             <h1 className="mb-6 text-[34px] font-extrabold leading-[1.1] tracking-[-0.03em] text-white sm:text-5xl">
               {content.h1}
             </h1>
