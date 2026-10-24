@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import { ArrowRight, Mail, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { CONTACT } from "@/content/contact";
+import { PORTRAIT } from "@/content/portrait";
 
 const HERO_TECHS = ["Django", "React", "Next.js", "Flutter", "PostgreSQL"];
 
@@ -57,16 +58,20 @@ export function Hero() {
       <div className="relative mx-auto h-[330px] w-full max-w-[340px] sm:h-[420px] sm:max-w-[460px] lg:mr-0">
         <div aria-hidden="true" className="absolute right-2 top-5 h-[280px] w-[250px] rotate-6 rounded-[32px] bg-[#1D3F99] sm:right-4 sm:h-[340px] sm:w-[300px]" />
         <div className="absolute right-6 top-0 flex h-[300px] w-[250px] items-end justify-center overflow-hidden rounded-[28px] bg-primary sm:right-8 sm:h-[360px] sm:w-[300px]">
-          <img
-            src="/images/Eddy_Boni.png"
-            alt={t.hero.imageAlt}
-            width={408}
-            height={612}
-            fetchPriority="high"
-            loading="eager"
-            decoding="async"
-            className="h-[290px] w-auto sm:h-[350px]"
-          />
+          <picture>
+            <source type="image/avif" srcSet={PORTRAIT.avif} sizes={PORTRAIT.sizes} />
+            <source type="image/webp" srcSet={PORTRAIT.webp} sizes={PORTRAIT.sizes} />
+            <img
+              src="/images/eddy-boni-480.webp"
+              alt={t.hero.imageAlt}
+              width={480}
+              height={720}
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+              className="h-[290px] w-auto sm:h-[350px]"
+            />
+          </picture>
         </div>
         <div aria-hidden="true" className="absolute bottom-0 left-0 hidden w-[320px] rounded-xl border border-[#22355A] bg-card px-4 py-3.5 font-mono text-[13px] leading-[1.7] text-secondary-foreground shadow-[0_20px_40px_rgba(0,0,0,0.35)] sm:block">
           <div><span className="text-[#FF9E64]">const</span> developer = {"{"}</div>

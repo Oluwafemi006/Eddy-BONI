@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@plugin "@tailwindcss/typography";
-
 /* Self-hosted variable font (latin subset), preloaded from index.html. */
 @font-face {
   font-family: "Manrope";

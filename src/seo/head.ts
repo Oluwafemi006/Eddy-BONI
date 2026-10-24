@@ -3,6 +3,7 @@ import { fr } from "@/i18n/fr";
 import { CASE_STUDIES } from "@/content/caseStudies";
 import { SERVICES } from "@/content/services";
 import { structuredData } from "@/seo/schema";
+import { PORTRAIT } from "@/content/portrait";
 import { absoluteUrl, LANGUAGES, pathFor, SITE_URL, type Page } from "@/seo/routes";
 
 const HOME_META: Record<Language, { title: string; description: string }> = {
@@ -84,6 +85,13 @@ export function buildHead(page: Page, language: Language): string {
     meta("name", "twitter:image", imageUrl),
   );
   if (indexable) tags.push(meta("property", "og:url", url));
+
+  if (page.kind === "home") {
+    // The portrait is the largest image above the fold: start downloading it with the HTML.
+    tags.push(
+      `<link rel="preload" as="image" type="image/avif" imagesrcset="${PORTRAIT.avif}" imagesizes="${PORTRAIT.sizes}" fetchpriority="high" />`,
+    );
+  }
 
   const data = structuredData(page, language);
   if (data) {
