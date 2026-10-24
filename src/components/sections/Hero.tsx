@@ -62,7 +62,7 @@ export function Hero() {
             <source type="image/avif" srcSet={PORTRAIT.avif} sizes={PORTRAIT.sizes} />
             <source type="image/webp" srcSet={PORTRAIT.webp} sizes={PORTRAIT.sizes} />
             <img
-              src="/images/eddy-boni-480.webp"
+              src="/images/eddy-boni-v2-480.webp"
               alt={t.hero.imageAlt}
               width={480}
               height={720}
