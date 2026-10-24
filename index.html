@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#00ffb4" />
+    <meta name="theme-color" content="#0A1120" />
     
     <meta name="author" content="Eddy Boni" />
     <meta name="google-site-verification" content="pjtW-7YWPAXEmBRMstp0Jyjfe4kud_TMB79ewEIrSzI" />
@@ -12,14 +12,24 @@
     <title>Eddy Boni</title>
     <!--app-head-->
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Self-hosted font (declared in src/index.css) -->
+    <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
     
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Scroll-reveal guard: hide .reveal elements only when JS runs and motion is allowed.
+         If the app has not hydrated after 4 s, show everything (see src/components/layout/useReveal.ts). -->
+    <script>
+      (function () {
+        var d = document.documentElement;
+        if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        d.classList.add("motion");
+        setTimeout(function () {
+          if (!d.classList.contains("motion-ready")) d.classList.remove("motion");
+        }, 4000);
+      })();
+    </script>
   </head>
-  <body class="bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary">
+  <body class="bg-background text-foreground antialiased selection:bg-primary/40 selection:text-white">
     <div id="root"><!--app-html--></div>
     <form name="contact" netlify netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" />

@@ -7,6 +7,10 @@ export const fr = {
     process: "Process",
     contact: "Contact",
     contactCta: "Me contacter",
+    home: "Accueil",
+    label: "Navigation principale",
+    openMenu: "Ouvrir le menu",
+    closeMenu: "Fermer le menu",
   },
   hero: {
     badge: "Disponible en Freelance",
@@ -20,41 +24,73 @@ export const fr = {
     ctaProjects: "Voir mes projets",
     ctaContact: "Me contacter",
     ctaComeup: "Commander sur ComeUp",
-    imageAlt: "Eddy Boni",
+    imageAlt: "Portrait d'Eddy Boni",
+    headlinePrefix: "Je construis des",
+    headlineHighlight: "produits numériques",
+    headlineSuffix: "utiles et durables.",
   },
-  stats: {
-    items: [
-      { value: "3+", label: "Années d'expérience" },
-      { value: "10+", label: "Projets livrés" },
-      { value: "Licence Pro", label: "Informatique de Gestion (2026)" },
+  about: {
+    badge: "À propos de moi",
+    title: "Un développeur passionné par les produits numériques et les solutions utiles.",
+    facts: {
+      location: "Cotonou, Bénin · disponible en remote",
+      experience: "2 ans d'expérience en développement",
+      availability: "Disponible pour des opportunités",
+      languages: "Français ; échanges écrits possibles en anglais",
+    },
+    cta: "Voir mon expérience",
+    timelineTitle: "Mon parcours",
+    timeline: [
+      {
+        year: "2026",
+        title: "Licence Professionnelle — Informatique de Gestion",
+        place: "IUT de Parakou, Université de Parakou",
+        note: "Mémoire soutenu avec la mention très bien",
+      },
+      { year: "2026", title: "Partenaire technique Full-Stack", place: "Talenex Inc., Montréal (remote)", note: "" },
+      { year: "2025", title: "Stage — système de gestion de garage", place: "Luxury Élégance Garage, Parakou", note: "" },
+      { year: "2024", title: "Premiers projets web", place: "Projets personnels, puis missions freelance", note: "" },
+      { year: "2023", title: "Baccalauréat série D", place: "Collège Catholique Saint Thomas d'Aquin, Parakou", note: "" },
     ],
   },
   stack: {
-    titlePrefix: "Ma",
-    titleHighlight: "Stack Technique",
-    subtitle:
-      "Un écosystème d'outils modernes et performants pour construire des solutions de bout en bout.",
-    showMore: "Voir plus",
-    showLess: "Voir moins",
-    items: [
-      { name: "Next.js", desc: "Front-end & Full-stack SSR" },
-      { name: "React JS", desc: "Interfaces web & SPA" },
-      { name: "Flutter", desc: "Apps mobiles iOS & Android" },
-      { name: "Django", desc: "Framework backend robuste" },
-      { name: "Docker", desc: "Conteneurisation" },
-      { name: "PostgreSQL", desc: "Base de données relationnelle" },
-      { name: "Prisma", desc: "ORM type-safe" },
-      { name: "TypeScript", desc: "Typage statique" },
-      { name: "Nginx", desc: "Serveur web & Reverse Proxy" },
-      { name: "JavaScript", desc: "Logique dynamique" },
-      { name: "API REST", desc: "Architecture d'intégration" },
-      { name: "Git", desc: "Version control" },
+    titlePrefix: "Mes",
+    titleHighlight: "compétences",
+    subtitle: "Classées selon mon niveau réel d'utilisation.",
+    tiers: [
+      {
+        level: "mastered",
+        title: "Technologies maîtrisées",
+        caption: "Utilisées au quotidien, sur des projets en production",
+        items: ["React", "TypeScript / JavaScript", "HTML / CSS", "Python", "Django et Django REST Framework", "API REST", "PostgreSQL / MySQL", "Git et GitHub", "Linux (Ubuntu)"],
+      },
+      {
+        level: "practice",
+        title: "Utilisées en pratique",
+        caption: "Mises en œuvre sur des projets réels",
+        items: [
+          "Next.js et Prisma",
+          "Flutter (application mobile)",
+          "Docker et Nginx",
+          "Tableaux de bord et back-offices",
+          "Paiements en ligne (Stripe, Mobile Money)",
+          "Chatbot IA (Gemini)",
+          "UML et analyse des besoins",
+          "Déploiement (Railway, Netlify, PythonAnywhere, AWS EC2)",
+        ],
+      },
+      {
+        level: "learning",
+        title: "En apprentissage",
+        caption: "En cours d'approfondissement",
+        items: ["React Native", "Pandas", "Scikit-learn"],
+      },
     ],
   },
   experience: {
-    titlePrefix: "Expérience",
-    titleHighlight: "Professionnelle",
-    subtitle: "Mon parcours technique à travers des projets réels en entreprise.",
+    titlePrefix: "Expérience &",
+    titleHighlight: "projets professionnels",
+    subtitle: "Une expérience pratique sur des projets réels, en entreprise et en freelance.",
     items: [
       {
         role: "Développeur Full-Stack",
@@ -62,25 +98,29 @@ export const fr = {
         location: "Montréal, Canada (Remote)",
         type: "Partenariat technique",
         period: "2026 – Présent",
+        status: "En cours",
+        current: true,
         description:
-          "Contribution en tant que développeur full-stack sur TalenexPro, une plateforme d'échange de compétences bilingue. Configuration de l'infrastructure PostgreSQL sur AWS EC2, mise en place de l'envoi d'emails transactionnels, intégration d'analytics pour le suivi produit, et travail en cours sur le système de crédits et l'intégration de paiements internationaux (Flutterwave, Stripe).",
-        skills: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Docker", "AWS EC2"],
+          "Partenaire technique en remote pour Talenex Inc. (Montréal) : développement backend, intégration de paiements et mise en production.",
+        skills: [],
       },
       {
-        role: "Développeur Stagiaire — Système de Gestion de Garage",
+        role: "Développeur stagiaire — Système de gestion de garage (LUXEL-G)",
         company: "Luxury Élégance Garage",
         location: "Parakou, Bénin",
-        type: "Stage",
+        type: "Stage et projet de fin d'études",
         period: "2025 – 2026",
+        status: "Terminé",
+        current: false,
         description:
           "Analyse des besoins et conception UML complète (cas d'utilisation, séquence, classes) pour un système de suivi client et d'historique de services. Développement d'un système de réservation en ligne et d'un tableau de bord administrateur sécurisé par rôles, avec Django et PostgreSQL.",
-        skills: ["Django", "PostgreSQL", "UML", "Auth/Permissions"],
+        skills: ["Django", "Django REST Framework", "React", "TypeScript", "PostgreSQL", "UML"],
       },
     ],
   },
   process: {
     titlePrefix: "Méthodologie de",
-    titleHighlight: "Travail",
+    titleHighlight: "travail",
     subtitle:
       "Une approche structurée en 4 étapes pour garantir la réussite de vos projets, de l'idée au déploiement.",
     steps: [
@@ -103,18 +143,18 @@ export const fr = {
     ],
   },
   projects: {
-    titlePrefix: "Projets",
-    titleHighlight: "Récents",
-    subtitle:
-      "Une sélection de mes dernières réalisations alliant design moderne et ingénierie back-end solide.",
-    showMore: "Voir plus",
-    showLess: "Voir moins",
+    titlePrefix: "Mes",
+    titleHighlight: "projets",
+    subtitle: "Des projets concrets qui montrent mon savoir-faire.",
+    allProjects: "Tous mes dépôts sur GitHub",
+    inProgressTitle: "En cours de développement",
+    statusLive: "En ligne",
     statusDone: "Terminé",
     statusInProgress: "En cours",
     statusMobileTesting: "Mobile (Flutter) en test",
     caseStudy: "Étude de cas",
-    liveDemo: "Live Demo",
-    demoSoon: "Demo bientôt",
+    liveDemo: "Voir le site",
+    demoSoon: "Démo bientôt",
     code: "Code",
     items: [
       {
@@ -128,14 +168,14 @@ export const fr = {
           "Site vitrine Next.js bilingue FR/EN pour un groupe multisectoriel de Cotonou (BTP, énergie, logistique, import-export) : pages services, HSE & qualité, contact, SEO et Open Graph.",
       },
       {
-        title: "TalenexPro",
-        description:
-          "Plateforme B2B d'échange de compétences entre professionnels : gagnez des crédits en partageant vos compétences, dépensez-les pour apprendre auprès d'autres professionnels.",
-      },
-      {
         title: "AfriRent Marketplace",
         description:
           "Marketplace type Leboncoin pour la location entre particuliers avec authentification, annonces, favoris, panier et API backend sécurisée.",
+      },
+      {
+        title: "LUXEL-G",
+        description:
+          "Système de gestion pour un garage de Parakou (stage et projet de fin d'études) : réservation en ligne, tableau de bord par rôles, paiement Mobile Money, vérification par SMS et assistant IA.",
       },
       {
         title: "App E-commerce Mobile",
@@ -153,7 +193,7 @@ export const fr = {
   },
   services: {
     titlePrefix: "Mes",
-    titleHighlight: "Services",
+    titleHighlight: "services",
     intro:
       "J'accompagne les entreprises de la conception à la mise en production de leurs produits digitaux. Mon approche Full-Stack garantit une cohérence technique sur l'ensemble de votre projet.",
     bullets: [
@@ -184,8 +224,12 @@ export const fr = {
   },
   contact: {
     titlePrefix: "Travaillons",
-    titleHighlight: "Ensemble",
-    subtitle: "Vous avez un projet en tête ou vous recherchez un développeur freelance ? Discutons de vos besoins.",
+    titleHighlight: "ensemble",
+    subtitle: "Vous avez un projet, une opportunité ou simplement une question ? N'hésitez pas à me contacter.",
+    githubTitle: "GitHub",
+    githubCta: "Voir mon GitHub",
+    linkedinTitle: "LinkedIn",
+    formTitle: "Écrivez-moi",
     emailTitle: "Email",
     emailDesc: "Contactez-moi directement à l'adresse suivante :",
     locationTitle: "Localisation",
@@ -218,7 +262,7 @@ export const fr = {
   },
   faq: {
     titlePrefix: "Questions",
-    titleHighlight: "Fréquentes",
+    titleHighlight: "fréquentes",
     subtitle: "L'essentiel à savoir avant de démarrer un projet ensemble.",
     items: [
       {
@@ -234,7 +278,7 @@ export const fr = {
       {
         question: "Travaillez-vous à distance ?",
         answer:
-          "Oui. Je suis basé à Cotonou, au Bénin (UTC+1), et je travaille 100 % à distance, en français ou en anglais, avec des clients au Bénin et à l'international.",
+          "Oui. Je suis basé à Cotonou, au Bénin (UTC+1), et je travaille 100 % à distance avec des clients au Bénin et à l'international. Je travaille en français ; échanges écrits possibles en anglais.",
       },
       {
         question: "Comment se déroule une collaboration, et quels sont les délais ?",
@@ -271,7 +315,7 @@ export const fr = {
     howTitle: "Comment je travaille",
     remoteHighlights: [
       "Travail 100 % à distance",
-      "Francophone, je travaille aussi en anglais",
+      "En français ; échanges écrits possibles en anglais",
       "Fuseau horaire UTC+1",
       "Communication claire par WhatsApp, email et appels",
     ],

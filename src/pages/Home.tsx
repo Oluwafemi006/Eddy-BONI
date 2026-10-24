@@ -1,6 +1,6 @@
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { Hero } from "@/components/sections/Hero";
-import { Stats } from "@/components/sections/Stats";
+import { About } from "@/components/sections/About";
 import { TechStack } from "@/components/sections/TechStack";
 import { Projects } from "@/components/sections/Projects";
 import { Experience } from "@/components/sections/Experience";
@@ -13,12 +13,12 @@ export default function Home() {
   return (
     <SiteLayout>
       <Hero />
-      <Stats />
+      <About />
       <TechStack />
-      <Experience />
-      <Process />
       <Projects />
+      <Experience />
       <Services />
+      <Process />
       <Faq />
       <Contact />
     </SiteLayout>

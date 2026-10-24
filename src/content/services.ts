@@ -101,8 +101,8 @@ export const SERVICES: Record<ServiceId, Service> = {
       {
         name: "Luxury Élégance Garage",
         note: {
-          fr: "Système de gestion de garage (stage) : réservation en ligne et tableau de bord admin, Django et PostgreSQL",
-          en: "Garage management system (internship): online booking and admin dashboard, Django and PostgreSQL",
+          fr: "Système de gestion de garage (stage et projet de fin d'études) : réservation en ligne et tableau de bord admin, Django REST Framework, React et PostgreSQL",
+          en: "Garage management system (internship and final-year project): online booking and admin dashboard, Django REST Framework, React and PostgreSQL",
         },
       },
     ],
@@ -110,11 +110,11 @@ export const SERVICES: Record<ServiceId, Service> = {
       fr: {
         metaTitle: "Développeur Django freelance (Django REST Framework) | Eddy Boni",
         metaDescription:
-          "Développeur Django freelance : API REST avec Django REST Framework, back-ends d'applications web et mobiles, PostgreSQL. 100 % à distance, en français ou en anglais.",
+          "Développeur Django freelance : API REST avec Django REST Framework, back-ends d'applications web et mobiles, PostgreSQL. 100 % à distance.",
         h1: "Développeur Django freelance",
         intro: [
           "Je développe des back-ends et des API REST avec Python, Django et Django REST Framework, pour des applications web et mobiles.",
-          "Je travaille 100 % à distance, en français ou en anglais.",
+          "Je travaille 100 % à distance, en français ; échanges écrits possibles en anglais.",
         ],
         offers: [
           "API REST avec Django REST Framework",
@@ -126,11 +126,11 @@ export const SERVICES: Record<ServiceId, Service> = {
       en: {
         metaTitle: "Freelance Django developer (Django REST Framework) | Eddy Boni",
         metaDescription:
-          "Freelance Django developer: REST APIs with Django REST Framework, back ends for web and mobile apps, PostgreSQL. Fully remote, in English or French.",
+          "Freelance Django developer: REST APIs with Django REST Framework, back ends for web and mobile apps, PostgreSQL. Fully remote.",
         h1: "Freelance Django developer",
         intro: [
           "I build back ends and REST APIs with Python, Django and Django REST Framework, for web and mobile applications.",
-          "I work fully remotely, in English or French.",
+          "I work fully remotely, in French; written communication in English is possible.",
         ],
         offers: [
           "REST APIs with Django REST Framework",
@@ -170,7 +170,7 @@ export const SERVICES: Record<ServiceId, Service> = {
         h1: "Développeur Flutter freelance",
         intro: [
           "Je développe des applications mobiles iOS et Android avec Flutter, à partir d'une seule base de code, connectées à un back-end Django REST Framework ou à votre API existante.",
-          "Je travaille 100 % à distance, en français ou en anglais.",
+          "Je travaille 100 % à distance, en français ; échanges écrits possibles en anglais.",
         ],
         offers: [
           "Applications mobiles iOS et Android avec Flutter",
@@ -182,11 +182,11 @@ export const SERVICES: Record<ServiceId, Service> = {
       en: {
         metaTitle: "Freelance Flutter developer, iOS and Android apps | Eddy Boni",
         metaDescription:
-          "Freelance Flutter developer: iOS and Android mobile apps from a single codebase, connected to a REST API. Fully remote, in English or French.",
+          "Freelance Flutter developer: iOS and Android mobile apps from a single codebase, connected to a REST API. Fully remote.",
         h1: "Freelance Flutter developer",
         intro: [
           "I build iOS and Android mobile apps with Flutter from a single codebase, connected to a Django REST Framework back end or to your existing API.",
-          "I work fully remotely, in English or French.",
+          "I work fully remotely, in French; written communication in English is possible.",
         ],
         offers: [
           "iOS and Android mobile apps with Flutter",
@@ -211,8 +211,8 @@ export const SERVICES: Record<ServiceId, Service> = {
         name: "TalenexPro",
         url: "https://talenexpro.com",
         note: {
-          fr: "Contribution full-stack : Next.js, TypeScript, Prisma, PostgreSQL",
-          en: "Full-stack contribution: Next.js, TypeScript, Prisma, PostgreSQL",
+          fr: "Partenaire technique en remote pour Talenex Inc. (Montréal) : développement backend, intégration de paiements et mise en production.",
+          en: "Remote technical partner for Talenex Inc. (Montreal): back-end development, payment integration and production deployment.",
         },
       },
       {
@@ -229,7 +229,7 @@ export const SERVICES: Record<ServiceId, Service> = {
         h1: "Développeur React et Next.js freelance",
         intro: [
           "Je développe des applications web avec React, Next.js et TypeScript : interfaces rapides, sites optimisés pour le SEO, sites multilingues.",
-          "Je travaille 100 % à distance, en français ou en anglais.",
+          "Je travaille 100 % à distance, en français ; échanges écrits possibles en anglais.",
         ],
         offers: [
           "Applications web avec React et TypeScript",
@@ -241,11 +241,11 @@ export const SERVICES: Record<ServiceId, Service> = {
       en: {
         metaTitle: "Freelance React and Next.js developer | Eddy Boni",
         metaDescription:
-          "Freelance React and Next.js developer: TypeScript web apps, SEO-friendly Next.js websites, multilingual sites. Fully remote, in English or French.",
+          "Freelance React and Next.js developer: TypeScript web apps, SEO-friendly Next.js websites, multilingual sites. Fully remote.",
         h1: "Freelance React and Next.js developer",
         intro: [
           "I build web applications with React, Next.js and TypeScript: fast interfaces, SEO-friendly websites, multilingual sites.",
-          "I work fully remotely, in English or French.",
+          "I work fully remotely, in French; written communication in English is possible.",
         ],
         offers: [
           "Web applications with React and TypeScript",

@@ -1,33 +1,28 @@
 import { ArrowLeft } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { pathFor } from "@/seo/routes";
+import { Logo } from "@/components/layout/Navbar";
 
 export default function NotFound() {
   const { t, language } = useLanguage();
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-[#030509] flex items-center justify-center px-6">
-      <div className="absolute inset-0 -z-30 bg-[radial-gradient(circle_at_15%_35%,rgba(220,38,38,0.15),transparent_45%),radial-gradient(circle_at_85%_65%,rgba(6,182,212,0.18),transparent_45%),linear-gradient(135deg,#020305_0%,#050911_52%,#030509_100%)]" />
-      <div className="absolute -left-32 top-20 -z-20 h-[460px] w-[460px] rounded-full bg-red-600/10 blur-[130px]" />
-      <div className="absolute -right-32 bottom-10 -z-20 h-[480px] w-[480px] rounded-full bg-cyan-500/15 blur-[130px]" />
-
-      <div className="relative z-10 text-center max-w-md">
-        <div className="text-7xl sm:text-8xl font-display font-bold text-primary text-glow mb-4">
-          {t.notFound.code}
+    <main className="flex min-h-screen w-full items-center justify-center bg-background px-4">
+      <div className="max-w-md text-center">
+        <div className="mb-8 flex justify-center">
+          <Logo />
         </div>
-        <h1 className="text-2xl sm:text-3xl font-display font-bold text-white mb-3">
-          {t.notFound.title}
-        </h1>
-        <p className="text-muted-foreground mb-10">{t.notFound.description}</p>
-
+        <p className="mb-3 font-mono text-sm text-brand">{t.notFound.code}</p>
+        <h1 className="mb-3 text-3xl font-extrabold text-white sm:text-4xl">{t.notFound.title}</h1>
+        <p className="mb-10 text-muted-foreground">{t.notFound.description}</p>
         <a
           href={pathFor({ kind: "home" }, language)}
-          className="inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3.5 font-semibold text-primary-foreground transition-all duration-300 hover:box-glow"
+          className="inline-flex h-12 items-center gap-2 rounded-lg bg-primary px-6 font-semibold text-white transition-colors hover:bg-[#3B74F0]"
         >
-          <ArrowLeft className="w-5 h-5" />
+          <ArrowLeft size={18} aria-hidden="true" />
           {t.notFound.cta}
         </a>
       </div>
-    </div>
+    </main>
   );
 }

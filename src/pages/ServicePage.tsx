@@ -10,8 +10,8 @@ import { pathFor } from "@/seo/routes";
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section className="rounded-2xl bg-card border border-white/5 p-8">
-      <h2 className="text-2xl font-display font-bold text-foreground mb-4">{title}</h2>
+    <section className="reveal rounded-2xl border border-border bg-card p-6 sm:p-8">
+      <h2 className="mb-4 text-xl font-bold text-white sm:text-2xl">{title}</h2>
       {children}
     </section>
   );
@@ -22,7 +22,7 @@ function CheckList({ items }: { items: string[] }) {
     <ul className="space-y-3">
       {items.map((item) => (
         <li key={item} className="flex items-start gap-3 text-muted-foreground">
-          <Check size={18} className="mt-0.5 shrink-0 text-primary" aria-hidden="true" />
+          <Check size={18} className="mt-0.5 shrink-0 text-brand" aria-hidden="true" />
           {item}
         </li>
       ))}
@@ -36,12 +36,12 @@ function RelatedItem({ work }: { work: RelatedWork }) {
   if ("caseStudy" in work) {
     const study = CASE_STUDIES[work.caseStudy];
     return (
-      <li className="rounded-xl border border-white/5 bg-secondary/40 p-5">
-        <h3 className="font-display font-semibold text-foreground mb-1">{study.name}</h3>
+      <li className="rounded-xl border border-border bg-background/60 p-5">
+        <h3 className="mb-1 font-semibold text-white">{study.name}</h3>
         <p className="text-sm text-muted-foreground mb-3">{work.note[language]}</p>
         <a
           href={pathFor({ kind: "project", id: work.caseStudy }, language)}
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+          className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:text-white"
         >
           {t.servicePage.caseStudy} <ArrowRight size={14} />
         </a>
@@ -50,15 +50,15 @@ function RelatedItem({ work }: { work: RelatedWork }) {
   }
 
   return (
-    <li className="rounded-xl border border-white/5 bg-secondary/40 p-5">
-      <h3 className="font-display font-semibold text-foreground mb-1">{work.name}</h3>
+    <li className="rounded-xl border border-border bg-background/60 p-5">
+      <h3 className="mb-1 font-semibold text-white">{work.name}</h3>
       <p className="text-sm text-muted-foreground">{work.note[language]}</p>
       {work.url && (
         <a
           href={work.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground hover:text-primary transition-colors"
+          className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground transition-colors hover:text-white"
         >
           {t.servicePage.visit} <ExternalLink size={14} />
         </a>
@@ -76,12 +76,12 @@ export default function ServicePage({ id }: { id: ServiceId }) {
 
   return (
     <SiteLayout>
-      <article className="pt-32 pb-24">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+      <article className="pb-20 pt-10 sm:pt-14">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <Breadcrumbs items={breadcrumbsFor({ kind: "service", id }, language)} />
 
-          <header className="mb-12">
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground leading-tight mb-6">
+          <header className="hero-reveal mb-12">
+            <h1 className="mb-6 text-[34px] font-extrabold leading-[1.1] tracking-[-0.03em] text-white sm:text-5xl">
               {content.h1}
             </h1>
             <div className="space-y-3 text-lg text-muted-foreground leading-relaxed mb-8">
@@ -91,7 +91,7 @@ export default function ServicePage({ id }: { id: ServiceId }) {
             </div>
             <a
               href={`${home}#contact`}
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground transition-all duration-300 hover:box-glow"
+              className="inline-flex h-12 items-center gap-2 rounded-lg bg-primary px-6 font-semibold text-white transition-colors hover:bg-[#3B74F0]"
             >
               {t.servicePage.ctaButton} <ArrowRight size={16} />
             </a>
@@ -107,7 +107,7 @@ export default function ServicePage({ id }: { id: ServiceId }) {
                 {service.stack.map((tech) => (
                   <li
                     key={tech}
-                    className="px-3 py-1 text-sm font-medium rounded-full bg-secondary text-secondary-foreground border border-white/5"
+                    className="rounded-md bg-secondary px-3 py-1.5 text-sm font-medium text-secondary-foreground"
                   >
                     {tech}
                   </li>
@@ -131,7 +131,7 @@ export default function ServicePage({ id }: { id: ServiceId }) {
               <p className="text-muted-foreground mb-6">{t.servicePage.ctaText}</p>
               <a
                 href={`${home}#contact`}
-                className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground transition-all duration-300 hover:box-glow"
+                className="inline-flex h-12 items-center gap-2 rounded-lg bg-primary px-6 font-semibold text-white transition-colors hover:bg-[#3B74F0]"
               >
                 {t.servicePage.ctaButton}
               </a>

@@ -9,6 +9,10 @@ export const en: Translations = {
     process: "Process",
     contact: "Contact",
     contactCta: "Get in touch",
+    home: "Home",
+    label: "Main navigation",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
   },
   hero: {
     badge: "Available for Freelance",
@@ -22,40 +26,73 @@ export const en: Translations = {
     ctaProjects: "View my projects",
     ctaContact: "Get in touch",
     ctaComeup: "Book on ComeUp",
-    imageAlt: "Eddy Boni",
+    imageAlt: "Portrait of Eddy Boni",
+    headlinePrefix: "I build",
+    headlineHighlight: "digital products",
+    headlineSuffix: "that are useful and built to last.",
   },
-  stats: {
-    items: [
-      { value: "3+", label: "Years of experience" },
-      { value: "10+", label: "Projects delivered" },
-      { value: "Licence Pro", label: "Business Computing degree (2026)" },
+  about: {
+    badge: "About me",
+    title: "A developer who cares about digital products and solutions that are actually useful.",
+    facts: {
+      location: "Cotonou, Benin · available remotely",
+      experience: "2 years of development experience",
+      availability: "Open to opportunities",
+      languages: "French; written communication in English is possible",
+    },
+    cta: "See my experience",
+    timelineTitle: "My journey",
+    timeline: [
+      {
+        year: "2026",
+        title: "Professional Bachelor's degree — Business Computing",
+        place: "IUT de Parakou, University of Parakou",
+        note: "Final-year project graded with highest honors",
+      },
+      { year: "2026", title: "Full-stack technical partner", place: "Talenex Inc., Montreal (remote)", note: "" },
+      { year: "2025", title: "Internship — garage management system", place: "Luxury Élégance Garage, Parakou", note: "" },
+      { year: "2024", title: "First web projects", place: "Personal projects, then freelance work", note: "" },
+      { year: "2023", title: "Baccalaureate (science track, série D)", place: "Collège Catholique Saint Thomas d'Aquin, Parakou", note: "" },
     ],
   },
   stack: {
     titlePrefix: "My",
-    titleHighlight: "Tech Stack",
-    subtitle: "A modern, high-performance toolkit for building end-to-end solutions.",
-    showMore: "Show more",
-    showLess: "Show less",
-    items: [
-      { name: "Next.js", desc: "Front-end & full-stack SSR" },
-      { name: "React JS", desc: "Web interfaces & SPAs" },
-      { name: "Flutter", desc: "iOS & Android mobile apps" },
-      { name: "Django", desc: "Robust backend framework" },
-      { name: "Docker", desc: "Containerization" },
-      { name: "PostgreSQL", desc: "Relational database" },
-      { name: "Prisma", desc: "Type-safe ORM" },
-      { name: "TypeScript", desc: "Static typing" },
-      { name: "Nginx", desc: "Web server & reverse proxy" },
-      { name: "JavaScript", desc: "Dynamic logic" },
-      { name: "API REST", desc: "Integration architecture" },
-      { name: "Git", desc: "Version control" },
+    titleHighlight: "skills",
+    subtitle: "Grouped by how much I actually use them.",
+    tiers: [
+      {
+        level: "mastered",
+        title: "Core technologies",
+        caption: "Used daily, on projects in production",
+        items: ["React", "TypeScript / JavaScript", "HTML / CSS", "Python", "Django and Django REST Framework", "REST APIs", "PostgreSQL / MySQL", "Git and GitHub", "Linux (Ubuntu)"],
+      },
+      {
+        level: "practice",
+        title: "Used in practice",
+        caption: "Applied on real projects",
+        items: [
+          "Next.js and Prisma",
+          "Flutter (mobile app)",
+          "Docker and Nginx",
+          "Dashboards and back offices",
+          "Online payments (Stripe, Mobile Money)",
+          "AI chatbot (Gemini)",
+          "UML and requirements analysis",
+          "Deployment (Railway, Netlify, PythonAnywhere, AWS EC2)",
+        ],
+      },
+      {
+        level: "learning",
+        title: "Currently learning",
+        caption: "Building up through practice",
+        items: ["React Native", "Pandas", "Scikit-learn"],
+      },
     ],
   },
   experience: {
-    titlePrefix: "Professional",
-    titleHighlight: "Experience",
-    subtitle: "My technical journey through real-world projects in the field.",
+    titlePrefix: "Experience &",
+    titleHighlight: "professional projects",
+    subtitle: "Hands-on experience on real projects, in companies and as a freelancer.",
     items: [
       {
         role: "Full-Stack Developer",
@@ -63,25 +100,29 @@ export const en: Translations = {
         location: "Montreal, Canada (Remote)",
         type: "Technical partnership",
         period: "2026 – Present",
+        status: "Ongoing",
+        current: true,
         description:
-          "Contributing as a full-stack developer on TalenexPro, a bilingual skill-exchange platform. Set up PostgreSQL infrastructure on AWS EC2, implemented transactional email delivery, integrated product analytics, and currently working on the credit system and international payment integration (Flutterwave, Stripe).",
-        skills: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Docker", "AWS EC2"],
+          "Remote technical partner for Talenex Inc. (Montreal): back-end development, payment integration and production deployment.",
+        skills: [],
       },
       {
-        role: "Intern Developer — Garage Management System",
+        role: "Intern Developer — Garage Management System (LUXEL-G)",
         company: "Luxury Élégance Garage",
         location: "Parakou, Benin",
-        type: "Internship",
+        type: "Internship and final-year project",
         period: "2025 – 2026",
+        status: "Completed",
+        current: false,
         description:
           "Requirements analysis and full UML design (use case, sequence, and class diagrams) for a customer tracking and service history system. Built an online booking system and a role-secured admin dashboard using Django and PostgreSQL.",
-        skills: ["Django", "PostgreSQL", "UML", "Auth/Permissions"],
+        skills: ["Django", "Django REST Framework", "React", "TypeScript", "PostgreSQL", "UML"],
       },
     ],
   },
   process: {
-    titlePrefix: "Working",
-    titleHighlight: "Methodology",
+    titlePrefix: "How I",
+    titleHighlight: "work",
     subtitle: "A structured 4-step approach to ensure your project's success, from idea to deployment.",
     steps: [
       {
@@ -103,16 +144,17 @@ export const en: Translations = {
     ],
   },
   projects: {
-    titlePrefix: "Recent",
-    titleHighlight: "Projects",
-    subtitle: "A selection of my latest work combining modern design with solid back-end engineering.",
-    showMore: "Show more",
-    showLess: "Show less",
+    titlePrefix: "My",
+    titleHighlight: "projects",
+    subtitle: "Real projects that show what I can do.",
+    allProjects: "All my repositories on GitHub",
+    inProgressTitle: "In development",
+    statusLive: "Live",
     statusDone: "Completed",
     statusInProgress: "In Progress",
     statusMobileTesting: "Mobile (Flutter) in testing",
     caseStudy: "Case study",
-    liveDemo: "Live Demo",
+    liveDemo: "Visit the site",
     demoSoon: "Demo coming soon",
     code: "Code",
     items: [
@@ -127,14 +169,14 @@ export const en: Translations = {
           "Bilingual FR/EN Next.js corporate website for a multi-sector group in Cotonou (construction, energy, logistics, import-export): service pages, HSE & quality, contact, SEO and Open Graph.",
       },
       {
-        title: "TalenexPro",
-        description:
-          "A B2B platform where professionals trade skills: earn credits by sharing what you know, spend them to learn from other professionals.",
-      },
-      {
         title: "AfriRent Marketplace",
         description:
           "A Leboncoin-style marketplace for peer-to-peer rentals with authentication, listings, favorites, cart, and a secure backend API.",
+      },
+      {
+        title: "LUXEL-G",
+        description:
+          "Management system for a garage in Parakou (internship and final-year project): online booking, role-based dashboard, Mobile Money payment, SMS verification and an AI assistant.",
       },
       {
         title: "Mobile E-commerce App",
@@ -152,7 +194,7 @@ export const en: Translations = {
   },
   services: {
     titlePrefix: "My",
-    titleHighlight: "Services",
+    titleHighlight: "services",
     intro:
       "I support companies from initial concept through to production launch of their digital products. My full-stack approach ensures technical consistency across your entire project.",
     bullets: [
@@ -182,9 +224,13 @@ export const en: Translations = {
     ],
   },
   contact: {
-    titlePrefix: "Let's Work",
-    titleHighlight: "Together",
-    subtitle: "Have a project in mind or looking for a freelance developer? Let's talk about your needs.",
+    titlePrefix: "Let's work",
+    titleHighlight: "together",
+    subtitle: "Have a project, an opportunity or just a question? Feel free to reach out.",
+    githubTitle: "GitHub",
+    githubCta: "See my GitHub",
+    linkedinTitle: "LinkedIn",
+    formTitle: "Send me a message",
     emailTitle: "Email",
     emailDesc: "Reach me directly at the following address:",
     locationTitle: "Location",
@@ -216,8 +262,8 @@ export const en: Translations = {
     rights: "All rights reserved.",
   },
   faq: {
-    titlePrefix: "Frequently Asked",
-    titleHighlight: "Questions",
+    titlePrefix: "Frequently asked",
+    titleHighlight: "questions",
     subtitle: "What to know before we start a project together.",
     items: [
       {
@@ -233,7 +279,7 @@ export const en: Translations = {
       {
         question: "Do you work remotely?",
         answer:
-          "Yes. I am based in Cotonou, Benin (UTC+1), and work fully remotely, in English or French, with clients in Benin and abroad.",
+          "Yes. I am based in Cotonou, Benin (UTC+1), and work fully remotely with clients in Benin and abroad. I work in French; written communication in English is possible.",
       },
       {
         question: "How does a collaboration work, and what are the timelines?",
@@ -270,7 +316,7 @@ export const en: Translations = {
     howTitle: "How I work",
     remoteHighlights: [
       "Fully remote work",
-      "French speaker, also working in English",
+      "I work in French; written communication in English is possible",
       "UTC+1 time zone",
       "Clear communication via WhatsApp, email and calls",
     ],

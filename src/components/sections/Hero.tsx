@@ -1,129 +1,84 @@
 import type { CSSProperties } from "react";
-import { ArrowRight, Terminal, ExternalLink } from "lucide-react";
+import { ArrowRight, Mail, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { CONTACT } from "@/content/contact";
+import { PORTRAIT } from "@/content/portrait";
 
 const HERO_TECHS = ["Django", "React", "Next.js", "Flutter", "PostgreSQL"];
+
+const reveal = (delay: string) => ({ "--reveal-delay": delay }) as CSSProperties;
 
 export function Hero() {
   const { t } = useLanguage();
   return (
-    <section
-      id="about"
-      className="relative min-h-[100svh] w-full overflow-hidden bg-[#030509] pt-24 text-foreground sm:pt-28 lg:pt-20"
-    >
-      {/* 🌌 Fond d'ambiance haut de gamme (Effet lueurs diffuses bicolores) */}
-      <div className="absolute inset-0 -z-30 bg-[radial-gradient(circle_at_15%_35%,rgba(220,38,38,0.15),transparent_45%),radial-gradient(circle_at_85%_65%,rgba(6,182,212,0.18),transparent_45%),linear-gradient(135deg,#020305_0%,#050911_52%,#030509_100%)]" />
-      
-      {/* Halos lumineux accentués en arrière-plan */}
-      <div className="absolute -left-32 top-20 -z-20 h-[460px] w-[460px] rounded-full bg-red-600/10 blur-[130px] sm:h-[620px] sm:w-[620px]" />
-      <div className="absolute -right-32 bottom-10 -z-20 h-[480px] w-[480px] rounded-full bg-cyan-500/15 blur-[130px] sm:h-[680px] sm:w-[680px]" />
-      
-      {/* Grille technique subtile */}
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:72px_72px] opacity-30 [mask-image:radial-gradient(circle_at_center,black,transparent_80%)]" />
+    <section id="top" className="mx-auto grid max-w-6xl items-center gap-12 px-4 pb-16 pt-12 sm:px-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:pb-20 lg:pt-20">
+      <div className="flex flex-col gap-6">
+        <span style={reveal("0s")} className="hero-reveal inline-flex items-center gap-2 self-start rounded-full border border-border bg-[#111E35] px-3 py-1.5 text-[13px] font-medium text-secondary-foreground">
+          <span className="h-2 w-2 rounded-full bg-success" aria-hidden="true" />
+          {t.hero.badge}
+        </span>
 
-      <div className="relative z-10 mx-auto grid min-h-[calc(100svh-6rem)] w-full max-w-7xl items-center gap-12 px-6 pb-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(360px,0.9fr)] lg:gap-16 lg:px-8 lg:pb-0">
-        
-        {/* COLONNE GAUCHE : TEXTES ET ACTIONS */}
-        <div className="max-w-3xl">
-          <div
-            style={{ "--reveal-delay": "0s", "--reveal-duration": "0.5s", "--reveal-distance": "20px" } as CSSProperties}
-            className="hero-reveal mb-8 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1.5 text-sm font-medium text-primary shadow-[0_0_30px_rgba(0,255,180,0.08)] backdrop-blur"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            {t.hero.badge}
-          </div>
+        <h1 style={reveal("0.15s")} className="hero-reveal flex flex-col gap-3">
+          <span className="text-base font-semibold text-muted-foreground sm:text-lg">
+            {t.hero.name} — {t.hero.role}
+          </span>
+          <span className="text-[34px] font-extrabold leading-[1.1] tracking-[-0.03em] text-white text-balance sm:text-5xl lg:text-[56px]">
+            {t.hero.headlinePrefix} <span className="text-brand">{t.hero.headlineHighlight}</span> {t.hero.headlineSuffix}
+          </span>
+        </h1>
 
-          <h1
-            style={{ "--reveal-delay": "0.1s", "--reveal-duration": "0.5s", "--reveal-distance": "20px" } as CSSProperties}
-            className="hero-reveal mb-6 text-5xl font-display font-bold leading-[1.04] text-white sm:text-6xl md:text-7xl"
-          >
-            {t.hero.name} <br />
-            <span className="bg-gradient-to-r from-primary via-cyan-200 to-blue-400 bg-clip-text text-transparent">
-              {t.hero.role}
-            </span>
-          </h1>
+        <p style={reveal("0.3s")} className="hero-reveal max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          {t.hero.description} <strong className="font-semibold text-white">{t.hero.descriptionStrong}</strong>
+        </p>
 
-          <div
-            style={{ "--reveal-delay": "0.2s", "--reveal-duration": "0.5s", "--reveal-distance": "20px" } as CSSProperties}
-            className="hero-reveal mb-6 flex flex-wrap items-center gap-3 text-lg font-medium text-slate-200 sm:gap-4 md:text-xl lg:text-2xl font-display"
-          >
-            {HERO_TECHS.map((tech, i) => (
-              <span key={tech} className="contents">
-                {i > 0 && <span className="w-1.5 h-1.5 rounded-full bg-primary/50" />}
-                <span>{tech}</span>
-              </span>
-            ))}
-          </div>
-
-          <p
-            style={{ "--reveal-delay": "0.3s", "--reveal-duration": "0.5s", "--reveal-distance": "20px" } as CSSProperties}
-            className="hero-reveal mb-4 max-w-2xl text-lg leading-relaxed text-slate-300"
-          >
-            {t.hero.description}{" "}
-            <strong className="text-white">{t.hero.descriptionStrong}</strong>
-          </p>
-
-          <p
-            style={{ "--reveal-delay": "0.35s", "--reveal-duration": "0.5s", "--reveal-distance": "20px" } as CSSProperties}
-            className="hero-reveal mb-10 max-w-2xl text-sm leading-relaxed text-slate-400"
-          >
-            {t.hero.geoSentence}
-          </p>
-
-          {/* BOUTONS D'ACTION (Incluant ComeUp pour le maillage SEO) */}
-          <div
-            style={{ "--reveal-delay": "0.4s", "--reveal-duration": "0.5s", "--reveal-distance": "20px" } as CSSProperties}
-            className="hero-reveal flex flex-wrap items-center gap-4"
-          >
-            <a
-              href="#projects"
-              className="group flex items-center gap-2 rounded-lg bg-primary px-7 py-3.5 font-semibold text-primary-foreground transition-all duration-300 hover:box-glow"
-            >
-              {t.hero.ctaProjects}
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-
-            <a
-              href="#contact"
-              className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-7 py-3.5 font-semibold text-white backdrop-blur transition-all duration-300 hover:border-primary/40 hover:bg-white/[0.08]"
-            >
-              {t.hero.ctaContact}
-              <Terminal className="w-5 h-5 opacity-70" />
-            </a>
-
-            <a
-              href="https://comeup.com/fr/@eddy-boni"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-lg border border-cyan-500/20 bg-cyan-500/[0.03] px-7 py-3.5 font-semibold text-cyan-400 backdrop-blur transition-all duration-300 hover:border-cyan-400/50 hover:bg-cyan-500/[0.08]"
-            >
-              {t.hero.ctaComeup}
-              <ExternalLink className="w-4 h-4 opacity-80" />
-            </a>
-          </div>
+        <div style={reveal("0.45s")} className="hero-reveal flex flex-wrap items-center gap-3">
+          <a href="#projects" className="inline-flex h-12 items-center gap-2.5 rounded-lg bg-primary px-5 text-[15px] font-semibold text-white transition-colors hover:bg-[#3B74F0]">
+            {t.hero.ctaProjects}
+            <ArrowRight size={16} aria-hidden="true" />
+          </a>
+          <a href="#contact" className="inline-flex h-12 items-center gap-2.5 rounded-lg border border-[#3A4E73] px-5 text-[15px] font-semibold text-foreground transition-colors hover:border-brand hover:text-white">
+            {t.hero.ctaContact}
+            <Mail size={16} aria-hidden="true" />
+          </a>
+          <a href={CONTACT.comeup} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center gap-2 px-2 text-[15px] font-semibold text-muted-foreground transition-colors hover:text-white">
+            {t.hero.ctaComeup}
+            <ExternalLink size={14} aria-hidden="true" />
+          </a>
         </div>
 
-        {/* COLONNE DROITE : INTEGRATION BRUTE & SUBLIMÉE DE TON PORTRAIT DETOURÉ */}
-        <div
-          style={{ "--reveal-delay": "0.25s", "--reveal-duration": "0.7s", "--reveal-distance": "40px" } as CSSProperties}
-          className="hero-reveal relative flex items-end justify-center lg:h-full lg:items-end lg:justify-end"
-          aria-hidden="true"
-        >
-          {/* Lueur cyan diffuse positionnée juste derrière ton portrait pour faire ressortir le costume */}
-          <div className="absolute bottom-12 right-1/2 h-[60%] w-[60%] translate-x-1/2 rounded-full bg-cyan-500/10 blur-[100px] lg:right-12 lg:translate-x-0" />
-          
-          <img
-            src="/images/Eddy_Boni.png"
-            alt={t.hero.imageAlt}
-            width={408}
-            height={612}
-            fetchPriority="high"
-            className="relative z-10 max-h-[440px] w-auto max-w-[85vw] object-contain filter drop-shadow-[0_20px_50px_rgba(6,182,212,0.15)] sm:max-h-[580px] lg:max-h-[min(780px,85svh)] lg:max-w-full"
-            loading="eager"
-          />
+        <ul style={reveal("0.6s")} className="hero-reveal flex flex-wrap gap-2" aria-label="Stack">
+          {HERO_TECHS.map((tech) => (
+            <li key={tech} className="rounded-md bg-secondary px-3 py-1.5 text-[13px] font-medium text-secondary-foreground">
+              {tech}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div style={{ "--reveal-delay": "0.3s", "--reveal-duration": "1.6s", "--reveal-distance": "40px" } as CSSProperties} className="hero-reveal relative mx-auto h-[330px] w-full max-w-[340px] sm:h-[420px] sm:max-w-[460px] lg:mr-0">
+        <div aria-hidden="true" className="float-a absolute right-2 top-5 h-[280px] w-[250px] rotate-6 rounded-[32px] bg-[#1D3F99] sm:right-4 sm:h-[340px] sm:w-[300px]" />
+        <div className="float-b absolute right-6 top-0 flex h-[300px] w-[250px] items-end justify-center overflow-hidden rounded-[28px] bg-primary sm:right-8 sm:h-[360px] sm:w-[300px]">
+          <picture>
+            <source type="image/avif" srcSet={PORTRAIT.avif} sizes={PORTRAIT.sizes} />
+            <source type="image/webp" srcSet={PORTRAIT.webp} sizes={PORTRAIT.sizes} />
+            <img
+              src="/images/eddy-boni-480.webp"
+              alt={t.hero.imageAlt}
+              width={480}
+              height={720}
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+              className="h-[290px] w-auto sm:h-[350px]"
+            />
+          </picture>
+        </div>
+        <div aria-hidden="true" className="float-c absolute bottom-0 left-0 hidden w-[320px] rounded-xl border border-[#22355A] bg-card px-4 py-3.5 font-mono text-[13px] leading-[1.7] text-secondary-foreground shadow-[0_20px_40px_rgba(0,0,0,0.35)] sm:block">
+          <div><span className="text-[#FF9E64]">const</span> developer = {"{"}</div>
+          <div className="pl-4">name: <span className="text-warning">'Eddy Boni'</span>,</div>
+          <div className="pl-4">stack: [<span className="text-warning">'React'</span>, <span className="text-warning">'Django'</span>, <span className="text-warning">'API'</span>],</div>
+          <div className="pl-4">goal: <span className="text-warning">'Build useful products'</span></div>
+          <div>{"};"}</div>
         </div>
       </div>
     </section>

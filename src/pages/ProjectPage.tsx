@@ -9,8 +9,8 @@ import { pathFor } from "@/seo/routes";
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section className="rounded-2xl bg-card border border-white/5 p-8">
-      <h2 className="text-2xl font-display font-bold text-foreground mb-4">{title}</h2>
+    <section className="reveal rounded-2xl border border-border bg-card p-6 sm:p-8">
+      <h2 className="mb-4 text-xl font-bold text-white sm:text-2xl">{title}</h2>
       {children}
     </section>
   );
@@ -34,24 +34,24 @@ export default function ProjectPage({ id }: { id: CaseStudyId }) {
 
   return (
     <SiteLayout>
-      <article className="pt-32 pb-24">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+      <article className="pb-20 pt-10 sm:pt-14">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <Breadcrumbs items={breadcrumbsFor({ kind: "project", id }, language)} />
 
-          <header className="mb-12">
-            <span className="mb-6 inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full border bg-primary/15 text-primary border-primary/30">
-              {id === "axis-transport" && <Smartphone size={12} aria-hidden="true" />}
+          <header className="hero-reveal mb-12">
+            <span className="mb-6 inline-flex items-center gap-1.5 rounded-full border border-border bg-[#111E35] px-3 py-1.5 text-xs font-medium text-secondary-foreground">
+              {id === "axis-transport" ? <Smartphone size={12} className="text-warning" aria-hidden="true" /> : <span className="h-1.5 w-1.5 rounded-full bg-success" aria-hidden="true" />}
               {content.status}
             </span>
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground leading-tight mb-6">
+            <h1 className="mb-6 text-[34px] font-extrabold leading-[1.1] tracking-[-0.03em] text-white sm:text-5xl">
               {content.h1}
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">{content.summary}</p>
+            <p className="mb-8 text-lg leading-relaxed text-muted-foreground">{content.summary}</p>
             <a
               href={study.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground transition-all duration-300 hover:box-glow"
+              className="inline-flex h-12 items-center gap-2 rounded-lg bg-primary px-6 font-semibold text-white transition-colors hover:bg-[#3B74F0]"
             >
               {t.caseStudy.live} <ExternalLink size={16} />
             </a>
@@ -79,7 +79,7 @@ export default function ProjectPage({ id }: { id: CaseStudyId }) {
                 {study.stack.map((tech) => (
                   <li
                     key={tech}
-                    className="px-3 py-1 text-sm font-medium rounded-full bg-secondary text-secondary-foreground border border-white/5"
+                    className="rounded-md bg-secondary px-3 py-1.5 text-sm font-medium text-secondary-foreground"
                   >
                     {tech}
                   </li>
@@ -91,7 +91,7 @@ export default function ProjectPage({ id }: { id: CaseStudyId }) {
               <ul className="space-y-3">
                 {content.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3 text-muted-foreground">
-                    <Check size={18} className="mt-0.5 shrink-0 text-primary" aria-hidden="true" />
+                    <Check size={18} className="mt-0.5 shrink-0 text-brand" aria-hidden="true" />
                     {feature}
                   </li>
                 ))}
@@ -110,7 +110,7 @@ export default function ProjectPage({ id }: { id: CaseStudyId }) {
                       alt={shot.alt[language]}
                       loading={i === 0 ? "eager" : "lazy"}
                       decoding="async"
-                      className={`w-full h-auto rounded-xl border border-white/5 ${i === 0 ? "sm:col-span-2" : ""}`}
+                      className={`w-full h-auto rounded-xl border border-border ${i === 0 ? "sm:col-span-2" : ""}`}
                     />
                   ))}
                 </div>
@@ -122,13 +122,13 @@ export default function ProjectPage({ id }: { id: CaseStudyId }) {
               <div className="flex flex-wrap items-center gap-4">
                 <a
                   href={`${home}#contact`}
-                  className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground transition-all duration-300 hover:box-glow"
+                  className="inline-flex h-12 items-center gap-2 rounded-lg bg-primary px-6 font-semibold text-white transition-colors hover:bg-[#3B74F0]"
                 >
                   {t.caseStudy.ctaButton}
                 </a>
                 <a
                   href={`${home}#projects`}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-white"
                 >
                   <ArrowLeft size={16} /> {t.caseStudy.backToProjects}
                 </a>
