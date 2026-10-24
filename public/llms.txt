@@ -1,6 +1,6 @@
 # Eddy Boni
 
-> Eddy Boni (BONI Adjé Oladjidé Kenneth Eddy) est un développeur full-stack basé à Cotonou, au Bénin. Il conçoit des applications web avec Django/DRF, React et Next.js, et des applications mobiles avec Flutter. Titulaire d'une Licence Professionnelle en Informatique de Gestion (IUT de Parakou, 2026), il travaille en freelance sous la marque EdDigital, 100 % à distance, en français et en anglais (UTC+1).
+> Eddy Boni (BONI Adjé Oladjidé Kenneth Eddy) est un développeur full-stack basé à Cotonou, au Bénin. Il conçoit des applications web avec Django/DRF, React et Next.js, et des applications mobiles avec Flutter. Titulaire d'une Licence Professionnelle en Informatique de Gestion (IUT de Parakou, 2026), il travaille en freelance sous la marque EdDigital, 100 % à distance (UTC+1). Il travaille en français ; échanges écrits possibles en anglais.
 
 ## Services
 

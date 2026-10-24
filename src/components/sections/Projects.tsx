@@ -38,15 +38,6 @@ const PROJECTS_META: ProjectMeta[] = [
     caseStudy: "sd-international-group",
   },
   {
-    tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "AWS EC2"],
-    icon: Repeat,
-    color: "from-cyan-500/20 to-teal-400/20 text-cyan-400 border-cyan-500/30",
-    done: true,
-    mobileTesting: false,
-    demoUrl: "https://talenexpro.com",
-    codeUrl: null,
-  },
-  {
     tags: ["React", "TypeScript", "Django REST", "PostgreSQL", "Railway"],
     icon: ShoppingBag,
     color: "from-primary/25 to-blue-500/20 text-primary border-primary/30",

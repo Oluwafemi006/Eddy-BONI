@@ -24,8 +24,7 @@ export const fr = {
   },
   stats: {
     items: [
-      { value: "3+", label: "Années d'expérience" },
-      { value: "10+", label: "Projets livrés" },
+      { value: "2 ans", label: "D'expérience en développement" },
       { value: "Licence Pro", label: "Informatique de Gestion (2026)" },
     ],
   },
@@ -62,19 +61,21 @@ export const fr = {
         location: "Montréal, Canada (Remote)",
         type: "Partenariat technique",
         period: "2026 – Présent",
+        status: "En cours",
         description:
-          "Contribution en tant que développeur full-stack sur TalenexPro, une plateforme d'échange de compétences bilingue. Configuration de l'infrastructure PostgreSQL sur AWS EC2, mise en place de l'envoi d'emails transactionnels, intégration d'analytics pour le suivi produit, et travail en cours sur le système de crédits et l'intégration de paiements internationaux (Flutterwave, Stripe).",
-        skills: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Docker", "AWS EC2"],
+          "Partenaire technique en remote pour Talenex Inc. (Montréal) : développement backend, intégration de paiements et mise en production.",
+        skills: [],
       },
       {
-        role: "Développeur Stagiaire — Système de Gestion de Garage",
+        role: "Développeur stagiaire — Système de gestion de garage (LUXEL-G)",
         company: "Luxury Élégance Garage",
         location: "Parakou, Bénin",
-        type: "Stage",
+        type: "Stage et projet de fin d'études",
         period: "2025 – 2026",
+        status: "Terminé",
         description:
           "Analyse des besoins et conception UML complète (cas d'utilisation, séquence, classes) pour un système de suivi client et d'historique de services. Développement d'un système de réservation en ligne et d'un tableau de bord administrateur sécurisé par rôles, avec Django et PostgreSQL.",
-        skills: ["Django", "PostgreSQL", "UML", "Auth/Permissions"],
+        skills: ["Django", "Django REST Framework", "React", "TypeScript", "PostgreSQL", "UML"],
       },
     ],
   },
@@ -126,11 +127,6 @@ export const fr = {
         title: "SD International Group",
         description:
           "Site vitrine Next.js bilingue FR/EN pour un groupe multisectoriel de Cotonou (BTP, énergie, logistique, import-export) : pages services, HSE & qualité, contact, SEO et Open Graph.",
-      },
-      {
-        title: "TalenexPro",
-        description:
-          "Plateforme B2B d'échange de compétences entre professionnels : gagnez des crédits en partageant vos compétences, dépensez-les pour apprendre auprès d'autres professionnels.",
       },
       {
         title: "AfriRent Marketplace",
@@ -234,7 +230,7 @@ export const fr = {
       {
         question: "Travaillez-vous à distance ?",
         answer:
-          "Oui. Je suis basé à Cotonou, au Bénin (UTC+1), et je travaille 100 % à distance, en français ou en anglais, avec des clients au Bénin et à l'international.",
+          "Oui. Je suis basé à Cotonou, au Bénin (UTC+1), et je travaille 100 % à distance avec des clients au Bénin et à l'international. Je travaille en français ; échanges écrits possibles en anglais.",
       },
       {
         question: "Comment se déroule une collaboration, et quels sont les délais ?",
@@ -271,7 +267,7 @@ export const fr = {
     howTitle: "Comment je travaille",
     remoteHighlights: [
       "Travail 100 % à distance",
-      "Francophone, je travaille aussi en anglais",
+      "En français ; échanges écrits possibles en anglais",
       "Fuseau horaire UTC+1",
       "Communication claire par WhatsApp, email et appels",
     ],
