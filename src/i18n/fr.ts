@@ -31,7 +31,7 @@ export const fr = {
   },
   about: {
     badge: "À propos de moi",
-    title: "Un développeur passionné par les produits numériques et les solutions utiles.",
+    title: "Je construis et je mets en production des applications web et mobiles pour des entreprises au Bénin et à l'étranger.",
     facts: {
       location: "Cotonou, Bénin · disponible en remote",
       experience: "2 ans d'expérience en développement",
@@ -39,19 +39,10 @@ export const fr = {
       languages: "Français ; échanges écrits possibles en anglais",
     },
     cta: "Voir mon expérience",
-    timelineTitle: "Mon parcours",
-    timeline: [
-      {
-        year: "2026",
-        title: "Licence Professionnelle — Informatique de Gestion",
-        place: "IUT de Parakou, Université de Parakou",
-        note: "Mémoire soutenu avec la mention très bien",
-      },
-      { year: "2026", title: "Partenaire technique Full-Stack", place: "Talenex Inc., Montréal (remote)", note: "" },
-      { year: "2025", title: "Stage — système de gestion de garage", place: "Luxury Élégance Garage, Parakou", note: "" },
-      { year: "2024", title: "Premiers projets web", place: "Projets personnels, puis missions freelance", note: "" },
-      { year: "2023", title: "Baccalauréat série D", place: "Collège Catholique Saint Thomas d'Aquin, Parakou", note: "" },
-    ],
+    education: {
+      title: "Formation",
+      text: "Licence Professionnelle Informatique de Gestion — IUT de Parakou, 2026 (mention très bien)",
+    },
   },
   stack: {
     titlePrefix: "Mes",
@@ -88,21 +79,50 @@ export const fr = {
     ],
   },
   experience: {
-    titlePrefix: "Expérience &",
-    titleHighlight: "projets professionnels",
+    titlePrefix: "Expérience",
+    titleHighlight: "professionnelle",
     subtitle: "Une expérience pratique sur des projets réels, en entreprise et en freelance.",
+    caseStudyLink: "Voir l'étude de cas",
+    // Most recent first. Single source for professional experience (the About section only shows education).
     items: [
       {
-        role: "Développeur Full-Stack",
+        role: "Partenaire technique",
         company: "Talenex Inc.",
-        location: "Montréal, Canada (Remote)",
+        location: "Montréal, Canada (remote)",
         type: "Partenariat technique",
-        period: "2026 – Présent",
+        period: "2026 — aujourd'hui",
         status: "En cours",
         current: true,
         description:
           "Partenaire technique en remote pour Talenex Inc. (Montréal) : développement backend, intégration de paiements et mise en production.",
         skills: [],
+        caseStudy: null,
+      },
+      {
+        // TODO: exact role title to confirm with Eddy.
+        role: "Développeur",
+        company: "Axis Transport",
+        location: "Parakou, Bénin",
+        type: "Freelance",
+        period: "2026",
+        status: "Web en production · mobile (Flutter) en test",
+        current: true,
+        description: "Plateforme web en production, application Flutter en test.",
+        skills: ["Django", "Django REST Framework", "Flutter", "Next.js"],
+        caseStudy: "axis-transport",
+      },
+      {
+        // TODO: exact role title to confirm with Eddy.
+        role: "Développeur",
+        company: "SD International Group",
+        location: "Cotonou, Bénin",
+        type: "",
+        period: "2026",
+        status: "En production",
+        current: false,
+        description: "Site vitrine bilingue FR/EN en Next.js.",
+        skills: ["Next.js", "TypeScript", "Tailwind CSS"],
+        caseStudy: "sd-international-group",
       },
       {
         role: "Développeur stagiaire — Système de gestion de garage (LUXEL-G)",
@@ -115,6 +135,19 @@ export const fr = {
         description:
           "Analyse des besoins et conception UML complète (cas d'utilisation, séquence, classes) pour un système de suivi client et d'historique de services. Développement d'un système de réservation en ligne et d'un tableau de bord administrateur sécurisé par rôles, avec Django et PostgreSQL.",
         skills: ["Django", "Django REST Framework", "React", "TypeScript", "PostgreSQL", "UML"],
+        caseStudy: null,
+      },
+      {
+        role: "Missions freelance",
+        company: "EdDigital",
+        location: "",
+        type: "Freelance",
+        period: "2024",
+        status: "",
+        current: false,
+        description: "Premiers projets web pour des clients.",
+        skills: [],
+        caseStudy: null,
       },
     ],
   },

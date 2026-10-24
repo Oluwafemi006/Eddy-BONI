@@ -33,7 +33,7 @@ export const en: Translations = {
   },
   about: {
     badge: "About me",
-    title: "A developer who cares about digital products and solutions that are actually useful.",
+    title: "I build web and mobile applications and take them to production for businesses in Benin and abroad.",
     facts: {
       location: "Cotonou, Benin · available remotely",
       experience: "2 years of development experience",
@@ -41,19 +41,10 @@ export const en: Translations = {
       languages: "French; written communication in English is possible",
     },
     cta: "See my experience",
-    timelineTitle: "My journey",
-    timeline: [
-      {
-        year: "2026",
-        title: "Professional Bachelor's degree — Business Computing",
-        place: "IUT de Parakou, University of Parakou",
-        note: "Final-year project graded with highest honors",
-      },
-      { year: "2026", title: "Full-stack technical partner", place: "Talenex Inc., Montreal (remote)", note: "" },
-      { year: "2025", title: "Internship — garage management system", place: "Luxury Élégance Garage, Parakou", note: "" },
-      { year: "2024", title: "First web projects", place: "Personal projects, then freelance work", note: "" },
-      { year: "2023", title: "Baccalaureate (science track, série D)", place: "Collège Catholique Saint Thomas d'Aquin, Parakou", note: "" },
-    ],
+    education: {
+      title: "Education",
+      text: "Professional Bachelor's degree in Business Computing — IUT de Parakou, 2026 (graduated with highest honors)",
+    },
   },
   stack: {
     titlePrefix: "My",
@@ -90,21 +81,49 @@ export const en: Translations = {
     ],
   },
   experience: {
-    titlePrefix: "Experience &",
-    titleHighlight: "professional projects",
+    titlePrefix: "Professional",
+    titleHighlight: "experience",
     subtitle: "Hands-on experience on real projects, in companies and as a freelancer.",
+    caseStudyLink: "Read the case study",
     items: [
       {
-        role: "Full-Stack Developer",
+        role: "Technical partner",
         company: "Talenex Inc.",
-        location: "Montreal, Canada (Remote)",
+        location: "Montreal, Canada (remote)",
         type: "Technical partnership",
-        period: "2026 – Present",
+        period: "2026 — present",
         status: "Ongoing",
         current: true,
         description:
           "Remote technical partner for Talenex Inc. (Montreal): back-end development, payment integration and production deployment.",
         skills: [],
+        caseStudy: null,
+      },
+      {
+        // TODO: exact role title to confirm with Eddy.
+        role: "Developer",
+        company: "Axis Transport",
+        location: "Parakou, Benin",
+        type: "Freelance",
+        period: "2026",
+        status: "Web live in production · mobile (Flutter) in testing",
+        current: true,
+        description: "Web platform live in production, Flutter app in testing.",
+        skills: ["Django", "Django REST Framework", "Flutter", "Next.js"],
+        caseStudy: "axis-transport",
+      },
+      {
+        // TODO: exact role title to confirm with Eddy.
+        role: "Developer",
+        company: "SD International Group",
+        location: "Cotonou, Benin",
+        type: "",
+        period: "2026",
+        status: "Live",
+        current: false,
+        description: "Bilingual FR/EN corporate website built with Next.js.",
+        skills: ["Next.js", "TypeScript", "Tailwind CSS"],
+        caseStudy: "sd-international-group",
       },
       {
         role: "Intern Developer — Garage Management System (LUXEL-G)",
@@ -117,6 +136,19 @@ export const en: Translations = {
         description:
           "Requirements analysis and full UML design (use case, sequence, and class diagrams) for a customer tracking and service history system. Built an online booking system and a role-secured admin dashboard using Django and PostgreSQL.",
         skills: ["Django", "Django REST Framework", "React", "TypeScript", "PostgreSQL", "UML"],
+        caseStudy: null,
+      },
+      {
+        role: "Freelance work",
+        company: "EdDigital",
+        location: "",
+        type: "Freelance",
+        period: "2024",
+        status: "",
+        current: false,
+        description: "First web projects for clients.",
+        skills: [],
+        caseStudy: null,
       },
     ],
   },

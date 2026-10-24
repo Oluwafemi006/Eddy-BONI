@@ -33,6 +33,23 @@ function person(language: Language): Node {
       "Flutter",
     ],
     knowsLanguage: ["fr", "en"],
+    // Occupation rather than worksFor: the Talenex relationship is a technical partnership, not employment.
+    hasOccupation: {
+      "@type": "Occupation",
+      name: language === "fr" ? "Développeur Full-Stack" : "Full-Stack Developer",
+      occupationLocation: { "@type": "City", name: "Cotonou" },
+      skills: "Django, Django REST Framework, React, Next.js, TypeScript, PostgreSQL, Flutter",
+    },
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "degree",
+      name:
+        language === "fr"
+          ? "Licence Professionnelle Informatique de Gestion"
+          : "Professional Bachelor's degree in Business Computing",
+      recognizedBy: { "@type": "CollegeOrUniversity", name: "IUT de Parakou" },
+      dateCreated: "2026",
+    },
     alumniOf: {
       "@type": "CollegeOrUniversity",
       name: "IUT de Parakou",

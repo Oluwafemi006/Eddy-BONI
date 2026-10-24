@@ -1,12 +1,15 @@
-import { Briefcase, Wrench } from "lucide-react";
+import { ArrowRight, Briefcase, Building2, Bus, Laptop, Wrench } from "lucide-react";
+import { pathFor } from "@/seo/routes";
+import type { CaseStudyId } from "@/content/caseStudies";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Section, SectionHeader } from "@/components/sections/SectionHeader";
 import { stagger } from "@/components/layout/useReveal";
 
-const ICONS = [Briefcase, Wrench];
+// One icon per item, same order as t.experience.items.
+const ICONS = [Briefcase, Bus, Building2, Wrench, Laptop];
 
 export function Experience() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <Section id="experience">
@@ -15,22 +18,26 @@ export function Experience() {
         {t.experience.items.map((exp, i) => {
           const Icon = ICONS[i] ?? Briefcase;
           return (
-            <article key={exp.company} style={stagger(i, 0.15)} className="reveal lift flex gap-4 hover:border-[#2F4A7A] rounded-2xl border border-border bg-card p-5 sm:gap-5 sm:p-7">
+            <article key={`${exp.company}-${exp.period}`} style={stagger(i, 0.15)} className="reveal lift flex gap-4 hover:border-[#2F4A7A] rounded-2xl border border-border bg-card p-5 sm:gap-5 sm:p-7">
               <span aria-hidden="true" className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary text-white">
                 <Icon size={22} />
               </span>
               <div className="flex min-w-0 flex-col gap-1.5">
                 <h3 className="text-[17px] font-bold text-white">{exp.company}</h3>
                 <p className="text-sm font-semibold text-secondary-foreground">{exp.role}</p>
-                <p className="flex flex-wrap gap-x-2 text-[13px] text-subtle">
-                  <span>{exp.period}</span>
-                  <span aria-hidden="true">·</span>
-                  <span>{exp.location}</span>
-                  <span aria-hidden="true">·</span>
-                  <span>{exp.type}</span>
-                </p>
-                <p className={`text-xs font-semibold ${exp.current ? "text-warning" : "text-success"}`}>{exp.status}</p>
+                <p className="text-[13px] text-subtle">{[exp.period, exp.location, exp.type].filter(Boolean).join(" · ")}</p>
+                {exp.status && <p className={`text-xs font-semibold ${exp.current ? "text-warning" : "text-success"}`}>{exp.status}</p>}
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{exp.description}</p>
+                {exp.caseStudy && (
+                  <a
+                    href={pathFor({ kind: "project", id: exp.caseStudy as CaseStudyId }, language)}
+                    className="inline-flex min-h-9 items-center gap-1.5 self-start text-[13px] font-semibold text-brand hover:text-white"
+                  >
+                    {t.experience.caseStudyLink}
+                    <span className="sr-only"> : {exp.company}</span>
+                    <ArrowRight size={13} aria-hidden="true" />
+                  </a>
+                )}
                 {exp.skills.length > 0 && (
                   <ul className="mt-2 flex flex-wrap gap-1.5">
                     {exp.skills.map((skill) => (
