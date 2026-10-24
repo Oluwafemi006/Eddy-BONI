@@ -3,7 +3,8 @@ export const fr = {
     about: "À propos",
     experience: "Expérience",
     skills: "Compétences",
-    projects: "Projets",
+    projects: "Réalisations",
+    services: "Services",
     process: "Process",
     contact: "Contact",
     contactCta: "Me contacter",
@@ -16,18 +17,23 @@ export const fr = {
     badge: "Disponible en Freelance",
     name: "Eddy Boni",
     role: "Développeur Full-Stack",
-    description:
-      "Je conçois et développe des applications web et mobiles performantes, scalables et centrées sur l'utilisateur pour les entreprises et startups.",
-    descriptionStrong: "Basé à Cotonou, disponible en remote.",
+    headlinePrefix: "Je crée les",
+    headlineHighlight: "sites, plateformes et applications mobiles",
+    headlineSuffix: "de votre entreprise, de la conception à la mise en ligne.",
+    description: "Basé à Cotonou, je travaille avec des entreprises au Bénin et à l'étranger.",
+    descriptionStrong: "Parlons de votre projet sur WhatsApp.",
     geoSentence:
       "Eddy Boni (BONI Adjé Oladjidé Kenneth Eddy) est un développeur full-stack basé à Cotonou, au Bénin. Il conçoit des applications web avec Django/DRF, React et Next.js, et des applications mobiles avec Flutter. Titulaire d'une Licence Professionnelle en Informatique de Gestion (IUT de Parakou, 2026), il travaille en freelance sous la marque EdDigital.",
-    ctaProjects: "Voir mes projets",
+    ctaWhatsapp: "Discuter sur WhatsApp",
+    ctaProjects: "Voir mes réalisations",
     ctaContact: "Me contacter",
     ctaComeup: "Commander sur ComeUp",
     imageAlt: "Portrait d'Eddy Boni",
-    headlinePrefix: "Je construis des",
-    headlineHighlight: "produits numériques",
-    headlineSuffix: "utiles et durables.",
+  },
+  whatsapp: {
+    label: "WhatsApp",
+    message: "Bonjour Eddy, je souhaite vous parler d'un projet.",
+    quoteMessage: "Bonjour Eddy, je souhaite un devis pour : ",
   },
   about: {
     badge: "À propos de moi",
@@ -45,44 +51,16 @@ export const fr = {
     },
   },
   stack: {
-    titlePrefix: "Mes",
-    titleHighlight: "compétences",
-    subtitle: "Classées selon mon niveau réel d'utilisation.",
-    tiers: [
-      {
-        level: "mastered",
-        title: "Technologies maîtrisées",
-        caption: "Utilisées au quotidien, sur des projets en production",
-        items: ["React", "TypeScript / JavaScript", "HTML / CSS", "Python", "Django et Django REST Framework", "API REST", "PostgreSQL / MySQL", "Git et GitHub", "Linux (Ubuntu)"],
-      },
-      {
-        level: "practice",
-        title: "Utilisées en pratique",
-        caption: "Mises en œuvre sur des projets réels",
-        items: [
-          "Next.js et Prisma",
-          "Flutter (application mobile)",
-          "Docker et Nginx",
-          "Tableaux de bord et back-offices",
-          "Paiements en ligne (Stripe, Mobile Money)",
-          "Chatbot IA (Gemini)",
-          "UML et analyse des besoins",
-          "Déploiement (Railway, Netlify, PythonAnywhere, AWS EC2)",
-        ],
-      },
-      {
-        level: "learning",
-        title: "En apprentissage",
-        caption: "En cours d'approfondissement",
-        items: ["React Native", "Pandas", "Scikit-learn"],
-      },
-    ],
+    title: "Technologies utilisées",
+    subtitle: "Pour les profils techniques : les outils avec lesquels je construis vos projets.",
+    items: ["React", "Next.js", "TypeScript", "Python", "Django", "Django REST Framework", "PostgreSQL", "Flutter", "Docker", "Nginx", "Stripe", "Mobile Money", "Git"],
   },
   experience: {
     titlePrefix: "Expérience",
     titleHighlight: "professionnelle",
     subtitle: "Une expérience pratique sur des projets réels, en entreprise et en freelance.",
     caseStudyLink: "Voir l'étude de cas",
+    cv: "Télécharger mon CV",
     // Most recent first. Single source for professional experience (the About section only shows education).
     items: [
       {
@@ -177,8 +155,8 @@ export const fr = {
   },
   projects: {
     titlePrefix: "Mes",
-    titleHighlight: "projets",
-    subtitle: "Des projets concrets qui montrent mon savoir-faire.",
+    titleHighlight: "réalisations",
+    subtitle: "Des projets réels, présentés par ce qu'ils permettent de faire.",
     allProjects: "Tous mes dépôts sur GitHub",
     inProgressTitle: "En cours de développement",
     statusLive: "En ligne",
@@ -192,68 +170,110 @@ export const fr = {
     items: [
       {
         title: "Axis Transport",
+        outcome: "Les clients d'Axis réservent leurs billets de bus et suivent leurs colis en ligne.",
         description:
           "Plateforme de transport sur l'axe Parakou – Savè – Kétou – Porto-Novo – Cotonou : billetterie de bus, envoi et suivi de colis, location de véhicules. Backend Django/DRF, web en production, mobile Flutter en phase de test.",
       },
       {
         title: "SD International Group",
+        outcome: "SD International Group présente ses activités (BTP, énergie, logistique, import-export) en français et en anglais.",
         description:
           "Site vitrine Next.js bilingue FR/EN pour un groupe multisectoriel de Cotonou (BTP, énergie, logistique, import-export) : pages services, HSE & qualité, contact, SEO et Open Graph.",
       },
       {
         title: "AfriRent Marketplace",
+        outcome: "Les particuliers publient leurs biens à louer et trouvent une location en ligne.",
         description:
           "Marketplace type Leboncoin pour la location entre particuliers avec authentification, annonces, favoris, panier et API backend sécurisée.",
       },
       {
         title: "LUXEL-G",
+        outcome: "Un garage gère ses réservations, ses clients et ses paiements Mobile Money depuis un tableau de bord.",
         description:
           "Système de gestion pour un garage de Parakou (stage et projet de fin d'études) : réservation en ligne, tableau de bord par rôles, paiement Mobile Money, vérification par SMS et assistant IA.",
       },
       {
         title: "App E-commerce Mobile",
+        outcome: "Une boutique mobile : catalogue, panier et paiement (en cours).",
         description: "MVP mobile en cours de développement avec catalogue produit, panier et tunnel de paiement à finaliser.",
       },
       {
         title: "RentBoard",
+        outcome: "Un tableau de bord pour suivre les indicateurs d'un produit en ligne (en cours).",
         description: "Dashboard analytique en cours de construction pour le suivi de KPIs SaaS et de la performance produit.",
       },
       {
         title: "API REST Gestion RH",
+        outcome: "La gestion des congés et des plannings d'une équipe (en cours).",
         description: "API RH en cours avec modules congés, plannings, authentification et architecture orientée scalabilité.",
       },
     ],
   },
   services: {
-    titlePrefix: "Mes",
-    titleHighlight: "services",
-    intro:
-      "J'accompagne les entreprises de la conception à la mise en production de leurs produits digitaux. Mon approche Full-Stack garantit une cohérence technique sur l'ensemble de votre projet.",
-    bullets: [
-      "Architecture technique sur-mesure",
-      "Code propre, documenté et testé",
-      "Communication transparente et agile",
-      "Déploiement et intégration continue (CI/CD)",
-    ],
+    titlePrefix: "Ce que je peux",
+    titleHighlight: "faire pour vous",
+    subtitle: "Des solutions concrètes pour votre entreprise, de la conception à la mise en ligne.",
+    quote: "Demander un devis",
     learnMore: "En savoir plus",
+    exampleLabel: "Exemple réel",
+    // Only services backed by a real project. Landing page / online shop: add once confirmed.
     items: [
       {
-        title: "Développement Web Full-Stack",
-        description: "Création d'applications web robustes et réactives en utilisant l'écosystème React couplé à la puissance de Django.",
+        id: "vitrine",
+        title: "Site vitrine pour entreprise",
+        outcome: "Un site professionnel qui présente votre entreprise, vos services et vos coordonnées, agréable à consulter sur téléphone.",
+        details: [
+          "Présentation de vos activités et de vos services",
+          "Formulaire de contact",
+          "Version française et anglaise si besoin",
+          "Préparé pour le référencement sur Google",
+        ],
+        example: "SD International Group",
+        exampleNote: "",
       },
       {
-        title: "Applications Mobiles",
-        description: "Développement d'applications mobiles iOS et Android avec Flutter, à partir d'une seule base de code.",
+        id: "plateforme",
+        title: "Plateforme sur mesure : réservation, gestion, espace client",
+        outcome: "Un outil en ligne adapté à votre activité : vos clients réservent et paient en ligne, votre équipe suit tout depuis un tableau de bord.",
+        details: [
+          "Réservation et paiement en ligne (Mobile Money)",
+          "Espace client avec compte",
+          "Tableau de bord pour votre équipe",
+          "Accès adapté au rôle de chaque employé",
+        ],
+        example: "Axis Transport",
+        exampleNote: "",
       },
       {
-        title: "API REST & Back-end",
-        description: "Architecture et développement d'APIs sécurisées et scalables avec Django REST Framework et PostgreSQL.",
-      },
-      {
-        title: "Consulting & Architecture",
-        description: "Accompagnement technique sur les choix d'architecture, la modélisation de données et l'optimisation des performances.",
+        id: "mobile",
+        title: "Application mobile Android / iOS",
+        outcome: "Une application pour vos clients, reliée à votre plateforme, pour utiliser vos services depuis leur téléphone.",
+        details: [
+          "Android et iOS à partir d'un seul projet",
+          "Connexion et compte client",
+          "Reliée à votre plateforme web",
+          "Phase de test avant publication sur les stores",
+        ],
+        example: "Axis Transport",
+        exampleNote: "application en test",
       },
     ],
+  },
+  sectors: {
+    titlePrefix: "Pour",
+    titleHighlight: "qui je travaille",
+    subtitle: "Les secteurs dans lesquels j'ai déjà réalisé des projets.",
+    items: [
+      { id: "transport", title: "Transport", text: "Billetterie de bus et envoi de colis", example: "Axis Transport" },
+      { id: "btp", title: "BTP & énergie", text: "Site vitrine d'un groupe multisectoriel", example: "SD International Group" },
+      { id: "garage", title: "Garage automobile", text: "Réservations et gestion de l'atelier", example: "Luxury Élégance Garage" },
+      { id: "online", title: "Plateformes en ligne", text: "Échange de compétences, location entre particuliers", example: "TalenexPro, AfriRent" },
+    ],
+  },
+  testimonials: {
+    title: "Ce qu'en disent mes clients",
+    // TODO: add real client reviews ({ quote, author, company }). The section stays hidden while empty.
+    items: [] as { quote: string; author: string; company: string }[],
   },
   contact: {
     titlePrefix: "Travaillons",

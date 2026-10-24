@@ -1,7 +1,7 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
-import { Mail, Github, Linkedin, MapPin, Send, Loader2, Globe } from "lucide-react";
+import { Mail, Github, Linkedin, MapPin, Send, Loader2, Globe, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { CONTACT } from "@/content/contact";
+import { CONTACT, whatsappLink } from "@/content/contact";
 
 const FORM_NAME = "contact";
 type Status = "idle" | "sending" | "success" | "error";
@@ -37,6 +37,7 @@ export function Contact() {
   };
 
   const links = [
+    { icon: MessageCircle, label: t.whatsapp.label, value: "+229 01 96 62 06 95", href: whatsappLink(t.whatsapp.message) },
     { icon: Mail, label: t.contact.emailTitle, value: CONTACT.email, href: `mailto:${CONTACT.email}` },
     { icon: Github, label: t.contact.githubTitle, value: CONTACT.githubLabel, href: CONTACT.github },
     { icon: Linkedin, label: t.contact.linkedinTitle, value: "Eddy Boni", href: CONTACT.linkedin },
@@ -55,8 +56,8 @@ export function Contact() {
             </h2>
             <p className="leading-relaxed text-muted-foreground">{t.contact.subtitle}</p>
             <div className="flex flex-wrap justify-center gap-3 pt-2">
-              <a href={`mailto:${CONTACT.email}`} className="inline-flex h-12 items-center gap-2.5 rounded-lg bg-primary px-5 text-[15px] font-semibold text-white transition-colors hover:bg-[#3B74F0]">
-                {t.nav.contactCta} <Mail size={16} aria-hidden="true" />
+              <a href={whatsappLink(t.whatsapp.message)} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center gap-2.5 rounded-lg bg-primary px-5 text-[15px] font-semibold text-white transition-colors hover:bg-[#3B74F0]">
+                <MessageCircle size={16} aria-hidden="true" /> {t.hero.ctaWhatsapp}
               </a>
               <a href={CONTACT.github} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center gap-2.5 rounded-lg border border-[#3A4E73] px-5 text-[15px] font-semibold text-foreground transition-colors hover:border-brand hover:text-white">
                 {t.contact.githubCta} <Github size={16} aria-hidden="true" />

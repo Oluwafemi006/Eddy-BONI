@@ -1,4 +1,5 @@
-import { ArrowRight, Briefcase, Building2, Bus, Laptop, Wrench } from "lucide-react";
+import { ArrowRight, Briefcase, Building2, Bus, Download, Laptop, Wrench } from "lucide-react";
+import { CONTACT } from "@/content/contact";
 import { pathFor } from "@/seo/routes";
 import type { CaseStudyId } from "@/content/caseStudies";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -13,7 +14,18 @@ export function Experience() {
 
   return (
     <Section id="experience">
-      <SectionHeader title={`${t.experience.titlePrefix} ${t.experience.titleHighlight}`} subtitle={t.experience.subtitle} />
+      <SectionHeader
+        title={`${t.experience.titlePrefix} ${t.experience.titleHighlight}`}
+        subtitle={t.experience.subtitle}
+        action={
+          // Shown once the CV file path is set in src/content/contact.ts (TODO there).
+          CONTACT.cv && (
+            <a href={CONTACT.cv} download className="inline-flex h-11 items-center gap-2 rounded-lg border border-[#3A4E73] px-4 text-sm font-semibold text-foreground transition-colors hover:border-brand hover:text-white">
+              <Download size={16} aria-hidden="true" /> {t.experience.cv}
+            </a>
+          )
+        }
+      />
       <div className="grid gap-5 lg:grid-cols-2">
         {t.experience.items.map((exp, i) => {
           const Icon = ICONS[i] ?? Briefcase;
