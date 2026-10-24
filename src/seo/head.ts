@@ -20,23 +20,29 @@ const HOME_META: Record<Language, { title: string; description: string }> = {
 };
 
 const OG_LOCALES: Record<Language, string> = { fr: "fr_FR", en: "en_US" };
-const DEFAULT_OG_IMAGE = "/opengraph.jpg";
+// Default share image per language. Bump OG_VERSION when the images change: the new URL makes
+// LinkedIn, Facebook and WhatsApp fetch the image again instead of showing their cached copy.
+const OG_VERSION = "2";
+const DEFAULT_OG_IMAGES: Record<Language, string> = {
+  fr: `/opengraph.jpg?v=${OG_VERSION}`,
+  en: `/opengraph-en.jpg?v=${OG_VERSION}`,
+};
 
 function pageMeta(page: Page, language: Language) {
   switch (page.kind) {
     case "home":
-      return { ...HOME_META[language], image: DEFAULT_OG_IMAGE };
+      return { ...HOME_META[language], image: DEFAULT_OG_IMAGES[language] };
     case "project": {
       const study = CASE_STUDIES[page.id];
       const content = study.content[language];
-      return { title: content.metaTitle, description: content.metaDescription, image: study.ogImage ?? DEFAULT_OG_IMAGE };
+      return { title: content.metaTitle, description: content.metaDescription, image: study.ogImage ?? DEFAULT_OG_IMAGES[language] };
     }
     case "service": {
       const content = SERVICES[page.id].content[language];
-      return { title: content.metaTitle, description: content.metaDescription, image: DEFAULT_OG_IMAGE };
+      return { title: content.metaTitle, description: content.metaDescription, image: DEFAULT_OG_IMAGES[language] };
     }
     case "notFound":
-      return { title: `${fr.notFound.title} | Eddy Boni`, description: fr.notFound.description, image: DEFAULT_OG_IMAGE };
+      return { title: `${fr.notFound.title} | Eddy Boni`, description: fr.notFound.description, image: DEFAULT_OG_IMAGES.fr };
   }
 }
 
