@@ -1,4 +1,3 @@
-import { Toaster } from "@/components/ui/toaster";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import { matchPath, type Page } from "@/seo/routes";
 import NotFound from "@/pages/not-found";
@@ -26,7 +25,6 @@ function App({ pathname }: { pathname: string }) {
   return (
     <LanguageProvider language={language} page={page}>
       <PageView page={page} />
-      <Toaster />
     </LanguageProvider>
   );
 }

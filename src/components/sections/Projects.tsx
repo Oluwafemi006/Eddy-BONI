@@ -1,14 +1,13 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, ShoppingBag, LayoutDashboard, Users, Repeat, Bus, Building2, Smartphone, ChevronDown, ChevronUp, FileText } from "lucide-react";
+import { ExternalLink, Github, ShoppingBag, LayoutDashboard, Users, Bus, Building2, Wrench, ArrowRight, Smartphone } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { pathFor } from "@/seo/routes";
 import type { CaseStudyId } from "@/content/caseStudies";
+import { CONTACT } from "@/content/contact";
+import { Section, SectionHeader } from "@/components/sections/SectionHeader";
 
 type ProjectMeta = {
   tags: string[];
   icon: typeof Bus;
-  color: string;
   done: boolean;
   mobileTesting: boolean;
   demoUrl: string | null;
@@ -16,11 +15,11 @@ type ProjectMeta = {
   caseStudy?: CaseStudyId;
 };
 
+// Same order as t.projects.items.
 const PROJECTS_META: ProjectMeta[] = [
   {
     tags: ["Django/DRF", "Flutter", "Next.js"],
     icon: Bus,
-    color: "from-amber-500/20 to-orange-500/20 text-amber-400 border-amber-500/30",
     done: true,
     mobileTesting: true,
     demoUrl: "https://axistransportlogistique.com",
@@ -30,7 +29,6 @@ const PROJECTS_META: ProjectMeta[] = [
   {
     tags: ["Next.js", "i18n FR/EN", "SEO", "Open Graph"],
     icon: Building2,
-    color: "from-sky-500/20 to-indigo-500/20 text-sky-400 border-sky-500/30",
     done: true,
     mobileTesting: false,
     demoUrl: "https://www.sd-internationalgroup.com",
@@ -40,186 +38,138 @@ const PROJECTS_META: ProjectMeta[] = [
   {
     tags: ["React", "TypeScript", "Django REST", "PostgreSQL", "Railway"],
     icon: ShoppingBag,
-    color: "from-primary/25 to-blue-500/20 text-primary border-primary/30",
     done: true,
     mobileTesting: false,
     demoUrl: "https://afrirent.netlify.app",
     codeUrl: "https://github.com/Oluwafemi006/Afrirent",
   },
   {
+    tags: ["Django REST", "React", "TypeScript", "PostgreSQL"],
+    icon: Wrench,
+    done: true,
+    mobileTesting: false,
+    demoUrl: "https://luxuryelegancegarage.netlify.app",
+    codeUrl: "https://github.com/Oluwafemi006/LUXEL-G",
+  },
+  {
     tags: ["Flutter", "Django REST", "PostgreSQL", "Stripe"],
     icon: ShoppingBag,
-    color: "from-blue-500/20 to-purple-500/20 text-blue-400 border-blue-500/30",
     done: false,
     mobileTesting: false,
     demoUrl: null,
-    codeUrl: "https://github.com/Oluwafemi006",
+    codeUrl: null,
   },
   {
     tags: ["React JS", "Chart.js", "FastAPI", "Redis"],
     icon: LayoutDashboard,
-    color: "from-primary/20 to-green-500/20 text-primary border-primary/30",
     done: false,
     mobileTesting: false,
     demoUrl: null,
-    codeUrl: "https://github.com/Oluwafemi006",
+    codeUrl: "https://github.com/Oluwafemi006/Rentboard",
   },
   {
     tags: ["Django", "PostgreSQL", "Docker", "Celery"],
     icon: Users,
-    color: "from-orange-500/20 to-red-500/20 text-orange-400 border-orange-500/30",
     done: false,
     mobileTesting: false,
     demoUrl: null,
-    codeUrl: "https://github.com/Oluwafemi006",
+    codeUrl: null,
   },
 ];
 
 export function Projects() {
   const { t, language } = useLanguage();
-  const [showAll, setShowAll] = useState(false);
-
-  const PROJECTS = t.projects.items.map((item, i) => ({
-    ...item,
-    ...PROJECTS_META[i],
-    statusLabel: PROJECTS_META[i].done ? t.projects.statusDone : t.projects.statusInProgress,
-  }));
-  const displayedProjects = showAll ? PROJECTS : PROJECTS.slice(0, 3);
+  const projects = t.projects.items.map((item, i) => ({ ...item, ...PROJECTS_META[i] }));
+  const featured = projects.filter((project) => project.done);
+  const inProgress = projects.filter((project) => !project.done);
 
   return (
-    <section id="projects" className="py-24 bg-secondary/20 border-y border-white/5">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16 md:text-center"
-        >
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4">
-            {t.projects.titlePrefix} <span className="text-primary text-glow">{t.projects.titleHighlight}</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {t.projects.subtitle}
-          </p>
-        </motion.div>
+    <Section id="projects">
+      <SectionHeader
+        title={`${t.projects.titlePrefix} ${t.projects.titleHighlight}`}
+        subtitle={t.projects.subtitle}
+        action={
+          <a href={CONTACT.github} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-brand hover:text-white">
+            {t.projects.allProjects} <ArrowRight size={14} aria-hidden="true" />
+          </a>
+        }
+      />
 
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <AnimatePresence>
-            {displayedProjects.map((project, index) => {
-              const Icon = project.icon;
-              return (
-                <motion.div
-                  layout
-                  key={project.title}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="group relative rounded-2xl bg-card border border-white/5 overflow-hidden hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 flex flex-col h-full"
-                >
-                  {/* Decorative background gradient specific to project */}
-                  <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${project.color} blur-[50px] opacity-50 group-hover:opacity-100 transition-opacity duration-500`} />
-                  
-                  <div className="p-8 flex flex-col h-full relative z-10">
-                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 bg-background border ${project.color} shadow-lg`}>
-                      <Icon size={28} />
-                    </div>
-                    
-                    <h3 className="text-2xl font-bold text-foreground mb-3 font-display group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
-
-                    <div className="mb-4 flex flex-wrap gap-2">
-                      <span
-                        className={`inline-flex px-3 py-1 text-xs font-semibold rounded-full border ${
-                          project.done
-                            ? "bg-primary/15 text-primary border-primary/30"
-                            : "bg-secondary text-muted-foreground border-white/10"
-                        }`}
-                      >
-                        {project.statusLabel}
-                      </span>
-                      {project.mobileTesting && (
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full border bg-amber-500/10 text-amber-400 border-amber-500/30">
-                          <Smartphone size={12} /> {t.projects.statusMobileTesting}
-                        </span>
-                      )}
-                    </div>
-                    
-                    <p className="text-muted-foreground mb-8 flex-grow">
-                      {project.description}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-2 mb-8">
-                      {project.tags.map(tag => (
-                        <span key={tag} className="px-3 py-1 text-xs font-medium rounded-full bg-secondary text-secondary-foreground border border-white/5">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-3 mt-auto pt-6 border-t border-white/5">
-                      {project.caseStudy && (
-                        <a
-                          href={pathFor({ kind: "project", id: project.caseStudy }, language)}
-                          className="flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
-                        >
-                          <FileText size={16} /> {t.projects.caseStudy}
-                          <span className="sr-only"> : {project.title}</span>
-                        </a>
-                      )}
-                      {project.demoUrl ? (
-                        <a
-                          href={project.demoUrl}
-                          target="_blank"
-                          rel="noreferrer noopener"
-                          aria-label={`${t.projects.liveDemo} – ${project.title}`}
-                          className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors"
-                        >
-                          <ExternalLink size={16} /> {t.projects.liveDemo}
-                        </a>
-                      ) : (
-                        <span className="flex items-center gap-2 text-sm font-semibold text-muted-foreground/70">
-                          <ExternalLink size={16} /> {t.projects.demoSoon}
-                        </span>
-                      )}
-                      {project.codeUrl && (
-                        <a
-                          href={project.codeUrl}
-                          target="_blank"
-                          rel="noreferrer noopener"
-                          className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors"
-                        >
-                          <Github size={16} /> {t.projects.code}
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
-        </motion.div>
-
-        {PROJECTS.length > 3 && (
-          <div className="mt-12 flex justify-center">
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="flex items-center gap-2 px-6 py-3 rounded-full bg-secondary border border-white/10 text-foreground font-semibold hover:border-primary/50 hover:text-primary transition-all duration-300"
-            >
-              {showAll ? (
-                <>
-                  {t.projects.showLess} <ChevronUp size={20} />
-                </>
-              ) : (
-                <>
-                  {t.projects.showMore} ({PROJECTS.length - 3}) <ChevronDown size={20} />
-                </>
-              )}
-            </button>
-          </div>
-        )}
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {featured.map((project) => {
+          const Icon = project.icon;
+          return (
+            <article key={project.title} className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-[#2F4A7A]">
+              <div aria-hidden="true" className="flex h-28 items-center justify-center border-b border-border bg-[#0C1528]">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-brand">
+                  <Icon size={24} />
+                </span>
+              </div>
+              <div className="flex flex-1 flex-col gap-3 p-5">
+                <h3 className="text-lg font-bold text-white">{project.title}</h3>
+                <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium">
+                  <span className="text-success">{project.demoUrl ? t.projects.statusLive : t.projects.statusDone}</span>
+                  {project.mobileTesting && (
+                    <span className="inline-flex items-center gap-1 text-warning">
+                      <Smartphone size={12} aria-hidden="true" /> {t.projects.statusMobileTesting}
+                    </span>
+                  )}
+                </p>
+                <p className="text-sm leading-relaxed text-muted-foreground">{project.description}</p>
+                <ul className="mt-auto flex flex-wrap gap-1.5 pt-2">
+                  {project.tags.map((tag) => (
+                    <li key={tag} className="rounded-md bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex flex-wrap gap-x-4 border-t border-line pt-3 text-sm font-semibold">
+                  {project.caseStudy && (
+                    <a href={pathFor({ kind: "project", id: project.caseStudy }, language)} className="inline-flex min-h-11 items-center text-brand hover:text-white">
+                      {t.projects.caseStudy}
+                      <span className="sr-only"> : {project.title}</span>
+                    </a>
+                  )}
+                  {project.demoUrl && (
+                    <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-1.5 text-foreground hover:text-white">
+                      {t.projects.liveDemo}
+                      <span className="sr-only"> : {project.title}</span>
+                      <ExternalLink size={14} aria-hidden="true" />
+                    </a>
+                  )}
+                  {project.codeUrl && (
+                    <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-1.5 text-foreground hover:text-white">
+                      <Github size={14} aria-hidden="true" /> {t.projects.code}
+                      <span className="sr-only"> : {project.title}</span>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </article>
+          );
+        })}
       </div>
-    </section>
+
+      {inProgress.length > 0 && (
+        <div className="mt-6 rounded-2xl border border-dashed border-[#2A3B5C] p-5 sm:p-6">
+          <h3 className="mb-4 text-sm font-semibold text-white">{t.projects.inProgressTitle}</h3>
+          <ul className="grid gap-5 md:grid-cols-3">
+            {inProgress.map((project) => (
+              <li key={project.title} className="flex flex-col gap-1.5">
+                {project.codeUrl ? (
+                  <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-white hover:text-brand">
+                    {project.title} <Github size={14} aria-hidden="true" />
+                  </a>
+                ) : (
+                  <span className="text-[15px] font-semibold text-white">{project.title}</span>
+                )}
+                <p className="text-sm leading-relaxed text-muted-foreground">{project.description}</p>
+                <p className="text-xs text-subtle">{project.tags.join(" · ")}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </Section>
   );
 }

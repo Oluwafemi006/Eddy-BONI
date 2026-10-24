@@ -1,205 +1,155 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { Mail, MapPin, Send, Loader2, Globe } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { useState, type ChangeEvent, type FormEvent } from "react";
+import { Mail, Github, Linkedin, MapPin, Send, Loader2, Globe } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { CONTACT } from "@/content/contact";
 
 const FORM_NAME = "contact";
+type Status = "idle" | "sending" | "success" | "error";
 
-const encodeForm = (data: Record<string, string>) => {
-  return new URLSearchParams(data).toString();
-};
+const inputClass =
+  "w-full rounded-lg border border-input bg-background px-4 py-3 text-[15px] text-foreground placeholder:text-subtle focus:border-brand focus:outline-none";
 
 export function Contact() {
   const { t } = useLanguage();
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
+  const [status, setStatus] = useState<Status>("idle");
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
+    setStatus("sending");
     try {
       const response = await fetch("/", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: encodeForm({
-          "form-name": FORM_NAME,
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        }),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ "form-name": FORM_NAME, ...formData }).toString(),
       });
-
-      if (!response.ok) {
-        throw new Error("Netlify form submission failed");
-      }
-
-      toast({
-        title: t.contact.form.successTitle,
-        description: t.contact.form.successDesc,
-        variant: "default",
-      });
-
+      if (!response.ok) throw new Error("Netlify form submission failed");
+      setStatus("success");
       setFormData({ name: "", email: "", message: "" });
     } catch {
-      toast({
-        title: t.contact.form.errorTitle,
-        description: t.contact.form.errorDesc,
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
+      setStatus("error");
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  return (
-    <section id="contact" className="py-24 relative overflow-hidden">
-      {/* Glow background */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none -z-10" />
-      
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4">
-            {t.contact.titlePrefix} <span className="text-primary text-glow">{t.contact.titleHighlight}</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {t.contact.subtitle}
-          </p>
-        </motion.div>
+  const links = [
+    { icon: Mail, label: t.contact.emailTitle, value: CONTACT.email, href: `mailto:${CONTACT.email}` },
+    { icon: Github, label: t.contact.githubTitle, value: CONTACT.githubLabel, href: CONTACT.github },
+    { icon: Linkedin, label: t.contact.linkedinTitle, value: "Eddy Boni", href: CONTACT.linkedin },
+  ];
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-1 space-y-8"
-          >
-            <div className="p-8 rounded-2xl glass-panel">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6">
-                <Mail size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-2">{t.contact.emailTitle}</h3>
-              <p className="text-muted-foreground mb-4">{t.contact.emailDesc}</p>
-              <a href="mailto:eddybaoke@gmail.com" className="text-primary hover:underline font-semibold text-lg">
-                eddybaoke@gmail.com
+  return (
+    <section id="contact" className="border-t border-line">
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+        <div className="rounded-3xl border border-border bg-card p-6 sm:p-10 lg:p-14">
+          <div className="mx-auto mb-10 flex max-w-xl flex-col items-center gap-4 text-center">
+            <span aria-hidden="true" className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-brand">
+              <Send size={22} />
+            </span>
+            <h2 className="text-[28px] font-extrabold text-white sm:text-4xl">
+              {t.contact.titlePrefix} {t.contact.titleHighlight}
+            </h2>
+            <p className="leading-relaxed text-muted-foreground">{t.contact.subtitle}</p>
+            <div className="flex flex-wrap justify-center gap-3 pt-2">
+              <a href={`mailto:${CONTACT.email}`} className="inline-flex h-12 items-center gap-2.5 rounded-lg bg-primary px-5 text-[15px] font-semibold text-white transition-colors hover:bg-[#3B74F0]">
+                {t.nav.contactCta} <Mail size={16} aria-hidden="true" />
+              </a>
+              <a href={CONTACT.github} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center gap-2.5 rounded-lg border border-[#3A4E73] px-5 text-[15px] font-semibold text-foreground transition-colors hover:border-brand hover:text-white">
+                {t.contact.githubCta} <Github size={16} aria-hidden="true" />
               </a>
             </div>
+          </div>
 
-            <div className="p-8 rounded-2xl glass-panel">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6">
-                <MapPin size={24} />
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
+            <div className="flex flex-col gap-3">
+              {links.map(({ icon: Icon, label, value, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className="flex items-center gap-4 rounded-xl border border-border px-4 py-3.5 transition-colors hover:border-brand"
+                >
+                  <Icon size={18} className="shrink-0 text-brand" aria-hidden="true" />
+                  <span className="flex min-w-0 flex-col">
+                    <span className="text-xs text-subtle">{label}</span>
+                    <span className="truncate text-sm font-medium text-foreground">{value}</span>
+                  </span>
+                </a>
+              ))}
+              <div className="flex items-start gap-4 rounded-xl border border-border px-4 py-3.5">
+                <MapPin size={18} className="mt-0.5 shrink-0 text-brand" aria-hidden="true" />
+                <span className="flex flex-col gap-1">
+                  <span className="text-xs text-subtle">{t.contact.locationTitle}</span>
+                  <span className="text-sm text-foreground">{t.contact.locationDesc}</span>
+                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-brand">
+                    <Globe size={12} aria-hidden="true" /> {t.contact.remoteFirst}
+                  </span>
+                </span>
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-2">{t.contact.locationTitle}</h3>
-              <p className="text-muted-foreground mb-4">{t.contact.locationDesc}</p>
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-foreground text-sm font-medium border border-white/5">
-                <Globe size={14} className="text-primary" />
-                {t.contact.remoteFirst}
-              </span>
             </div>
-          </motion.div>
 
-          {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-2 p-8 md:p-10 rounded-2xl bg-card border border-white/5 shadow-2xl relative"
-          >
             <form
               name={FORM_NAME}
               method="POST"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
-              className="space-y-6 relative z-10"
+              className="flex flex-col gap-4 rounded-2xl border border-border bg-background/60 p-5 sm:p-6"
             >
+              <h3 className="text-base font-bold text-white">{t.contact.formTitle}</h3>
               <input type="hidden" name="form-name" value={FORM_NAME} />
               <p className="hidden">
                 <label>
                   {t.contact.form.honeypotLabel} <input name="bot-field" />
                 </label>
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="flex flex-col gap-1.5">
                   <label htmlFor="name" className="text-sm font-medium text-foreground">{t.contact.form.nameLabel}</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200"
-                    placeholder={t.contact.form.namePlaceholder}
-                  />
+                  <input type="text" id="name" name="name" required autoComplete="name" value={formData.name} onChange={handleChange} className={inputClass} placeholder={t.contact.form.namePlaceholder} />
                 </div>
-                <div className="space-y-2">
+                <div className="flex flex-col gap-1.5">
                   <label htmlFor="email" className="text-sm font-medium text-foreground">{t.contact.form.emailLabel}</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200"
-                    placeholder={t.contact.form.emailPlaceholder}
-                  />
+                  <input type="email" id="email" name="email" required autoComplete="email" value={formData.email} onChange={handleChange} className={inputClass} placeholder={t.contact.form.emailPlaceholder} />
                 </div>
               </div>
-
-              <div className="space-y-2">
+              <div className="flex flex-col gap-1.5">
                 <label htmlFor="message" className="text-sm font-medium text-foreground">{t.contact.form.messageLabel}</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={6}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200 resize-none"
-                  placeholder={t.contact.form.messagePlaceholder}
-                />
+                <textarea id="message" name="message" required rows={5} value={formData.message} onChange={handleChange} className={`${inputClass} resize-y`} placeholder={t.contact.form.messagePlaceholder} />
               </div>
-
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold flex items-center justify-center gap-2 bg-primary text-primary-foreground hover:box-glow hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none transition-all duration-200"
+                disabled={status === "sending"}
+                className="inline-flex h-12 items-center justify-center gap-2 self-start rounded-lg bg-primary px-6 text-[15px] font-semibold text-white transition-colors hover:bg-[#3B74F0] disabled:cursor-not-allowed disabled:opacity-70"
               >
-                {isSubmitting ? (
+                {status === "sending" ? (
                   <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    {t.contact.form.submitting}
+                    <Loader2 size={18} className="animate-spin" aria-hidden="true" /> {t.contact.form.submitting}
                   </>
                 ) : (
                   <>
-                    {t.contact.form.submit}
-                    <Send className="w-5 h-5" />
+                    {t.contact.form.submit} <Send size={16} aria-hidden="true" />
                   </>
                 )}
               </button>
+              <p role="status" aria-live="polite" className="text-sm">
+                {status === "success" && (
+                  <span className="text-success">
+                    <strong>{t.contact.form.successTitle}</strong> {t.contact.form.successDesc}
+                  </span>
+                )}
+                {status === "error" && (
+                  <span className="text-[#FCA5A5]">
+                    <strong>{t.contact.form.errorTitle}.</strong> {t.contact.form.errorDesc}
+                  </span>
+                )}
+              </p>
             </form>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
