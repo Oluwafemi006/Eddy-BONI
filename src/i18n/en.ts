@@ -33,7 +33,7 @@ export const en: Translations = {
   },
   about: {
     badge: "About me",
-    title: "A developer who cares about digital products and solutions that are actually useful.",
+    title: "I build web and mobile applications and take them to production for businesses in Benin and abroad.",
     facts: {
       location: "Cotonou, Benin · available remotely",
       experience: "2 years of development experience",
@@ -41,19 +41,51 @@ export const en: Translations = {
       languages: "French; written communication in English is possible",
     },
     cta: "See my experience",
-    timelineTitle: "My journey",
+    timelineTitle: "Experience",
+    caseStudyLink: "Read the case study",
     timeline: [
       {
-        year: "2026",
-        title: "Professional Bachelor's degree — Business Computing",
-        place: "IUT de Parakou, University of Parakou",
-        note: "Final-year project graded with highest honors",
+        period: "2026 — present",
+        title: "Technical partner — Talenex Inc.",
+        place: "Montreal (remote)",
+        description: "Back-end development, payment integration, production deployment.",
+        caseStudy: null,
       },
-      { year: "2026", title: "Full-stack technical partner", place: "Talenex Inc., Montreal (remote)", note: "" },
-      { year: "2025", title: "Internship — garage management system", place: "Luxury Élégance Garage, Parakou", note: "" },
-      { year: "2024", title: "First web projects", place: "Personal projects, then freelance work", note: "" },
-      { year: "2023", title: "Baccalaureate (science track, série D)", place: "Collège Catholique Saint Thomas d'Aquin, Parakou", note: "" },
+      {
+        period: "2026",
+        // TODO: exact role title to confirm with Eddy.
+        title: "Developer — Axis Transport",
+        place: "",
+        description: "Web platform live in production, Flutter app in testing.",
+        caseStudy: "axis-transport",
+      },
+      {
+        period: "2026",
+        // TODO: exact role title to confirm with Eddy.
+        title: "Developer — SD International Group",
+        place: "",
+        description: "Bilingual FR/EN corporate website built with Next.js.",
+        caseStudy: "sd-international-group",
+      },
+      {
+        period: "2025",
+        title: "Internship — Luxury Élégance Garage",
+        place: "Parakou",
+        description: "Garage management system (Django, PostgreSQL).",
+        caseStudy: null,
+      },
+      {
+        period: "2024",
+        title: "Freelance work — EdDigital",
+        place: "",
+        description: "First web projects for clients.",
+        caseStudy: null,
+      },
     ],
+    education: {
+      title: "Education",
+      text: "Professional Bachelor's degree in Business Computing — IUT de Parakou, 2026 (graduated with highest honors)",
+    },
   },
   stack: {
     titlePrefix: "My",

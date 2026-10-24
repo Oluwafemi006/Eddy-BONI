@@ -31,7 +31,7 @@ export const fr = {
   },
   about: {
     badge: "À propos de moi",
-    title: "Un développeur passionné par les produits numériques et les solutions utiles.",
+    title: "Je construis et je mets en production des applications web et mobiles pour des entreprises au Bénin et à l'étranger.",
     facts: {
       location: "Cotonou, Bénin · disponible en remote",
       experience: "2 ans d'expérience en développement",
@@ -39,19 +39,52 @@ export const fr = {
       languages: "Français ; échanges écrits possibles en anglais",
     },
     cta: "Voir mon expérience",
-    timelineTitle: "Mon parcours",
+    timelineTitle: "Expérience",
+    caseStudyLink: "Voir l'étude de cas",
+    // Most recent first. Professional experience only; education is in `education` below.
     timeline: [
       {
-        year: "2026",
-        title: "Licence Professionnelle — Informatique de Gestion",
-        place: "IUT de Parakou, Université de Parakou",
-        note: "Mémoire soutenu avec la mention très bien",
+        period: "2026 — aujourd'hui",
+        title: "Partenaire technique — Talenex Inc.",
+        place: "Montréal (remote)",
+        description: "Développement backend, intégration de paiements, mise en production.",
+        caseStudy: null,
       },
-      { year: "2026", title: "Partenaire technique Full-Stack", place: "Talenex Inc., Montréal (remote)", note: "" },
-      { year: "2025", title: "Stage — système de gestion de garage", place: "Luxury Élégance Garage, Parakou", note: "" },
-      { year: "2024", title: "Premiers projets web", place: "Projets personnels, puis missions freelance", note: "" },
-      { year: "2023", title: "Baccalauréat série D", place: "Collège Catholique Saint Thomas d'Aquin, Parakou", note: "" },
+      {
+        period: "2026",
+        // TODO: exact role title to confirm with Eddy.
+        title: "Développeur — Axis Transport",
+        place: "",
+        description: "Plateforme web en production, application Flutter en test.",
+        caseStudy: "axis-transport",
+      },
+      {
+        period: "2026",
+        // TODO: exact role title to confirm with Eddy.
+        title: "Développeur — SD International Group",
+        place: "",
+        description: "Site vitrine bilingue FR/EN en Next.js.",
+        caseStudy: "sd-international-group",
+      },
+      {
+        period: "2025",
+        title: "Stage — Luxury Élégance Garage",
+        place: "Parakou",
+        description: "Système de gestion de garage (Django, PostgreSQL).",
+        caseStudy: null,
+      },
+      {
+        period: "2024",
+        title: "Missions freelance — EdDigital",
+        place: "",
+        description: "Premiers projets web pour des clients.",
+        caseStudy: null,
+      },
     ],
+    education: {
+      title: "Formation",
+      text: "Licence Professionnelle Informatique de Gestion — IUT de Parakou, 2026 (mention très bien)",
+    },
   },
   stack: {
     titlePrefix: "Mes",
