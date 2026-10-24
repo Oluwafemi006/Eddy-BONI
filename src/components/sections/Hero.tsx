@@ -1,6 +1,8 @@
-import { motion } from "framer-motion";
+import type { CSSProperties } from "react";
 import { ArrowRight, Terminal, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+
+const HERO_TECHS = ["Django", "React", "Next.js", "Flutter", "PostgreSQL"];
 
 export function Hero() {
   const { t } = useLanguage();
@@ -23,64 +25,58 @@ export function Hero() {
         
         {/* COLONNE GAUCHE : TEXTES ET ACTIONS */}
         <div className="max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1.5 text-sm font-medium text-primary shadow-[0_0_30px_rgba(0,255,180,0.08)] backdrop-blur"
+          <div
+            style={{ "--reveal-delay": "0s", "--reveal-duration": "0.5s", "--reveal-distance": "20px" } as CSSProperties}
+            className="hero-reveal mb-8 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1.5 text-sm font-medium text-primary shadow-[0_0_30px_rgba(0,255,180,0.08)] backdrop-blur"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
             {t.hero.badge}
-          </motion.div>
+          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-6 text-5xl font-display font-bold leading-[1.04] text-white sm:text-6xl md:text-7xl"
+          <h1
+            style={{ "--reveal-delay": "0.1s", "--reveal-duration": "0.5s", "--reveal-distance": "20px" } as CSSProperties}
+            className="hero-reveal mb-6 text-5xl font-display font-bold leading-[1.04] text-white sm:text-6xl md:text-7xl"
           >
             {t.hero.name} <br />
             <span className="bg-gradient-to-r from-primary via-cyan-200 to-blue-400 bg-clip-text text-transparent">
               {t.hero.role}
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-6 flex flex-wrap items-center gap-3 text-lg font-medium text-slate-200 sm:gap-4 md:text-xl lg:text-2xl font-display"
+          <div
+            style={{ "--reveal-delay": "0.2s", "--reveal-duration": "0.5s", "--reveal-distance": "20px" } as CSSProperties}
+            className="hero-reveal mb-6 flex flex-wrap items-center gap-3 text-lg font-medium text-slate-200 sm:gap-4 md:text-xl lg:text-2xl font-display"
           >
-            <span>Next.js</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-primary/50" />
-            <span>React</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-primary/50" />
-            <span>Django</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-primary/50" />
-            <span>PostgreSQL</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-primary/50" />
-            <span>Docker</span>
-          </motion.div>
+            {HERO_TECHS.map((tech, i) => (
+              <span key={tech} className="contents">
+                {i > 0 && <span className="w-1.5 h-1.5 rounded-full bg-primary/50" />}
+                <span>{tech}</span>
+              </span>
+            ))}
+          </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mb-10 max-w-2xl text-lg leading-relaxed text-slate-300"
+          <p
+            style={{ "--reveal-delay": "0.3s", "--reveal-duration": "0.5s", "--reveal-distance": "20px" } as CSSProperties}
+            className="hero-reveal mb-4 max-w-2xl text-lg leading-relaxed text-slate-300"
           >
             {t.hero.description}{" "}
             <strong className="text-white">{t.hero.descriptionStrong}</strong>
-          </motion.p>
+          </p>
+
+          <p
+            style={{ "--reveal-delay": "0.35s", "--reveal-duration": "0.5s", "--reveal-distance": "20px" } as CSSProperties}
+            className="hero-reveal mb-10 max-w-2xl text-sm leading-relaxed text-slate-400"
+          >
+            {t.hero.geoSentence}
+          </p>
 
           {/* BOUTONS D'ACTION (Incluant ComeUp pour le maillage SEO) */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-wrap items-center gap-4"
+          <div
+            style={{ "--reveal-delay": "0.4s", "--reveal-duration": "0.5s", "--reveal-distance": "20px" } as CSSProperties}
+            className="hero-reveal flex flex-wrap items-center gap-4"
           >
             <a
               href="#projects"
@@ -107,15 +103,13 @@ export function Hero() {
               {t.hero.ctaComeup}
               <ExternalLink className="w-4 h-4 opacity-80" />
             </a>
-          </motion.div>
+          </div>
         </div>
 
         {/* COLONNE DROITE : INTEGRATION BRUTE & SUBLIMÉE DE TON PORTRAIT DETOURÉ */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
-          className="relative flex items-end justify-center lg:h-full lg:items-end lg:justify-end"
+        <div
+          style={{ "--reveal-delay": "0.25s", "--reveal-duration": "0.7s", "--reveal-distance": "40px" } as CSSProperties}
+          className="hero-reveal relative flex items-end justify-center lg:h-full lg:items-end lg:justify-end"
           aria-hidden="true"
         >
           {/* Lueur cyan diffuse positionnée juste derrière ton portrait pour faire ressortir le costume */}
@@ -124,10 +118,13 @@ export function Hero() {
           <img
             src="/images/Eddy_Boni.png"
             alt={t.hero.imageAlt}
+            width={408}
+            height={612}
+            fetchPriority="high"
             className="relative z-10 max-h-[440px] w-auto max-w-[85vw] object-contain filter drop-shadow-[0_20px_50px_rgba(6,182,212,0.15)] sm:max-h-[580px] lg:max-h-[min(780px,85svh)] lg:max-w-full"
             loading="eager"
           />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

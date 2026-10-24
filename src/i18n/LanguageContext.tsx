@@ -1,36 +1,33 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useContext, type ReactNode } from "react";
 import { fr } from "./fr";
 import { en } from "./en";
+import type { Page } from "@/seo/routes";
 
 export type Language = "fr" | "en";
 
 const translations = { fr, en };
-const STORAGE_KEY = "portfolio-language";
-
-function getInitialLanguage(): Language {
-  const stored = window.localStorage.getItem(STORAGE_KEY);
-  if (stored === "fr" || stored === "en") return stored;
-  return navigator.language.toLowerCase().startsWith("en") ? "en" : "fr";
-}
 
 type LanguageContextValue = {
   language: Language;
-  setLanguage: (language: Language) => void;
+  /** The page being rendered, used to link to its other-language equivalent. */
+  page: Page;
   t: typeof fr;
 };
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>(getInitialLanguage);
-
-  useEffect(() => {
-    document.documentElement.lang = language;
-    window.localStorage.setItem(STORAGE_KEY, language);
-  }, [language]);
-
+// The language comes from the URL (/ or /en/), so prerendered HTML and the hydrated app always agree.
+export function LanguageProvider({
+  language,
+  page,
+  children,
+}: {
+  language: Language;
+  page: Page;
+  children: ReactNode;
+}) {
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t: translations[language] }}>
+    <LanguageContext.Provider value={{ language, page, t: translations[language] }}>
       {children}
     </LanguageContext.Provider>
   );

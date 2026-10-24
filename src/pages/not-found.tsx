@@ -1,9 +1,9 @@
-import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { pathFor } from "@/seo/routes";
 
 export default function NotFound() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-[#030509] flex items-center justify-center px-6">
@@ -20,13 +20,13 @@ export default function NotFound() {
         </h1>
         <p className="text-muted-foreground mb-10">{t.notFound.description}</p>
 
-        <Link
-          href="/"
+        <a
+          href={pathFor({ kind: "home" }, language)}
           className="inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3.5 font-semibold text-primary-foreground transition-all duration-300 hover:box-glow"
         >
           <ArrowLeft className="w-5 h-5" />
           {t.notFound.cta}
-        </Link>
+        </a>
       </div>
     </div>
   );

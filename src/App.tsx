@@ -1,41 +1,33 @@
-import { Switch, Route, Router as WouterRouter } from "wouter";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/i18n/LanguageContext";
+import { matchPath, type Page } from "@/seo/routes";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import ProjectPage from "@/pages/ProjectPage";
+import ServicePage from "@/pages/ServicePage";
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-      retry: false,
-    },
-  },
-});
-
-function Router() {
-  return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route component={NotFound} />
-    </Switch>
-  );
+function PageView({ page }: { page: Page }) {
+  switch (page.kind) {
+    case "home":
+      return <Home />;
+    case "project":
+      return <ProjectPage id={page.id} />;
+    case "service":
+      return <ServicePage id={page.id} />;
+    case "notFound":
+      return <NotFound />;
+  }
 }
 
-function App() {
+// Every page is prerendered to its own HTML file, so navigation between pages is a full page load
+// and the app only needs to know which page the current URL maps to.
+function App({ pathname }: { pathname: string }) {
+  const { page, language } = matchPath(pathname);
   return (
-    <QueryClientProvider client={queryClient}>
-      <LanguageProvider>
-        <TooltipProvider>
-          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-            <Router />
-          </WouterRouter>
-          <Toaster />
-        </TooltipProvider>
-      </LanguageProvider>
-    </QueryClientProvider>
+    <LanguageProvider language={language} page={page}>
+      <PageView page={page} />
+      <Toaster />
+    </LanguageProvider>
   );
 }
 
