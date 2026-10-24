@@ -1,118 +1,104 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { pathFor } from "@/seo/routes";
 
+export function Logo({ size = "md" }: { size?: "sm" | "md" }) {
+  return (
+    <span
+      aria-hidden="true"
+      className={`flex items-center justify-center rounded-md bg-primary font-extrabold tracking-tighter text-white ${
+        size === "sm" ? "h-6 w-7 text-[11px]" : "h-7 w-[34px] text-sm"
+      }`}
+    >
+      EB
+    </span>
+  );
+}
+
 export function Navbar() {
   const { t, language } = useLanguage();
   const home = pathFor({ kind: "home" }, language);
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  const NAV_LINKS = [
+  const links = [
+    { name: t.nav.home, href: home },
     { name: t.nav.about, href: `${home}#about` },
-    { name: t.nav.experience, href: `${home}#experience` },
-    { name: t.nav.skills, href: `${home}#skills` },
     { name: t.nav.projects, href: `${home}#projects` },
-    { name: t.nav.process, href: `${home}#process` },
+    { name: t.nav.skills, href: `${home}#skills` },
+    { name: t.nav.experience, href: `${home}#experience` },
+    { name: t.nav.contact, href: `${home}#contact` },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent",
-        scrolled ? "bg-background/80 backdrop-blur-lg border-white/5 shadow-lg" : "bg-transparent"
-      )}
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
-        {/* Logo */}
-        <a href={home} className="relative group flex items-center gap-2">
-          <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20 group-hover:border-primary/50 transition-colors">
-            <span className="font-display font-bold text-primary text-xl">EB</span>
-          </div>
-          <span className="font-display font-bold text-lg hidden sm:block tracking-wide">
-            Eddy Boni
-          </span>
+    <header className="sticky top-0 z-50 border-b border-line bg-background/90 backdrop-blur-md">
+      <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between gap-6 px-4 sm:px-6">
+        <a href={home} className="flex items-center gap-2.5 text-[17px] font-bold text-white">
+          <Logo />
+          Eddy Boni
         </a>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
+        <nav aria-label={t.nav.label} className="hidden items-center gap-7 lg:flex">
+          {links.map((link) => (
             <a
-              key={link.name}
+              key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
+              className="py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-white"
             >
               {link.name}
             </a>
           ))}
-          <a
-            href={`${home}#contact`}
-            className="px-5 py-2.5 text-sm font-semibold rounded-lg bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-primary-foreground hover:box-glow transition-all duration-300"
-          >
-            {t.nav.contact}
-          </a>
-          <LanguageSwitcher />
         </nav>
 
-        {/* Mobile Toggle */}
+        <div className="hidden items-center gap-3 lg:flex">
+          <LanguageSwitcher />
+          <a
+            href={`${home}#contact`}
+            className="inline-flex h-11 items-center rounded-lg bg-primary px-4 text-sm font-semibold text-white transition-colors hover:bg-[#3B74F0]"
+          >
+            {t.nav.contactCta}
+          </a>
+        </div>
+
         <button
-          className="md:hidden p-2 text-muted-foreground hover:text-foreground"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
+          type="button"
+          className="flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-card text-foreground lg:hidden"
+          onClick={() => setOpen((value) => !value)}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
         >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
         </button>
       </div>
 
-      {/* Mobile Nav */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-white/5 bg-background/95 backdrop-blur-xl overflow-hidden"
-          >
-            <nav className="flex flex-col px-6 py-6 gap-4">
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-lg font-medium text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {link.name}
-                </a>
-              ))}
-              <div className="pt-4 border-t border-white/5 flex flex-col gap-4">
-                <LanguageSwitcher className="self-start" />
-                <a
-                  href={`${home}#contact`}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center w-full px-5 py-3 text-base font-semibold rounded-lg bg-primary text-primary-foreground shadow-[0_0_15px_rgba(0,255,180,0.3)]"
-                >
-                  {t.nav.contactCta}
-                </a>
-              </div>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.header>
+      {open && (
+        <div id="mobile-menu" className="border-t border-line bg-background lg:hidden">
+          <nav aria-label={t.nav.label} className="mx-auto flex max-w-6xl flex-col px-4 py-4 sm:px-6">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="flex min-h-11 items-center border-b border-line text-base font-medium text-muted-foreground hover:text-white"
+              >
+                {link.name}
+              </a>
+            ))}
+            <div className="flex items-center justify-between gap-4 pt-4">
+              <LanguageSwitcher />
+              <a
+                href={`${home}#contact`}
+                onClick={() => setOpen(false)}
+                className="inline-flex h-11 items-center rounded-lg bg-primary px-5 text-sm font-semibold text-white"
+              >
+                {t.nav.contactCta}
+              </a>
+            </div>
+          </nav>
+        </div>
+      )}
+    </header>
   );
 }

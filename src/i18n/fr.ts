@@ -7,6 +7,10 @@ export const fr = {
     process: "Process",
     contact: "Contact",
     contactCta: "Me contacter",
+    home: "Accueil",
+    label: "Navigation principale",
+    openMenu: "Ouvrir le menu",
+    closeMenu: "Fermer le menu",
   },
   hero: {
     badge: "Disponible en Freelance",

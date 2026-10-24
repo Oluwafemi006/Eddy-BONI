@@ -9,6 +9,10 @@ export const en: Translations = {
     process: "Process",
     contact: "Contact",
     contactCta: "Get in touch",
+    home: "Home",
+    label: "Main navigation",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
   },
   hero: {
     badge: "Available for Freelance",

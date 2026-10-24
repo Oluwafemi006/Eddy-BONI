@@ -15,6 +15,10 @@ const basePath = process.env.BASE_PATH ?? "/";
 
 export default defineConfig({
   base: basePath,
+  // Same value in the prerendered HTML and the client bundle, so the footer year never causes a hydration mismatch.
+  define: {
+    __BUILD_YEAR__: JSON.stringify(new Date().getFullYear()),
+  },
   plugins: [
     react(),
     tailwindcss(),
