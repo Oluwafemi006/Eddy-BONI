@@ -14,7 +14,9 @@ export const fr = {
     role: "Développeur Full-Stack",
     description:
       "Je conçois et développe des applications web et mobiles performantes, scalables et centrées sur l'utilisateur pour les entreprises et startups.",
-    descriptionStrong: "Basé en remote.",
+    descriptionStrong: "Basé à Cotonou, disponible en remote.",
+    geoSentence:
+      "Eddy Boni (BONI Adjé Oladjidé Kenneth Eddy) est un développeur full-stack basé à Cotonou, au Bénin. Il conçoit des applications web avec Django/DRF, React et Next.js, et des applications mobiles avec Flutter. Titulaire d'une Licence Professionnelle en Informatique de Gestion (IUT de Parakou, 2026), il travaille en freelance sous la marque EdDigital.",
     ctaProjects: "Voir mes projets",
     ctaContact: "Me contacter",
     ctaComeup: "Commander sur ComeUp",
@@ -23,9 +25,8 @@ export const fr = {
   stats: {
     items: [
       { value: "3+", label: "Années d'expérience" },
-      { value: "20+", label: "Projets réalisés" },
-      { value: "100%", label: "Satisfaction client" },
-      { value: "10k+", label: "Lignes de code" },
+      { value: "10+", label: "Projets livrés" },
+      { value: "Licence Pro", label: "Informatique de Gestion (2026)" },
     ],
   },
   stack: {
@@ -37,7 +38,8 @@ export const fr = {
     showLess: "Voir moins",
     items: [
       { name: "Next.js", desc: "Front-end & Full-stack SSR" },
-      { name: "React JS / Native", desc: "SPA & Apps mobiles" },
+      { name: "React JS", desc: "Interfaces web & SPA" },
+      { name: "Flutter", desc: "Apps mobiles iOS & Android" },
       { name: "Django", desc: "Framework backend robuste" },
       { name: "Docker", desc: "Conteneurisation" },
       { name: "PostgreSQL", desc: "Base de données relationnelle" },
@@ -109,7 +111,8 @@ export const fr = {
     showLess: "Voir moins",
     statusDone: "Terminé",
     statusInProgress: "En cours",
-    statusMobileTesting: "App mobile en test",
+    statusMobileTesting: "Mobile (Flutter) en test",
+    caseStudy: "Étude de cas",
     liveDemo: "Live Demo",
     demoSoon: "Demo bientôt",
     code: "Code",
@@ -117,17 +120,17 @@ export const fr = {
       {
         title: "Axis Transport",
         description:
-          "Plateforme web et mobile d'une compagnie de transport sur l'axe Parakou – Cotonou (Bénin) : réservation de billets, envoi et suivi de colis, location de véhicules et espace client. Site web en production, application mobile en phase de test.",
+          "Plateforme de transport sur l'axe Parakou – Savè – Kétou – Porto-Novo – Cotonou : billetterie de bus, envoi et suivi de colis, location de véhicules. Backend Django/DRF, web en production, mobile Flutter en phase de test.",
       },
       {
         title: "SD International Group",
         description:
-          "Site corporate bilingue FR/EN d'un groupe multisectoriel béninois (BTP, énergie, import-export & logistique) : pages services, HSE & qualité et parcours de demande de devis.",
+          "Site vitrine Next.js bilingue FR/EN pour un groupe multisectoriel de Cotonou (BTP, énergie, logistique, import-export) : pages services, HSE & qualité, contact, SEO et Open Graph.",
       },
       {
         title: "TalenexPro",
         description:
-          "Plateforme B2B d'échange de compétences entre professionnels : gagnez des crédits en partageant votre expertise, dépensez-les pour apprendre auprès d'autres experts.",
+          "Plateforme B2B d'échange de compétences entre professionnels : gagnez des crédits en partageant vos compétences, dépensez-les pour apprendre auprès d'autres professionnels.",
       },
       {
         title: "AfriRent Marketplace",
@@ -159,6 +162,7 @@ export const fr = {
       "Communication transparente et agile",
       "Déploiement et intégration continue (CI/CD)",
     ],
+    learnMore: "En savoir plus",
     items: [
       {
         title: "Développement Web Full-Stack",
@@ -166,7 +170,7 @@ export const fr = {
       },
       {
         title: "Applications Mobiles",
-        description: "Développement d'applications natives iOS et Android avec React Native, partageant le code pour une livraison rapide.",
+        description: "Développement d'applications mobiles iOS et Android avec Flutter, à partir d'une seule base de code.",
       },
       {
         title: "API REST & Back-end",
@@ -185,7 +189,7 @@ export const fr = {
     emailTitle: "Email",
     emailDesc: "Contactez-moi directement à l'adresse suivante :",
     locationTitle: "Localisation",
-    locationDesc: "Disponible en 100% remote partout dans le monde.",
+    locationDesc: "Basé à Cotonou (Bénin, UTC+1). Disponible en remote partout dans le monde.",
     remoteFirst: "Remote First",
     form: {
       nameLabel: "Nom complet",
@@ -205,11 +209,84 @@ export const fr = {
   },
   footer: {
     description:
-      "BONI Adjé Oladjidé Kenneth Eddy.\nDéveloppeur Full-Stack expert en React, React Native et Django. Création d'applications performantes en freelance.",
+      "BONI Adjé Oladjidé Kenneth Eddy.\nDéveloppeur full-stack basé à Cotonou : applications web avec Django, React et Next.js, et mobiles avec Flutter. Freelance sous la marque EdDigital.",
     navTitle: "Navigation",
+    servicesTitle: "Services",
     socialTitle: "Réseaux",
     availableForWork: "Disponible pour de nouvelles missions",
     rights: "Tous droits réservés.",
+  },
+  faq: {
+    titlePrefix: "Questions",
+    titleHighlight: "Fréquentes",
+    subtitle: "L'essentiel à savoir avant de démarrer un projet ensemble.",
+    items: [
+      {
+        question: "Quels services proposez-vous ?",
+        answer:
+          "Je développe des applications web avec Django/DRF, React et Next.js, des applications mobiles avec Flutter, des API REST et des sites vitrines pour les entreprises.",
+      },
+      {
+        question: "Quelle est votre stack technique ?",
+        answer:
+          "Back-end : Python, Django, Django REST Framework et PostgreSQL. Front-end : React, Next.js et TypeScript. Mobile : Flutter. Déploiement : Docker et Nginx.",
+      },
+      {
+        question: "Travaillez-vous à distance ?",
+        answer:
+          "Oui. Je suis basé à Cotonou, au Bénin (UTC+1), et je travaille 100 % à distance, en français ou en anglais, avec des clients au Bénin et à l'international.",
+      },
+      {
+        question: "Comment se déroule une collaboration, et quels sont les délais ?",
+        answer:
+          "En quatre étapes : découverte des besoins, architecture et maquettes, développement et tests, puis mise en production et suivi. Les délais dépendent du périmètre et sont fixés ensemble à l'issue de la phase de découverte.",
+      },
+      {
+        question: "Comment vous contacter ?",
+        answer:
+          "Par le formulaire de contact de ce site, par email à eddybaoke@gmail.com, ou via mon profil ComeUp. Je réponds aussi sur WhatsApp et par appel une fois le premier contact établi.",
+      },
+    ],
+  },
+  caseStudy: {
+    breadcrumbHome: "Accueil",
+    breadcrumbSection: "Projets",
+    backToProjects: "Retour aux projets",
+    context: "Contexte client",
+    problem: "Problème",
+    role: "Mon rôle",
+    stack: "Stack technique",
+    features: "Fonctionnalités",
+    screenshots: "Captures d'écran",
+    live: "Voir le site en ligne",
+    ctaTitle: "Un projet similaire ?",
+    ctaText: "Parlons de vos besoins et de la meilleure façon d'y répondre.",
+    ctaButton: "Me contacter",
+  },
+  servicePage: {
+    breadcrumbHome: "Accueil",
+    breadcrumbSection: "Services",
+    offers: "Ce que je propose",
+    stack: "Technologies",
+    howTitle: "Comment je travaille",
+    remoteHighlights: [
+      "Travail 100 % à distance",
+      "Francophone, je travaille aussi en anglais",
+      "Fuseau horaire UTC+1",
+      "Communication claire par WhatsApp, email et appels",
+    ],
+    localHighlights: [
+      "Basé à Cotonou, au Bénin",
+      "Sites en français, ou bilingues français / anglais",
+      "Fuseau horaire UTC+1",
+      "Communication claire par WhatsApp, email et appels",
+    ],
+    related: "Projets liés",
+    caseStudy: "Voir l'étude de cas",
+    visit: "Voir le site",
+    ctaTitle: "Parlons de votre projet",
+    ctaText: "Décrivez-moi votre besoin : je reviens vers vous avec une proposition claire.",
+    ctaButton: "Me contacter",
   },
   notFound: {
     code: "404",

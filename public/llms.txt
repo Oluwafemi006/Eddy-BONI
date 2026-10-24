@@ -1,0 +1,40 @@
+# Eddy Boni
+
+> Eddy Boni (BONI Adjé Oladjidé Kenneth Eddy) est un développeur full-stack basé à Cotonou, au Bénin. Il conçoit des applications web avec Django/DRF, React et Next.js, et des applications mobiles avec Flutter. Titulaire d'une Licence Professionnelle en Informatique de Gestion (IUT de Parakou, 2026), il travaille en freelance sous la marque EdDigital, 100 % à distance, en français et en anglais (UTC+1).
+
+## Services
+
+- [Création de site web au Bénin](https://bonieddy.netlify.app/services/creation-site-web-benin): sites vitrines et applications web pour les entreprises au Bénin.
+- [Développeur Django freelance](https://bonieddy.netlify.app/services/developpeur-django-freelance): API REST avec Django REST Framework, back-ends web et mobiles, PostgreSQL.
+- [Développeur Flutter freelance](https://bonieddy.netlify.app/services/developpeur-flutter-freelance): applications mobiles iOS et Android avec Flutter.
+- [Développeur React et Next.js freelance](https://bonieddy.netlify.app/services/developpeur-react-nextjs-freelance): applications web React/TypeScript et sites Next.js optimisés pour le SEO.
+
+## Stack
+
+- Back-end : Python, Django, Django REST Framework, PostgreSQL
+- Front-end : React, Next.js, TypeScript
+- Mobile : Flutter
+- Déploiement : Docker, Nginx
+
+## Projets
+
+- [Axis Transport](https://bonieddy.netlify.app/projets/axis-transport): plateforme de transport sur l'axe Parakou – Cotonou (billetterie de bus, envoi et suivi de colis, location de véhicules). Backend Django/DRF ; web en production, application mobile Flutter en phase de test.
+- [SD International Group](https://bonieddy.netlify.app/projets/sd-international-group): site vitrine Next.js bilingue FR/EN pour un groupe multisectoriel de Cotonou (BTP, énergie, logistique, import-export).
+
+## Contact
+
+- [Formulaire de contact](https://bonieddy.netlify.app/#contact)
+- Email : eddybaoke@gmail.com
+- [GitHub](https://github.com/Oluwafemi006)
+- [LinkedIn](https://www.linkedin.com/in/adjé-oladjidé-kenneth-eddy-boni-6794512b3/)
+- [ComeUp](https://comeup.com/fr/@eddy-boni)
+
+## English version
+
+- [Home (English)](https://bonieddy.netlify.app/en/)
+- [Freelance Django developer](https://bonieddy.netlify.app/en/services/freelance-django-developer)
+- [Freelance Flutter developer](https://bonieddy.netlify.app/en/services/freelance-flutter-developer)
+- [Freelance React and Next.js developer](https://bonieddy.netlify.app/en/services/freelance-react-nextjs-developer)
+- [Website development in Benin](https://bonieddy.netlify.app/en/services/website-development-benin)
+- [Axis Transport case study](https://bonieddy.netlify.app/en/projects/axis-transport)
+- [SD International Group case study](https://bonieddy.netlify.app/en/projects/sd-international-group)

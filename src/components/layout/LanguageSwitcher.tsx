@@ -1,4 +1,5 @@
 import { useLanguage, type Language } from "@/i18n/LanguageContext";
+import { pathFor } from "@/seo/routes";
 import { cn } from "@/lib/utils";
 
 const OPTIONS: { code: Language; label: string }[] = [
@@ -7,7 +8,7 @@ const OPTIONS: { code: Language; label: string }[] = [
 ];
 
 export function LanguageSwitcher({ className }: { className?: string }) {
-  const { language, setLanguage } = useLanguage();
+  const { language, page } = useLanguage();
 
   return (
     <div
@@ -19,11 +20,12 @@ export function LanguageSwitcher({ className }: { className?: string }) {
       aria-label="Choix de la langue / Language selection"
     >
       {OPTIONS.map((option) => (
-        <button
+        <a
           key={option.code}
-          type="button"
-          onClick={() => setLanguage(option.code)}
-          aria-pressed={language === option.code}
+          href={pathFor(page, option.code)}
+          hrefLang={option.code}
+          lang={option.code}
+          aria-current={language === option.code ? "page" : undefined}
           className={cn(
             "px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200",
             language === option.code
@@ -32,7 +34,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
           )}
         >
           {option.label}
-        </button>
+        </a>
       ))}
     </div>
   );

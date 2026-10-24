@@ -16,7 +16,9 @@ export const en: Translations = {
     role: "Full-Stack Developer",
     description:
       "I design and build high-performance, scalable, user-centered web and mobile applications for businesses and startups.",
-    descriptionStrong: "Remote-based.",
+    descriptionStrong: "Based in Cotonou, available remotely.",
+    geoSentence:
+      "Eddy Boni (BONI Adjé Oladjidé Kenneth Eddy) is a full-stack developer based in Cotonou, Benin. He builds web applications with Django/DRF, React and Next.js, and mobile apps with Flutter. He holds a Professional Bachelor's degree in Business Computing (IUT de Parakou, 2026) and works as a freelancer under the EdDigital brand.",
     ctaProjects: "View my projects",
     ctaContact: "Get in touch",
     ctaComeup: "Book on ComeUp",
@@ -25,9 +27,8 @@ export const en: Translations = {
   stats: {
     items: [
       { value: "3+", label: "Years of experience" },
-      { value: "20+", label: "Projects delivered" },
-      { value: "100%", label: "Client satisfaction" },
-      { value: "10k+", label: "Lines of code" },
+      { value: "10+", label: "Projects delivered" },
+      { value: "Licence Pro", label: "Business Computing degree (2026)" },
     ],
   },
   stack: {
@@ -38,7 +39,8 @@ export const en: Translations = {
     showLess: "Show less",
     items: [
       { name: "Next.js", desc: "Front-end & full-stack SSR" },
-      { name: "React JS / Native", desc: "SPAs & mobile apps" },
+      { name: "React JS", desc: "Web interfaces & SPAs" },
+      { name: "Flutter", desc: "iOS & Android mobile apps" },
       { name: "Django", desc: "Robust backend framework" },
       { name: "Docker", desc: "Containerization" },
       { name: "PostgreSQL", desc: "Relational database" },
@@ -108,7 +110,8 @@ export const en: Translations = {
     showLess: "Show less",
     statusDone: "Completed",
     statusInProgress: "In Progress",
-    statusMobileTesting: "Mobile app in testing",
+    statusMobileTesting: "Mobile (Flutter) in testing",
+    caseStudy: "Case study",
     liveDemo: "Live Demo",
     demoSoon: "Demo coming soon",
     code: "Code",
@@ -116,17 +119,17 @@ export const en: Translations = {
       {
         title: "Axis Transport",
         description:
-          "Web and mobile platform for a transport company on the Parakou – Cotonou route (Benin): ticket booking, parcel shipping and tracking, vehicle rental, and customer accounts. Website live in production, mobile app currently in testing.",
+          "Transport platform on the Parakou – Savè – Kétou – Porto-Novo – Cotonou route: bus ticketing, parcel shipping and tracking, vehicle rental. Django/DRF back end, web live in production, Flutter mobile app in testing.",
       },
       {
         title: "SD International Group",
         description:
-          "Bilingual FR/EN corporate website for a multi-sector Beninese group (construction, energy, import-export & logistics): service pages, HSE & quality, and a quote request flow.",
+          "Bilingual FR/EN Next.js corporate website for a multi-sector group in Cotonou (construction, energy, logistics, import-export): service pages, HSE & quality, contact, SEO and Open Graph.",
       },
       {
         title: "TalenexPro",
         description:
-          "A B2B platform where professionals trade expertise: earn credits by sharing your skills, spend them to learn from other experts.",
+          "A B2B platform where professionals trade skills: earn credits by sharing what you know, spend them to learn from other professionals.",
       },
       {
         title: "AfriRent Marketplace",
@@ -158,6 +161,7 @@ export const en: Translations = {
       "Transparent, agile communication",
       "Deployment and continuous integration (CI/CD)",
     ],
+    learnMore: "Learn more",
     items: [
       {
         title: "Full-Stack Web Development",
@@ -165,7 +169,7 @@ export const en: Translations = {
       },
       {
         title: "Mobile Applications",
-        description: "Developing native iOS and Android apps with React Native, sharing code for faster delivery.",
+        description: "Building iOS and Android mobile apps with Flutter from a single codebase.",
       },
       {
         title: "REST API & Backend",
@@ -184,7 +188,7 @@ export const en: Translations = {
     emailTitle: "Email",
     emailDesc: "Reach me directly at the following address:",
     locationTitle: "Location",
-    locationDesc: "Available 100% remote, anywhere in the world.",
+    locationDesc: "Based in Cotonou (Benin, UTC+1). Available remotely, anywhere in the world.",
     remoteFirst: "Remote First",
     form: {
       nameLabel: "Full name",
@@ -204,11 +208,84 @@ export const en: Translations = {
   },
   footer: {
     description:
-      "BONI Adjé Oladjidé Kenneth Eddy.\nFull-Stack Developer specialized in React, React Native, and Django. Building high-performance applications as a freelancer.",
+      "BONI Adjé Oladjidé Kenneth Eddy.\nFull-stack developer based in Cotonou: web apps with Django, React and Next.js, and mobile apps with Flutter. Freelancing under the EdDigital brand.",
     navTitle: "Navigation",
+    servicesTitle: "Services",
     socialTitle: "Social",
     availableForWork: "Available for new projects",
     rights: "All rights reserved.",
+  },
+  faq: {
+    titlePrefix: "Frequently Asked",
+    titleHighlight: "Questions",
+    subtitle: "What to know before we start a project together.",
+    items: [
+      {
+        question: "What services do you offer?",
+        answer:
+          "I build web applications with Django/DRF, React and Next.js, mobile apps with Flutter, REST APIs, and corporate websites for businesses.",
+      },
+      {
+        question: "What is your tech stack?",
+        answer:
+          "Back end: Python, Django, Django REST Framework and PostgreSQL. Front end: React, Next.js and TypeScript. Mobile: Flutter. Deployment: Docker and Nginx.",
+      },
+      {
+        question: "Do you work remotely?",
+        answer:
+          "Yes. I am based in Cotonou, Benin (UTC+1), and work fully remotely, in English or French, with clients in Benin and abroad.",
+      },
+      {
+        question: "How does a collaboration work, and what are the timelines?",
+        answer:
+          "In four steps: discovery, architecture and mockups, development and testing, then deployment and follow-up. Timelines depend on the scope and are agreed together after the discovery phase.",
+      },
+      {
+        question: "How can I contact you?",
+        answer:
+          "Through the contact form on this site, by email at eddybaoke@gmail.com, or via my ComeUp profile. Once we are in touch, I am also available on WhatsApp and by phone.",
+      },
+    ],
+  },
+  caseStudy: {
+    breadcrumbHome: "Home",
+    breadcrumbSection: "Projects",
+    backToProjects: "Back to projects",
+    context: "Client context",
+    problem: "Problem",
+    role: "My role",
+    stack: "Tech stack",
+    features: "Features",
+    screenshots: "Screenshots",
+    live: "Visit the live site",
+    ctaTitle: "Working on something similar?",
+    ctaText: "Let's talk about your needs and the best way to meet them.",
+    ctaButton: "Get in touch",
+  },
+  servicePage: {
+    breadcrumbHome: "Home",
+    breadcrumbSection: "Services",
+    offers: "What I offer",
+    stack: "Technologies",
+    howTitle: "How I work",
+    remoteHighlights: [
+      "Fully remote work",
+      "French speaker, also working in English",
+      "UTC+1 time zone",
+      "Clear communication via WhatsApp, email and calls",
+    ],
+    localHighlights: [
+      "Based in Cotonou, Benin",
+      "Websites in French, or bilingual French / English",
+      "UTC+1 time zone",
+      "Clear communication via WhatsApp, email and calls",
+    ],
+    related: "Related projects",
+    caseStudy: "Read the case study",
+    visit: "Visit the site",
+    ctaTitle: "Let's talk about your project",
+    ctaText: "Tell me what you need: I'll get back to you with a clear proposal.",
+    ctaButton: "Get in touch",
   },
   notFound: {
     code: "404",

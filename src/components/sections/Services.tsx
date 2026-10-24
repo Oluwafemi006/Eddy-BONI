@@ -1,12 +1,19 @@
 import { motion } from "framer-motion";
-import { Globe, Smartphone, ServerCog, Lightbulb } from "lucide-react";
+import { Globe, Smartphone, ServerCog, Lightbulb, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { pathFor } from "@/seo/routes";
+import { SERVICES as SERVICE_PAGES, type ServiceId } from "@/content/services";
 
-const SERVICE_ICONS = [Globe, Smartphone, ServerCog, Lightbulb];
+const SERVICE_META: { icon: typeof Globe; page: ServiceId | null }[] = [
+  { icon: Globe, page: "react-nextjs" },
+  { icon: Smartphone, page: "flutter" },
+  { icon: ServerCog, page: "django" },
+  { icon: Lightbulb, page: null },
+];
 
 export function Services() {
-  const { t } = useLanguage();
-  const SERVICES = t.services.items.map((item, i) => ({ ...item, icon: SERVICE_ICONS[i] }));
+  const { t, language } = useLanguage();
+  const SERVICES = t.services.items.map((item, i) => ({ ...item, ...SERVICE_META[i] }));
 
   return (
     <section id="services" className="py-24">
@@ -34,6 +41,12 @@ export function Services() {
                 </li>
               ))}
             </ul>
+            <a
+              href={pathFor({ kind: "service", id: "web-benin" }, language)}
+              className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+            >
+              {SERVICE_PAGES["web-benin"].content[language].h1} <ArrowRight size={16} />
+            </a>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -53,6 +66,16 @@ export function Services() {
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-2 font-display">{service.title}</h3>
                   <p className="text-sm text-muted-foreground">{service.description}</p>
+                  {service.page && (
+                    <a
+                      href={pathFor({ kind: "service", id: service.page }, language)}
+                      className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+                    >
+                      {t.services.learnMore}
+                      <span className="sr-only"> : {SERVICE_PAGES[service.page].content[language].h1}</span>
+                      <ArrowRight size={14} />
+                    </a>
+                  )}
                 </motion.div>
               );
             })}

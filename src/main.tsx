@@ -1,39 +1,13 @@
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 
-function removeReplitBranding() {
-  const selectors = [
-    ".replit-badge",
-    "#replit-badge",
-    ".replit-dev-banner",
-    "#replit-dev-banner",
-    "[data-replit-badge]",
-    "[data-replit-dev-banner]",
-    'iframe[src*="replit"]',
-    'a[href*="replit.com"]',
-  ];
+const container = document.getElementById("root")!;
+const app = <App pathname={window.location.pathname} />;
 
-  document.querySelectorAll<HTMLElement>(selectors.join(",")).forEach((el) => {
-    el.remove();
-  });
-
-  document.querySelectorAll<HTMLElement>("body *").forEach((el) => {
-    const text = el.textContent?.trim().toLowerCase() ?? "";
-    if (
-      text === "made with replit" ||
-      text === "powered by replit" ||
-      text.includes("made with replit")
-    ) {
-      el.remove();
-    }
-  });
+// Built pages ship prerendered HTML to hydrate; the dev server serves an empty root.
+if (container.firstElementChild) {
+  hydrateRoot(container, app);
+} else {
+  createRoot(container).render(app);
 }
-
-removeReplitBranding();
-new MutationObserver(removeReplitBranding).observe(document.documentElement, {
-  childList: true,
-  subtree: true,
-});
-
-createRoot(document.getElementById("root")!).render(<App />);

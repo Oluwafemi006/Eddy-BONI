@@ -1,26 +1,41 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, ShoppingBag, LayoutDashboard, Users, Repeat, Bus, Building2, Smartphone, ChevronDown, ChevronUp } from "lucide-react";
+import { ExternalLink, Github, ShoppingBag, LayoutDashboard, Users, Repeat, Bus, Building2, Smartphone, ChevronDown, ChevronUp, FileText } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { pathFor } from "@/seo/routes";
+import type { CaseStudyId } from "@/content/caseStudies";
 
-const PROJECTS_META = [
+type ProjectMeta = {
+  tags: string[];
+  icon: typeof Bus;
+  color: string;
+  done: boolean;
+  mobileTesting: boolean;
+  demoUrl: string | null;
+  codeUrl: string | null;
+  caseStudy?: CaseStudyId;
+};
+
+const PROJECTS_META: ProjectMeta[] = [
   {
-    tags: ["Next.js", "React Native", "Caddy", "VPS"],
+    tags: ["Django/DRF", "Flutter", "Next.js"],
     icon: Bus,
     color: "from-amber-500/20 to-orange-500/20 text-amber-400 border-amber-500/30",
     done: true,
     mobileTesting: true,
     demoUrl: "https://axistransportlogistique.com",
     codeUrl: null,
+    caseStudy: "axis-transport",
   },
   {
-    tags: ["Next.js", "i18n FR/EN", "Vercel", "Cloudflare"],
+    tags: ["Next.js", "i18n FR/EN", "SEO", "Open Graph"],
     icon: Building2,
     color: "from-sky-500/20 to-indigo-500/20 text-sky-400 border-sky-500/30",
     done: true,
     mobileTesting: false,
     demoUrl: "https://www.sd-internationalgroup.com",
     codeUrl: null,
+    caseStudy: "sd-international-group",
   },
   {
     tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "AWS EC2"],
@@ -41,7 +56,7 @@ const PROJECTS_META = [
     codeUrl: "https://github.com/Oluwafemi006/Afrirent",
   },
   {
-    tags: ["React Native", "Django REST", "PostgreSQL", "Stripe"],
+    tags: ["Flutter", "Django REST", "PostgreSQL", "Stripe"],
     icon: ShoppingBag,
     color: "from-blue-500/20 to-purple-500/20 text-blue-400 border-blue-500/30",
     done: false,
@@ -70,7 +85,7 @@ const PROJECTS_META = [
 ];
 
 export function Projects() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [showAll, setShowAll] = useState(false);
 
   const PROJECTS = t.projects.items.map((item, i) => ({
@@ -152,7 +167,16 @@ export function Projects() {
                       ))}
                     </div>
                     
-                    <div className="flex items-center gap-4 mt-auto pt-6 border-t border-white/5">
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-3 mt-auto pt-6 border-t border-white/5">
+                      {project.caseStudy && (
+                        <a
+                          href={pathFor({ kind: "project", id: project.caseStudy }, language)}
+                          className="flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+                        >
+                          <FileText size={16} /> {t.projects.caseStudy}
+                          <span className="sr-only"> : {project.title}</span>
+                        </a>
+                      )}
                       {project.demoUrl ? (
                         <a
                           href={project.demoUrl}

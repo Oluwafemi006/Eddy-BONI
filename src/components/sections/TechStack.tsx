@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Code2, Smartphone, Database, Server, Layout, Terminal, Github, Container, ChevronDown, ChevronUp, Network, Brackets } from "lucide-react";
+import { Atom, Code2, Smartphone, Database, Server, Layout, Terminal, Github, Container, ChevronDown, ChevronUp, Network, Brackets } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const TECH_META = [
   { icon: Layout, color: "text-white" },
-  { icon: Smartphone, color: "text-blue-400" },
+  { icon: Atom, color: "text-blue-400" },
+  { icon: Smartphone, color: "text-sky-400" },
   { icon: Server, color: "text-green-600" },
   { icon: Container, color: "text-blue-500" },
   { icon: Database, color: "text-blue-300" },

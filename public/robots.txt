@@ -1,5 +1,19 @@
 User-agent: *
 Allow: /
-Host: bonieddy.netlify.app
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
 
 Sitemap: https://bonieddy.netlify.app/sitemap.xml

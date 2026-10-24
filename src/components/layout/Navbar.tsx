@@ -4,18 +4,20 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+import { pathFor } from "@/seo/routes";
 
 export function Navbar() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const home = pathFor({ kind: "home" }, language);
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const NAV_LINKS = [
-    { name: t.nav.about, href: "#about" },
-    { name: t.nav.experience, href: "#experience" },
-    { name: t.nav.skills, href: "#skills" },
-    { name: t.nav.projects, href: "#projects" },
-    { name: t.nav.process, href: "#process" },
+    { name: t.nav.about, href: `${home}#about` },
+    { name: t.nav.experience, href: `${home}#experience` },
+    { name: t.nav.skills, href: `${home}#skills` },
+    { name: t.nav.projects, href: `${home}#projects` },
+    { name: t.nav.process, href: `${home}#process` },
   ];
 
   useEffect(() => {
@@ -38,7 +40,7 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="relative group flex items-center gap-2">
+        <a href={home} className="relative group flex items-center gap-2">
           <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20 group-hover:border-primary/50 transition-colors">
             <span className="font-display font-bold text-primary text-xl">EB</span>
           </div>
@@ -59,7 +61,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#contact"
+            href={`${home}#contact`}
             className="px-5 py-2.5 text-sm font-semibold rounded-lg bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-primary-foreground hover:box-glow transition-all duration-300"
           >
             {t.nav.contact}
@@ -100,7 +102,7 @@ export function Navbar() {
               <div className="pt-4 border-t border-white/5 flex flex-col gap-4">
                 <LanguageSwitcher className="self-start" />
                 <a
-                  href="#contact"
+                  href={`${home}#contact`}
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-center w-full px-5 py-3 text-base font-semibold rounded-lg bg-primary text-primary-foreground shadow-[0_0_15px_rgba(0,255,180,0.3)]"
                 >
