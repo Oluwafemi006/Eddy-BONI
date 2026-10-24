@@ -110,7 +110,7 @@ export const SERVICES: Record<ServiceId, Service> = {
       fr: {
         metaTitle: "Développeur Django freelance (Django REST Framework) | Eddy Boni",
         metaDescription:
-          "Développeur Django freelance : API REST avec Django REST Framework, back-ends d'applications web et mobiles, PostgreSQL. 100 % à distance, en français ; échanges écrits possibles en anglais.",
+          "Développeur Django freelance : API REST avec Django REST Framework, back-ends d'applications web et mobiles, PostgreSQL. 100 % à distance.",
         h1: "Développeur Django freelance",
         intro: [
           "Je développe des back-ends et des API REST avec Python, Django et Django REST Framework, pour des applications web et mobiles.",
@@ -126,7 +126,7 @@ export const SERVICES: Record<ServiceId, Service> = {
       en: {
         metaTitle: "Freelance Django developer (Django REST Framework) | Eddy Boni",
         metaDescription:
-          "Freelance Django developer: REST APIs with Django REST Framework, back ends for web and mobile apps, PostgreSQL. Fully remote, in French; written communication in English is possible.",
+          "Freelance Django developer: REST APIs with Django REST Framework, back ends for web and mobile apps, PostgreSQL. Fully remote.",
         h1: "Freelance Django developer",
         intro: [
           "I build back ends and REST APIs with Python, Django and Django REST Framework, for web and mobile applications.",
@@ -182,7 +182,7 @@ export const SERVICES: Record<ServiceId, Service> = {
       en: {
         metaTitle: "Freelance Flutter developer, iOS and Android apps | Eddy Boni",
         metaDescription:
-          "Freelance Flutter developer: iOS and Android mobile apps from a single codebase, connected to a REST API. Fully remote, in French; written communication in English is possible.",
+          "Freelance Flutter developer: iOS and Android mobile apps from a single codebase, connected to a REST API. Fully remote.",
         h1: "Freelance Flutter developer",
         intro: [
           "I build iOS and Android mobile apps with Flutter from a single codebase, connected to a Django REST Framework back end or to your existing API.",
@@ -241,7 +241,7 @@ export const SERVICES: Record<ServiceId, Service> = {
       en: {
         metaTitle: "Freelance React and Next.js developer | Eddy Boni",
         metaDescription:
-          "Freelance React and Next.js developer: TypeScript web apps, SEO-friendly Next.js websites, multilingual sites. Fully remote, in French; written communication in English is possible.",
+          "Freelance React and Next.js developer: TypeScript web apps, SEO-friendly Next.js websites, multilingual sites. Fully remote.",
         h1: "Freelance React and Next.js developer",
         intro: [
           "I build web applications with React, Next.js and TypeScript: fast interfaces, SEO-friendly websites, multilingual sites.",
