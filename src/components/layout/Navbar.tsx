@@ -24,9 +24,9 @@ export function Navbar() {
 
   const links = [
     { name: t.nav.home, href: home },
-    { name: t.nav.about, href: `${home}#about` },
+    { name: t.nav.services, href: `${home}#services` },
     { name: t.nav.projects, href: `${home}#projects` },
-    { name: t.nav.skills, href: `${home}#skills` },
+    { name: t.nav.about, href: `${home}#about` },
     { name: t.nav.experience, href: `${home}#experience` },
     { name: t.nav.contact, href: `${home}#contact` },
   ];

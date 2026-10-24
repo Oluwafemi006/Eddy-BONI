@@ -5,7 +5,8 @@ export const en: Translations = {
     about: "About",
     experience: "Experience",
     skills: "Skills",
-    projects: "Projects",
+    projects: "Work",
+    services: "Services",
     process: "Process",
     contact: "Contact",
     contactCta: "Get in touch",
@@ -18,18 +19,23 @@ export const en: Translations = {
     badge: "Available for Freelance",
     name: "Eddy Boni",
     role: "Full-Stack Developer",
-    description:
-      "I design and build high-performance, scalable, user-centered web and mobile applications for businesses and startups.",
-    descriptionStrong: "Based in Cotonou, available remotely.",
+    headlinePrefix: "I build your business's",
+    headlineHighlight: "websites, platforms and mobile apps",
+    headlineSuffix: "from design to launch.",
+    description: "Based in Cotonou, I work with businesses in Benin and abroad.",
+    descriptionStrong: "Let's talk about your project on WhatsApp.",
     geoSentence:
       "Eddy Boni (BONI Adjé Oladjidé Kenneth Eddy) is a full-stack developer based in Cotonou, Benin. He builds web applications with Django/DRF, React and Next.js, and mobile apps with Flutter. He holds a Professional Bachelor's degree in Business Computing (IUT de Parakou, 2026) and works as a freelancer under the EdDigital brand.",
-    ctaProjects: "View my projects",
+    ctaWhatsapp: "Chat on WhatsApp",
+    ctaProjects: "See my work",
     ctaContact: "Get in touch",
     ctaComeup: "Book on ComeUp",
     imageAlt: "Portrait of Eddy Boni",
-    headlinePrefix: "I build",
-    headlineHighlight: "digital products",
-    headlineSuffix: "that are useful and built to last.",
+  },
+  whatsapp: {
+    label: "WhatsApp",
+    message: "Hello Eddy, I would like to talk to you about a project.",
+    quoteMessage: "Hello Eddy, I would like a quote for: ",
   },
   about: {
     badge: "About me",
@@ -47,44 +53,16 @@ export const en: Translations = {
     },
   },
   stack: {
-    titlePrefix: "My",
-    titleHighlight: "skills",
-    subtitle: "Grouped by how much I actually use them.",
-    tiers: [
-      {
-        level: "mastered",
-        title: "Core technologies",
-        caption: "Used daily, on projects in production",
-        items: ["React", "TypeScript / JavaScript", "HTML / CSS", "Python", "Django and Django REST Framework", "REST APIs", "PostgreSQL / MySQL", "Git and GitHub", "Linux (Ubuntu)"],
-      },
-      {
-        level: "practice",
-        title: "Used in practice",
-        caption: "Applied on real projects",
-        items: [
-          "Next.js and Prisma",
-          "Flutter (mobile app)",
-          "Docker and Nginx",
-          "Dashboards and back offices",
-          "Online payments (Stripe, Mobile Money)",
-          "AI chatbot (Gemini)",
-          "UML and requirements analysis",
-          "Deployment (Railway, Netlify, PythonAnywhere, AWS EC2)",
-        ],
-      },
-      {
-        level: "learning",
-        title: "Currently learning",
-        caption: "Building up through practice",
-        items: ["React Native", "Pandas", "Scikit-learn"],
-      },
-    ],
+    title: "Technologies I use",
+    subtitle: "For technical readers: the tools I build your projects with.",
+    items: ["React", "Next.js", "TypeScript", "Python", "Django", "Django REST Framework", "PostgreSQL", "Flutter", "Docker", "Nginx", "Stripe", "Mobile Money", "Git"],
   },
   experience: {
     titlePrefix: "Professional",
     titleHighlight: "experience",
     subtitle: "Hands-on experience on real projects, in companies and as a freelancer.",
     caseStudyLink: "Read the case study",
+    cv: "Download my CV",
     items: [
       {
         role: "Technical partner",
@@ -177,8 +155,8 @@ export const en: Translations = {
   },
   projects: {
     titlePrefix: "My",
-    titleHighlight: "projects",
-    subtitle: "Real projects that show what I can do.",
+    titleHighlight: "work",
+    subtitle: "Real projects, described by what they let people do.",
     allProjects: "All my repositories on GitHub",
     inProgressTitle: "In development",
     statusLive: "Live",
@@ -192,68 +170,108 @@ export const en: Translations = {
     items: [
       {
         title: "Axis Transport",
+        outcome: "Axis customers book bus tickets and track their parcels online.",
         description:
           "Transport platform on the Parakou – Savè – Kétou – Porto-Novo – Cotonou route: bus ticketing, parcel shipping and tracking, vehicle rental. Django/DRF back end, web live in production, Flutter mobile app in testing.",
       },
       {
         title: "SD International Group",
+        outcome: "SD International Group presents its business lines (construction, energy, logistics, import-export) in French and English.",
         description:
           "Bilingual FR/EN Next.js corporate website for a multi-sector group in Cotonou (construction, energy, logistics, import-export): service pages, HSE & quality, contact, SEO and Open Graph.",
       },
       {
         title: "AfriRent Marketplace",
+        outcome: "Individuals list properties for rent and find a rental online.",
         description:
           "A Leboncoin-style marketplace for peer-to-peer rentals with authentication, listings, favorites, cart, and a secure backend API.",
       },
       {
         title: "LUXEL-G",
+        outcome: "A garage manages its bookings, customers and Mobile Money payments from one dashboard.",
         description:
           "Management system for a garage in Parakou (internship and final-year project): online booking, role-based dashboard, Mobile Money payment, SMS verification and an AI assistant.",
       },
       {
         title: "Mobile E-commerce App",
+        outcome: "A mobile shop: catalog, cart and checkout (in progress).",
         description: "Mobile MVP in development featuring a product catalog, cart, and a checkout flow still being finalized.",
       },
       {
         title: "RentBoard",
+        outcome: "A dashboard to track an online product's key metrics (in progress).",
         description: "Analytics dashboard in progress for tracking SaaS KPIs and product performance.",
       },
       {
         title: "HR Management REST API",
+        outcome: "Leave and schedule management for a team (in progress).",
         description: "HR API in progress with leave management, scheduling, authentication modules, and a scalability-focused architecture.",
       },
     ],
   },
   services: {
-    titlePrefix: "My",
-    titleHighlight: "services",
-    intro:
-      "I support companies from initial concept through to production launch of their digital products. My full-stack approach ensures technical consistency across your entire project.",
-    bullets: [
-      "Custom technical architecture",
-      "Clean, documented, and tested code",
-      "Transparent, agile communication",
-      "Deployment and continuous integration (CI/CD)",
-    ],
+    titlePrefix: "What I can",
+    titleHighlight: "do for you",
+    subtitle: "Practical solutions for your business, from design to launch.",
+    quote: "Request a quote",
     learnMore: "Learn more",
+    exampleLabel: "Real example",
     items: [
       {
-        title: "Full-Stack Web Development",
-        description: "Building robust, responsive web applications using the React ecosystem paired with the power of Django.",
+        id: "vitrine",
+        title: "Business website",
+        outcome: "A professional website that presents your company, your services and your contact details, easy to read on a phone.",
+        details: [
+          "Your business lines and services",
+          "Contact form",
+          "French and English versions if needed",
+          "Ready for Google search",
+        ],
+        example: "SD International Group",
+        exampleNote: "",
       },
       {
-        title: "Mobile Applications",
-        description: "Building iOS and Android mobile apps with Flutter from a single codebase.",
+        id: "plateforme",
+        title: "Custom platform: booking, management, customer accounts",
+        outcome: "An online tool built around your business: customers book and pay online, your team follows everything from a dashboard.",
+        details: [
+          "Online booking and payment (Mobile Money)",
+          "Customer accounts",
+          "Dashboard for your team",
+          "Access based on each employee's role",
+        ],
+        example: "Axis Transport",
+        exampleNote: "",
       },
       {
-        title: "REST API & Backend",
-        description: "Architecting and building secure, scalable APIs with Django REST Framework and PostgreSQL.",
-      },
-      {
-        title: "Consulting & Architecture",
-        description: "Technical guidance on architecture decisions, data modeling, and performance optimization.",
+        id: "mobile",
+        title: "Android / iOS mobile app",
+        outcome: "An app for your customers, connected to your platform, so they can use your services from their phone.",
+        details: [
+          "Android and iOS from a single project",
+          "Login and customer account",
+          "Connected to your web platform",
+          "Testing phase before store release",
+        ],
+        example: "Axis Transport",
+        exampleNote: "app in testing",
       },
     ],
+  },
+  sectors: {
+    titlePrefix: "Who I",
+    titleHighlight: "work with",
+    subtitle: "Sectors where I have already delivered projects.",
+    items: [
+      { id: "transport", title: "Transport", text: "Bus ticketing and parcel shipping", example: "Axis Transport" },
+      { id: "btp", title: "Construction & energy", text: "Website for a multi-sector group", example: "SD International Group" },
+      { id: "garage", title: "Car repair", text: "Bookings and workshop management", example: "Luxury Élégance Garage" },
+      { id: "online", title: "Online platforms", text: "Skill exchange, peer-to-peer rentals", example: "TalenexPro, AfriRent" },
+    ],
+  },
+  testimonials: {
+    title: "What clients say",
+    items: [] as { quote: string; author: string; company: string }[],
   },
   contact: {
     titlePrefix: "Let's work",

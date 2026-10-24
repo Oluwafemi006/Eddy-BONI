@@ -108,6 +108,7 @@ export function Projects() {
               </div>
               <div className="flex flex-1 flex-col gap-3 p-5">
                 <h3 className="text-lg font-bold text-white">{project.title}</h3>
+                <p className="text-[15px] font-medium leading-relaxed text-secondary-foreground">{project.outcome}</p>
                 <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium">
                   <span className="text-success">{project.demoUrl ? t.projects.statusLive : t.projects.statusDone}</span>
                   {project.mobileTesting && (
@@ -116,10 +117,10 @@ export function Projects() {
                     </span>
                   )}
                 </p>
-                <p className="text-sm leading-relaxed text-muted-foreground">{project.description}</p>
-                <ul className="mt-auto flex flex-wrap gap-1.5 pt-2">
+                <p className="text-[13px] leading-relaxed text-subtle">{project.description}</p>
+                <ul className="mt-auto flex flex-wrap gap-1 pt-2" aria-label="Stack">
                   {project.tags.map((tag) => (
-                    <li key={tag} className="rounded-md bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">
+                    <li key={tag} className="rounded bg-secondary px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
                       {tag}
                     </li>
                   ))}
@@ -164,7 +165,7 @@ export function Projects() {
                 ) : (
                   <span className="text-[15px] font-semibold text-white">{project.title}</span>
                 )}
-                <p className="text-sm leading-relaxed text-muted-foreground">{project.description}</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">{project.outcome}</p>
                 <p className="text-xs text-subtle">{project.tags.join(" · ")}</p>
               </li>
             ))}

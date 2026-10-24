@@ -3,6 +3,7 @@ import { fr } from "@/i18n/fr";
 import { en } from "@/i18n/en";
 import { CASE_STUDIES } from "@/content/caseStudies";
 import { SERVICES } from "@/content/services";
+import { OFFER_LINKS } from "@/content/offers";
 import { breadcrumbsFor } from "@/seo/breadcrumbs";
 import { absoluteUrl, pathFor, SITE_URL, type Page } from "@/seo/routes";
 
@@ -98,6 +99,19 @@ function homeNodes(language: Language): Node[] {
       address: ADDRESS,
       email: "mailto:eddybaoke@gmail.com",
       areaServed: "Worldwide",
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: `${t.services.titlePrefix} ${t.services.titleHighlight}`,
+        itemListElement: t.services.items.map((offer) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: offer.title,
+            description: offer.outcome,
+            url: absoluteUrl(pathFor({ kind: "service", id: OFFER_LINKS[offer.id].page }, language)),
+          },
+        })),
+      },
     },
     {
       "@type": "FAQPage",

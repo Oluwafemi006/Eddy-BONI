@@ -26,11 +26,11 @@ export function Footer() {
           <div>
             <h2 className="mb-4 text-sm font-semibold text-white">{t.footer.navTitle}</h2>
             <ul className="space-y-2.5">
-              <li><a href={`${home}#about`} className={linkClass}>{t.nav.about}</a></li>
+              <li><a href={`${home}#services`} className={linkClass}>{t.nav.services}</a></li>
               <li><a href={`${home}#projects`} className={linkClass}>{t.nav.projects}</a></li>
-              <li><a href={`${home}#skills`} className={linkClass}>{t.nav.skills}</a></li>
+              <li><a href={`${home}#about`} className={linkClass}>{t.nav.about}</a></li>
               <li><a href={`${home}#experience`} className={linkClass}>{t.nav.experience}</a></li>
-              <li><a href={`${home}#services`} className={linkClass}>{t.footer.servicesTitle}</a></li>
+              <li><a href={`${home}#skills`} className={linkClass}>{t.stack.title}</a></li>
               <li><a href={`${home}#contact`} className={linkClass}>{t.nav.contact}</a></li>
             </ul>
           </div>

@@ -1,10 +1,8 @@
 import type { CSSProperties } from "react";
-import { ArrowRight, Mail, ExternalLink } from "lucide-react";
+import { ArrowRight, Mail, ExternalLink, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { CONTACT } from "@/content/contact";
+import { CONTACT, whatsappLink } from "@/content/contact";
 import { PORTRAIT } from "@/content/portrait";
-
-const HERO_TECHS = ["Django", "React", "Next.js", "Flutter", "PostgreSQL"];
 
 const reveal = (delay: string) => ({ "--reveal-delay": delay }) as CSSProperties;
 
@@ -22,7 +20,7 @@ export function Hero() {
           <span className="text-base font-semibold text-muted-foreground sm:text-lg">
             {t.hero.name} — {t.hero.role}
           </span>
-          <span className="text-[34px] font-extrabold leading-[1.1] tracking-[-0.03em] text-white text-balance sm:text-5xl lg:text-[56px]">
+          <span className="text-[30px] font-extrabold leading-[1.12] tracking-[-0.03em] text-white text-balance sm:text-[40px] lg:text-[42px]">
             {t.hero.headlinePrefix} <span className="text-brand">{t.hero.headlineHighlight}</span> {t.hero.headlineSuffix}
           </span>
         </h1>
@@ -32,27 +30,29 @@ export function Hero() {
         </p>
 
         <div style={reveal("0.45s")} className="hero-reveal flex flex-wrap items-center gap-3">
-          <a href="#projects" className="inline-flex h-12 items-center gap-2.5 rounded-lg bg-primary px-5 text-[15px] font-semibold text-white transition-colors hover:bg-[#3B74F0]">
+          <a
+            href={whatsappLink(t.whatsapp.message)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-12 items-center gap-2.5 rounded-lg bg-primary px-5 text-[15px] font-semibold text-white transition-colors hover:bg-[#3B74F0]"
+          >
+            <MessageCircle size={18} aria-hidden="true" />
+            {t.hero.ctaWhatsapp}
+          </a>
+          <a href="#projects" className="inline-flex h-12 items-center gap-2.5 rounded-lg border border-[#3A4E73] px-5 text-[15px] font-semibold text-foreground transition-colors hover:border-brand hover:text-white">
             {t.hero.ctaProjects}
             <ArrowRight size={16} aria-hidden="true" />
           </a>
-          <a href="#contact" className="inline-flex h-12 items-center gap-2.5 rounded-lg border border-[#3A4E73] px-5 text-[15px] font-semibold text-foreground transition-colors hover:border-brand hover:text-white">
-            {t.hero.ctaContact}
-            <Mail size={16} aria-hidden="true" />
-          </a>
-          <a href={CONTACT.comeup} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center gap-2 px-2 text-[15px] font-semibold text-muted-foreground transition-colors hover:text-white">
-            {t.hero.ctaComeup}
-            <ExternalLink size={14} aria-hidden="true" />
-          </a>
         </div>
 
-        <ul style={reveal("0.6s")} className="hero-reveal flex flex-wrap gap-2" aria-label="Stack">
-          {HERO_TECHS.map((tech) => (
-            <li key={tech} className="rounded-md bg-secondary px-3 py-1.5 text-[13px] font-medium text-secondary-foreground">
-              {tech}
-            </li>
-          ))}
-        </ul>
+        <p style={reveal("0.6s")} className="hero-reveal flex flex-wrap gap-x-5 gap-y-2 text-sm">
+          <a href="#contact" className="inline-flex min-h-11 items-center gap-1.5 font-medium text-muted-foreground hover:text-white">
+            <Mail size={14} aria-hidden="true" /> {t.hero.ctaContact}
+          </a>
+          <a href={CONTACT.comeup} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-1.5 font-medium text-muted-foreground hover:text-white">
+            {t.hero.ctaComeup} <ExternalLink size={13} aria-hidden="true" />
+          </a>
+        </p>
       </div>
 
       <div style={{ "--reveal-delay": "0.3s", "--reveal-duration": "1.6s", "--reveal-distance": "40px" } as CSSProperties} className="hero-reveal relative mx-auto h-[330px] w-full max-w-[340px] sm:h-[420px] sm:max-w-[460px] lg:mr-0">
