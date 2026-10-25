@@ -244,6 +244,37 @@ export const fr = {
       },
     ],
   },
+  whyMe: {
+    titlePrefix: "Pourquoi",
+    titleHighlight: "travailler avec moi",
+    subtitle: "Des faits que vous pouvez vérifier, pas des promesses.",
+    items: [
+      {
+        id: "live",
+        title: "Des projets en ligne, pas des maquettes",
+        text: "Axis Transport et SD International Group sont en production : vous pouvez les visiter dès maintenant.",
+      },
+      {
+        id: "single",
+        title: "Un seul interlocuteur, du début à la fin",
+        text: "Je m'occupe de la conception, du développement et de la mise en ligne. Vous savez toujours à qui parler.",
+      },
+      {
+        id: "local",
+        title: "Adapté aux entreprises du Bénin",
+        text: "Paiement Mobile Money, sites en français ou bilingues, échanges simples sur WhatsApp.",
+      },
+      {
+        id: "international",
+        title: "Aussi à l'international",
+        text: "Partenaire technique en remote pour Talenex Inc. (Montréal) depuis 2026.",
+      },
+    ],
+  },
+  ctaBand: {
+    title: "Un projet en tête ?",
+    text: "Décrivez-moi votre besoin sur WhatsApp : je reviens vers vous avec une proposition claire.",
+  },
   sectors: {
     titlePrefix: "Pour",
     titleHighlight: "qui je travaille",
