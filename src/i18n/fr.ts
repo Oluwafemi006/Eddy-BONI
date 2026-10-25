@@ -106,7 +106,7 @@ export const fr = {
         role: "Développeur stagiaire — Système de gestion de garage (LUXEL-G)",
         company: "Luxury Élégance Garage",
         location: "Parakou, Bénin",
-        type: "Stage et projet de fin d'études",
+        type: "Stage",
         period: "2025 – 2026",
         status: "Terminé",
         current: false,
@@ -190,22 +190,7 @@ export const fr = {
         title: "LUXEL-G",
         outcome: "Un garage gère ses réservations, ses clients et ses paiements Mobile Money depuis un tableau de bord.",
         description:
-          "Système de gestion pour un garage de Parakou (stage et projet de fin d'études) : réservation en ligne, tableau de bord par rôles, paiement Mobile Money, vérification par SMS et assistant IA.",
-      },
-      {
-        title: "App E-commerce Mobile",
-        outcome: "Une boutique mobile : catalogue, panier et paiement (en cours).",
-        description: "MVP mobile en cours de développement avec catalogue produit, panier et tunnel de paiement à finaliser.",
-      },
-      {
-        title: "RentBoard",
-        outcome: "Un tableau de bord pour suivre les indicateurs d'un produit en ligne (en cours).",
-        description: "Dashboard analytique en cours de construction pour le suivi de KPIs SaaS et de la performance produit.",
-      },
-      {
-        title: "API REST Gestion RH",
-        outcome: "La gestion des congés et des plannings d'une équipe (en cours).",
-        description: "API RH en cours avec modules congés, plannings, authentification et architecture orientée scalabilité.",
+          "Système de gestion pour un garage de Parakou : réservation en ligne, tableau de bord par rôles, paiement Mobile Money, vérification par SMS et assistant IA.",
       },
     ],
   },
@@ -267,7 +252,7 @@ export const fr = {
       { id: "transport", title: "Transport", text: "Billetterie de bus et envoi de colis", example: "Axis Transport" },
       { id: "btp", title: "BTP & énergie", text: "Site vitrine d'un groupe multisectoriel", example: "SD International Group" },
       { id: "garage", title: "Garage automobile", text: "Réservations et gestion de l'atelier", example: "Luxury Élégance Garage" },
-      { id: "online", title: "Plateformes en ligne", text: "Échange de compétences, location entre particuliers", example: "TalenexPro, AfriRent" },
+      { id: "online", title: "Plateformes en ligne", text: "Échange de compétences entre professionnels", example: "TalenexPro" },
     ],
   },
   testimonials: {

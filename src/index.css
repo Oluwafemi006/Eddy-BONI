@@ -135,7 +135,7 @@
   transform: none;
 }
 
-/* Slow float for the hero portrait panels and code card (transform only, runs on the compositor). */
+/* Slow float for the hero portrait panels (transform only, runs on the compositor). */
 @keyframes float-a {
   from { transform: translateY(0); }
   to { transform: translateY(-10px); }
@@ -144,13 +144,8 @@
   from { transform: translateY(0); }
   to { transform: translateY(-12px); }
 }
-@keyframes float-c {
-  from { transform: translateY(0); }
-  to { transform: translateY(8px); }
-}
 .float-a { animation: float-a 9s ease-in-out infinite alternate; }
 .float-b { animation: float-b 7s ease-in-out infinite alternate; }
-.float-c { animation: float-c 8s ease-in-out 1s infinite alternate; }
 
 /* Slower, softer hovers. The lift uses the `translate` property, so it never fights the reveal `transform`. */
 .lift {
@@ -179,8 +174,7 @@
 
   .hero-reveal,
   .float-a,
-  .float-b,
-  .float-c {
+  .float-b {
     animation: none;
   }
 
