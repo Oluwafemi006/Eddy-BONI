@@ -9,7 +9,7 @@ export default function NotFound() {
   return (
     <main className="flex min-h-screen w-full items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <div className="mb-8 flex justify-center">
+        <div className="mb-8 flex justify-center" aria-hidden="true">
           <Logo />
         </div>
         <p className="mb-3 font-mono text-sm text-brand">{t.notFound.code}</p>

@@ -4,15 +4,11 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { pathFor } from "@/seo/routes";
 
+/** Wordmark: "Eddy" in white, "Boni" in the accent color. */
 export function Logo({ size = "md" }: { size?: "sm" | "md" }) {
   return (
-    <span
-      aria-hidden="true"
-      className={`flex items-center justify-center rounded-md bg-primary font-extrabold tracking-tighter text-white ${
-        size === "sm" ? "h-6 w-7 text-[11px]" : "h-7 w-[34px] text-sm"
-      }`}
-    >
-      EB
+    <span className={`font-extrabold tracking-[-0.02em] text-white ${size === "sm" ? "text-[17px]" : "text-xl"}`}>
+      Eddy <span className="text-brand">Boni</span>
     </span>
   );
 }
@@ -26,7 +22,6 @@ export function Navbar() {
     { name: t.nav.home, href: home },
     { name: t.nav.services, href: `${home}#services` },
     { name: t.nav.projects, href: `${home}#projects` },
-    { name: t.nav.about, href: `${home}#about` },
     { name: t.nav.experience, href: `${home}#experience` },
     { name: t.nav.contact, href: `${home}#contact` },
   ];
@@ -34,9 +29,8 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-background/90 backdrop-blur-md">
       <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between gap-6 px-4 sm:px-6">
-        <a href={home} className="flex items-center gap-2.5 text-[17px] font-bold text-white">
+        <a href={home} className="flex items-center">
           <Logo />
-          Eddy Boni
         </a>
 
         <nav aria-label={t.nav.label} className="hidden items-center gap-7 lg:flex">
@@ -55,7 +49,7 @@ export function Navbar() {
           <LanguageSwitcher />
           <a
             href={`${home}#contact`}
-            className="inline-flex h-11 items-center rounded-lg bg-primary px-4 text-sm font-semibold text-white transition-colors hover:bg-[#3B74F0]"
+            className="inline-flex h-11 items-center rounded-full bg-primary px-5 text-sm font-bold text-white transition-[background-color,translate] duration-300 hover:-translate-y-0.5 hover:bg-[#3B74F0]"
           >
             {t.nav.contactCta}
           </a>
@@ -91,7 +85,7 @@ export function Navbar() {
               <a
                 href={`${home}#contact`}
                 onClick={() => setOpen(false)}
-                className="inline-flex h-11 items-center rounded-lg bg-primary px-5 text-sm font-semibold text-white"
+                className="inline-flex h-11 items-center rounded-full bg-primary px-5 text-sm font-bold text-white"
               >
                 {t.nav.contactCta}
               </a>

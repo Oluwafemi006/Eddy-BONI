@@ -29,6 +29,8 @@
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
   --color-brand: hsl(var(--brand));
+  --color-brand-soft: hsl(var(--brand-soft));
+  --color-surface: hsl(var(--surface));
 
   --color-secondary: hsl(var(--secondary));
   --color-secondary-foreground: hsl(var(--secondary-foreground));
@@ -49,16 +51,18 @@
 }
 
 :root {
-  /* Navy background, blue accent */
-  --background: 221 52% 8%; /* #0A1120 */
+  /* Deep navy background, blue accent */
+  --background: 223 60% 6%; /* #060B18 */
+  --surface: 223 60% 7%; /* #070D1C, alternate sections */
   --foreground: 216 43% 93%; /* #E6ECF5 */
 
-  --card: 219 51% 12%; /* #0F1A2E */
+  --card: 221 57% 10%; /* #0B1428 */
   --card-foreground: 216 43% 93%;
 
   --primary: 221 83% 53%; /* #2563EB, white text 5.2:1 */
   --primary-foreground: 0 0% 100%;
   --brand: 221 100% 65%; /* #4D84FF, accent text on navy */
+  --brand-soft: 222 100% 78%; /* #8FB0FF, labels and links */
 
   --secondary: 219 51% 15%; /* #13213B */
   --secondary-foreground: 216 30% 84%;
@@ -70,8 +74,8 @@
   --success: 158 64% 67%; /* #6EE7B7 */
   --warning: 40 83% 69%; /* #F2C46D */
 
-  --border: 219 42% 19%; /* #1C2A44 */
-  --line: 218 45% 16%; /* #16233A, section dividers */
+  --border: 223 51% 18%; /* #172446 */
+  --line: 222 48% 13%; /* #121C33, section dividers */
   --input: 220 45% 24%;
   --ring: 221 100% 65%;
 }
@@ -145,7 +149,33 @@
   to { transform: translateY(-12px); }
 }
 .float-a { animation: float-a 9s ease-in-out infinite alternate; }
-.float-b { animation: float-b 7s ease-in-out infinite alternate; }
+.float-b { animation: float-b 7s ease-in-out infinite alternate; animation-delay: var(--d, 0s); }
+
+/* Soft breathing glow behind the hero portrait. */
+@keyframes glow {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 0.9; }
+}
+.glow { animation: glow 6s ease-in-out infinite; }
+
+/* "Available" dot. */
+@keyframes live-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.55); }
+  50% { box-shadow: 0 0 0 7px rgba(52, 211, 153, 0); }
+}
+.live-dot { animation: live-pulse 2.4s ease-out infinite; }
+
+/* Project preview: the page inside the browser frame scrolls down and back, slowly. */
+@keyframes shot-scroll {
+  0%, 15% { transform: translateY(0); }
+  45%, 60% { transform: translateY(var(--shot-distance, -34%)); }
+  90%, 100% { transform: translateY(0); }
+}
+.shot { animation: shot-scroll 12s cubic-bezier(0.65, 0, 0.35, 1) infinite; animation-delay: var(--d, 0s); }
+
+/* Arrow nudge on card hover. */
+.nudge { display: inline-block; transition: transform 0.5s var(--ease-slow); }
+.group:hover .nudge { transform: translateX(5px); }
 
 /* Slower, softer hovers. The lift uses the `translate` property, so it never fights the reveal `transform`. */
 .lift {
@@ -174,8 +204,15 @@
 
   .hero-reveal,
   .float-a,
-  .float-b {
+  .float-b,
+  .glow,
+  .live-dot,
+  .shot {
     animation: none;
+  }
+
+  .group:hover .nudge {
+    transform: none;
   }
 
   .motion .reveal {

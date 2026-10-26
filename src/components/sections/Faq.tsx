@@ -8,9 +8,9 @@ export function Faq() {
   const { t } = useLanguage();
 
   return (
-    <Section id="faq">
+    <Section id="faq" tone="alt">
       <div className="mx-auto max-w-3xl">
-        <SectionHeader title={`${t.faq.titlePrefix} ${t.faq.titleHighlight}`} subtitle={t.faq.subtitle} />
+        <SectionHeader eyebrow={t.faq.eyebrow} title={t.faq.titlePrefix} highlight={t.faq.titleHighlight} subtitle={t.faq.subtitle} size="md" />
         <div className="flex flex-col gap-3">
           {t.faq.items.map((item, i) => (
             <details key={item.question} style={stagger(i, 0.08)} className="reveal group rounded-2xl border border-border bg-card open:border-[#2F4A7A]">
