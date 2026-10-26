@@ -73,13 +73,6 @@ export function Hero() {
             />
           </picture>
         </div>
-        <div aria-hidden="true" className="float-c absolute bottom-0 left-0 hidden w-[320px] rounded-xl border border-[#22355A] bg-card px-4 py-3.5 font-mono text-[13px] leading-[1.7] text-secondary-foreground shadow-[0_20px_40px_rgba(0,0,0,0.35)] sm:block">
-          <div><span className="text-[#FF9E64]">const</span> developer = {"{"}</div>
-          <div className="pl-4">name: <span className="text-warning">'Eddy Boni'</span>,</div>
-          <div className="pl-4">stack: [<span className="text-warning">'React'</span>, <span className="text-warning">'Django'</span>, <span className="text-warning">'API'</span>],</div>
-          <div className="pl-4">goal: <span className="text-warning">'Build useful products'</span></div>
-          <div>{"};"}</div>
-        </div>
       </div>
     </section>
   );

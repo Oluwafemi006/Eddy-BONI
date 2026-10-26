@@ -101,8 +101,8 @@ export const SERVICES: Record<ServiceId, Service> = {
       {
         name: "Luxury Élégance Garage",
         note: {
-          fr: "Système de gestion de garage (stage et projet de fin d'études) : réservation en ligne et tableau de bord admin, Django REST Framework, React et PostgreSQL",
-          en: "Garage management system (internship and final-year project): online booking and admin dashboard, Django REST Framework, React and PostgreSQL",
+          fr: "Système de gestion de garage (stage) : réservation en ligne et tableau de bord admin, Django REST Framework, React et PostgreSQL",
+          en: "Garage management system (internship): online booking and admin dashboard, Django REST Framework, React and PostgreSQL",
         },
       },
     ],
@@ -152,13 +152,6 @@ export const SERVICES: Record<ServiceId, Service> = {
         note: {
           fr: "Application mobile Flutter, en phase de test",
           en: "Flutter mobile app, currently in testing",
-        },
-      },
-      {
-        name: "App E-commerce Mobile",
-        note: {
-          fr: "MVP mobile en cours : catalogue produit, panier et paiement",
-          en: "Mobile MVP in progress: product catalog, cart and checkout",
         },
       },
     ],

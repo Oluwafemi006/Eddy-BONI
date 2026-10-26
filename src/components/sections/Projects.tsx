@@ -52,30 +52,6 @@ const PROJECTS_META: ProjectMeta[] = [
     demoUrl: "https://luxuryelegancegarage.netlify.app",
     codeUrl: "https://github.com/Oluwafemi006/LUXEL-G",
   },
-  {
-    tags: ["Flutter", "Django REST", "PostgreSQL", "Stripe"],
-    icon: ShoppingBag,
-    done: false,
-    mobileTesting: false,
-    demoUrl: null,
-    codeUrl: null,
-  },
-  {
-    tags: ["React JS", "Chart.js", "FastAPI", "Redis"],
-    icon: LayoutDashboard,
-    done: false,
-    mobileTesting: false,
-    demoUrl: null,
-    codeUrl: "https://github.com/Oluwafemi006/Rentboard",
-  },
-  {
-    tags: ["Django", "PostgreSQL", "Docker", "Celery"],
-    icon: Users,
-    done: false,
-    mobileTesting: false,
-    demoUrl: null,
-    codeUrl: null,
-  },
 ];
 
 export function Projects() {

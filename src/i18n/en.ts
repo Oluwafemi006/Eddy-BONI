@@ -107,7 +107,7 @@ export const en: Translations = {
         role: "Intern Developer — Garage Management System (LUXEL-G)",
         company: "Luxury Élégance Garage",
         location: "Parakou, Benin",
-        type: "Internship and final-year project",
+        type: "Internship",
         period: "2025 – 2026",
         status: "Completed",
         current: false,
@@ -190,22 +190,7 @@ export const en: Translations = {
         title: "LUXEL-G",
         outcome: "A garage manages its bookings, customers and Mobile Money payments from one dashboard.",
         description:
-          "Management system for a garage in Parakou (internship and final-year project): online booking, role-based dashboard, Mobile Money payment, SMS verification and an AI assistant.",
-      },
-      {
-        title: "Mobile E-commerce App",
-        outcome: "A mobile shop: catalog, cart and checkout (in progress).",
-        description: "Mobile MVP in development featuring a product catalog, cart, and a checkout flow still being finalized.",
-      },
-      {
-        title: "RentBoard",
-        outcome: "A dashboard to track an online product's key metrics (in progress).",
-        description: "Analytics dashboard in progress for tracking SaaS KPIs and product performance.",
-      },
-      {
-        title: "HR Management REST API",
-        outcome: "Leave and schedule management for a team (in progress).",
-        description: "HR API in progress with leave management, scheduling, authentication modules, and a scalability-focused architecture.",
+          "Management system for a garage in Parakou: online booking, role-based dashboard, Mobile Money payment, SMS verification and an AI assistant.",
       },
     ],
   },
@@ -266,7 +251,7 @@ export const en: Translations = {
       { id: "transport", title: "Transport", text: "Bus ticketing and parcel shipping", example: "Axis Transport" },
       { id: "btp", title: "Construction & energy", text: "Website for a multi-sector group", example: "SD International Group" },
       { id: "garage", title: "Car repair", text: "Bookings and workshop management", example: "Luxury Élégance Garage" },
-      { id: "online", title: "Online platforms", text: "Skill exchange, peer-to-peer rentals", example: "TalenexPro, AfriRent" },
+      { id: "online", title: "Online platforms", text: "Skill exchange between professionals", example: "TalenexPro" },
     ],
   },
   testimonials: {
