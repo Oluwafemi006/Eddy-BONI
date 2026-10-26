@@ -4,6 +4,7 @@ import { Eyebrow } from "@/components/sections/SectionHeader";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { CONTACT, whatsappLink } from "@/content/contact";
 
+const capitalize = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
 const FORM_NAME = "contact";
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -43,7 +44,8 @@ export function Contact() {
     { icon: Linkedin, label: t.contact.linkedinTitle, value: "Eddy Boni", href: CONTACT.linkedin },
     { icon: Github, label: t.contact.githubTitle, value: CONTACT.githubLabel, href: CONTACT.github },
     { icon: ExternalLink, label: "ComeUp", value: "@eddy-boni", href: CONTACT.comeup },
-    { icon: MapPin, label: t.contact.locationTitle, value: t.about.facts.location, href: null },
+    // "Cotonou, Bénin · disponible en remote" → value "Cotonou, Bénin", label "Disponible en remote".
+    { icon: MapPin, label: capitalize(t.about.facts.location.split(" · ")[1] ?? t.contact.locationTitle), value: t.about.facts.location.split(" · ")[0], href: null },
   ];
 
   return (

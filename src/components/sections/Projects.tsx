@@ -31,7 +31,7 @@ type ProjectMeta = {
 const PROJECTS_META: ProjectMeta[] = [
   {
     tags: ["Django/DRF", "Flutter", "Next.js"],
-    categories: ["web", "plateforme", "mobile"],
+    categories: ["plateforme", "mobile"],
     icon: Bus,
     status: "live",
     demoUrl: "https://axistransportlogistique.com",
@@ -53,7 +53,7 @@ const PROJECTS_META: ProjectMeta[] = [
   },
   {
     tags: ["React", "TypeScript", "Django REST", "PostgreSQL"],
-    categories: ["web", "plateforme"],
+    categories: ["plateforme"],
     icon: ShoppingBag,
     status: "live",
     demoUrl: "https://afrirent.netlify.app",
@@ -63,7 +63,7 @@ const PROJECTS_META: ProjectMeta[] = [
   },
   {
     tags: ["Django REST", "React", "TypeScript", "PostgreSQL"],
-    categories: ["web", "plateforme"],
+    categories: ["plateforme"],
     icon: Wrench,
     status: "demo",
     demoUrl: "https://luxuryelegancegarage.netlify.app",
