@@ -1,4 +1,4 @@
-import { ExternalLink, Github, ShoppingBag, LayoutDashboard, Users, Bus, Building2, Wrench, ArrowRight, Smartphone } from "lucide-react";
+import { ExternalLink, Github, ShoppingBag, LayoutDashboard, Users, Bus, Building2, Wrench, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { pathFor } from "@/seo/routes";
 import type { CaseStudyId } from "@/content/caseStudies";
@@ -10,7 +10,6 @@ type ProjectMeta = {
   tags: string[];
   icon: typeof Bus;
   done: boolean;
-  mobileTesting: boolean;
   demoUrl: string | null;
   codeUrl: string | null;
   caseStudy?: CaseStudyId;
@@ -22,7 +21,6 @@ const PROJECTS_META: ProjectMeta[] = [
     tags: ["Django/DRF", "Flutter", "Next.js"],
     icon: Bus,
     done: true,
-    mobileTesting: true,
     demoUrl: "https://axistransportlogistique.com",
     codeUrl: null,
     caseStudy: "axis-transport",
@@ -31,7 +29,6 @@ const PROJECTS_META: ProjectMeta[] = [
     tags: ["Next.js", "i18n FR/EN", "SEO", "Open Graph"],
     icon: Building2,
     done: true,
-    mobileTesting: false,
     demoUrl: "https://www.sd-internationalgroup.com",
     codeUrl: null,
     caseStudy: "sd-international-group",
@@ -40,7 +37,6 @@ const PROJECTS_META: ProjectMeta[] = [
     tags: ["React", "TypeScript", "Django REST", "PostgreSQL", "Railway"],
     icon: ShoppingBag,
     done: true,
-    mobileTesting: false,
     demoUrl: "https://afrirent.netlify.app",
     codeUrl: "https://github.com/Oluwafemi006/Afrirent",
   },
@@ -48,7 +44,6 @@ const PROJECTS_META: ProjectMeta[] = [
     tags: ["Django REST", "React", "TypeScript", "PostgreSQL"],
     icon: Wrench,
     done: true,
-    mobileTesting: false,
     demoUrl: "https://luxuryelegancegarage.netlify.app",
     codeUrl: "https://github.com/Oluwafemi006/LUXEL-G",
   },
@@ -87,11 +82,6 @@ export function Projects() {
                 <p className="text-[15px] font-medium leading-relaxed text-secondary-foreground">{project.outcome}</p>
                 <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium">
                   <span className="text-success">{project.demoUrl ? t.projects.statusLive : t.projects.statusDone}</span>
-                  {project.mobileTesting && (
-                    <span className="inline-flex items-center gap-1 text-warning">
-                      <Smartphone size={12} aria-hidden="true" /> {t.projects.statusMobileTesting}
-                    </span>
-                  )}
                 </p>
                 <p className="text-[13px] leading-relaxed text-subtle">{project.description}</p>
                 <ul className="mt-auto flex flex-wrap gap-1 pt-2" aria-label="Stack">

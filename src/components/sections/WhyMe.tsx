@@ -1,10 +1,10 @@
-import { ExternalLink, Globe2, MapPin, UserRound, type LucideIcon } from "lucide-react";
+import { CreditCard, ExternalLink, Globe2, UserRound, type LucideIcon } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Section, SectionHeader } from "@/components/sections/SectionHeader";
 import { stagger } from "@/components/layout/useReveal";
 
 // Only verifiable facts: no client counts, revenue or satisfaction rates.
-const ICONS: Record<string, LucideIcon> = { live: ExternalLink, single: UserRound, local: MapPin, international: Globe2 };
+const ICONS: Record<string, LucideIcon> = { live: ExternalLink, single: UserRound, payments: CreditCard, international: Globe2 };
 
 export function WhyMe() {
   const { t } = useLanguage();
