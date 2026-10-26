@@ -153,8 +153,8 @@ export const SERVICES: Record<ServiceId, Service> = {
       {
         caseStudy: "axis-transport",
         note: {
-          fr: "Application mobile Flutter, en phase de test",
-          en: "Flutter mobile app, currently in testing",
+          fr: "Application mobile Flutter (Android et iOS)",
+          en: "Flutter mobile app (Android and iOS)",
         },
       },
     ],
@@ -172,7 +172,7 @@ export const SERVICES: Record<ServiceId, Service> = {
           "Applications mobiles iOS et Android avec Flutter",
           "Connexion à une API REST",
           "Authentification et espace utilisateur",
-          "Phase de test avant publication sur les stores",
+          "Accompagnement jusqu'à la publication sur les stores",
         ],
       },
       en: {
@@ -188,7 +188,7 @@ export const SERVICES: Record<ServiceId, Service> = {
           "iOS and Android mobile apps with Flutter",
           "REST API integration",
           "Authentication and user accounts",
-          "Testing phase before store release",
+          "Support through to app store release",
         ],
       },
     },
