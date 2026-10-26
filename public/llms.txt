@@ -1,17 +1,20 @@
 # Eddy Boni
 
-> Eddy Boni (BONI Adjé Oladjidé Kenneth Eddy) est un développeur full-stack basé à Cotonou, au Bénin. Il conçoit des applications web avec Django/DRF, React et Next.js, et des applications mobiles avec Flutter. Titulaire d'une Licence Professionnelle en Informatique de Gestion (IUT de Parakou, 2026), il travaille en freelance sous la marque EdDigital, 100 % à distance (UTC+1). Il travaille en français ; échanges écrits possibles en anglais.
+> Eddy Boni (BONI Adjé Oladjidé Kenneth Eddy) est un développeur full-stack basé à Cotonou, au Bénin. Il conçoit des sites web, des applications web et mobiles et des produits numériques pour les entreprises, avec Django/DRF, React, Next.js et Flutter. Titulaire d'une Licence Professionnelle en Informatique de Gestion (IUT de Parakou, 2026), il travaille en freelance sous la marque EdDigital, 100 % à distance (UTC+1). Il travaille en français ; échanges écrits possibles en anglais.
 
 ## Pour les entreprises
 
-- Site vitrine pour entreprise (exemple : SD International Group)
-- Plateforme sur mesure : réservation, gestion, espace client (exemple : Axis Transport)
-- Application mobile Android / iOS (exemple : Axis Transport, application en test)
+- Site web d'entreprise et landing page (exemple : SD International Group)
+- Application web métier et plateforme numérique : réservation, espace client, tableau de bord (exemple : Axis Transport)
+- Développement de MVP
+- Application mobile Android et iOS (exemple : Axis Transport, application en test)
+- Intégration d'API et de moyens de paiement
+- Automatisation de processus métier
 - Contact rapide : WhatsApp +229 01 96 62 06 95
 
 ## Services
 
-- [Création de site web au Bénin](https://bonieddy.netlify.app/services/creation-site-web-benin): sites vitrines et applications web pour les entreprises au Bénin.
+- [Création de site web et landing page](https://bonieddy.netlify.app/services/creation-site-web): sites web d'entreprise, landing pages et applications web.
 - [Développeur Django freelance](https://bonieddy.netlify.app/services/developpeur-django-freelance): API REST avec Django REST Framework, back-ends web et mobiles, PostgreSQL.
 - [Développeur Flutter freelance](https://bonieddy.netlify.app/services/developpeur-flutter-freelance): applications mobiles iOS et Android avec Flutter.
 - [Développeur React et Next.js freelance](https://bonieddy.netlify.app/services/developpeur-react-nextjs-freelance): applications web React/TypeScript et sites Next.js optimisés pour le SEO.
@@ -42,6 +45,6 @@
 - [Freelance Django developer](https://bonieddy.netlify.app/en/services/freelance-django-developer)
 - [Freelance Flutter developer](https://bonieddy.netlify.app/en/services/freelance-flutter-developer)
 - [Freelance React and Next.js developer](https://bonieddy.netlify.app/en/services/freelance-react-nextjs-developer)
-- [Website development in Benin](https://bonieddy.netlify.app/en/services/website-development-benin)
+- [Website and landing page development](https://bonieddy.netlify.app/en/services/website-development)
 - [Axis Transport case study](https://bonieddy.netlify.app/en/projects/axis-transport)
 - [SD International Group case study](https://bonieddy.netlify.app/en/projects/sd-international-group)

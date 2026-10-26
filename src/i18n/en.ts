@@ -16,18 +16,18 @@ export const en: Translations = {
     closeMenu: "Close menu",
   },
   hero: {
-    badge: "Available for Freelance",
+    badge: "Available for freelance projects",
     name: "Eddy Boni",
     role: "Full-Stack Developer",
-    headlinePrefix: "I build your business's",
-    headlineHighlight: "websites, platforms and mobile apps",
-    headlineSuffix: "from design to launch.",
-    description: "Based in Cotonou, I work with businesses in Benin and abroad.",
-    descriptionStrong: "Let's talk about your project on WhatsApp.",
+    headlinePrefix: "I build",
+    headlineHighlight: "websites, web apps and digital products",
+    headlineSuffix: "for businesses.",
+    description: "From landing pages to custom web applications, I turn business needs into working digital solutions.",
+    descriptionStrong: "Remote projects, wherever you are.",
     geoSentence:
-      "Eddy Boni (BONI Adjé Oladjidé Kenneth Eddy) is a full-stack developer based in Cotonou, Benin. He builds web applications with Django/DRF, React and Next.js, and mobile apps with Flutter. He holds a Professional Bachelor's degree in Business Computing (IUT de Parakou, 2026) and works as a freelancer under the EdDigital brand.",
-    ctaWhatsapp: "Chat on WhatsApp",
-    ctaProjects: "See my work",
+      "Eddy Boni (BONI Adjé Oladjidé Kenneth Eddy) is a full-stack developer based in Cotonou, Benin. He builds websites, web and mobile applications and digital products for businesses, with Django/DRF, React, Next.js and Flutter. He holds a Professional Bachelor's degree in Business Computing (IUT de Parakou, 2026) and works as a freelancer under the EdDigital brand.",
+    ctaWhatsapp: "Discuss your project",
+    ctaProjects: "Explore my work",
     ctaContact: "Get in touch",
     ctaComeup: "Book on ComeUp",
     imageAlt: "Portrait of Eddy Boni",
@@ -39,7 +39,7 @@ export const en: Translations = {
   },
   about: {
     badge: "About me",
-    title: "I build web and mobile applications and take them to production for businesses in Benin and abroad.",
+    title: "I design, build and ship websites, applications and digital products for businesses.",
     facts: {
       location: "Cotonou, Benin · available remotely",
       experience: "2 years of development experience",
@@ -55,7 +55,7 @@ export const en: Translations = {
   stack: {
     title: "Technologies I use",
     subtitle: "For technical readers: the tools I build your projects with.",
-    items: ["React", "Next.js", "TypeScript", "Python", "Django", "Django REST Framework", "PostgreSQL", "Flutter", "Docker", "Nginx", "Stripe", "Mobile Money", "Git"],
+    items: ["React", "Next.js", "TypeScript", "Python", "Django", "Django REST Framework", "PostgreSQL", "Flutter", "Docker", "Nginx", "Stripe", "Payment APIs", "Git"],
   },
   experience: {
     titlePrefix: "Professional",
@@ -140,8 +140,8 @@ export const en: Translations = {
         description: "In-depth analysis of your needs, goal-setting, and technical feasibility study.",
       },
       {
-        title: "2. Architecture & Design",
-        description: "Data modeling (UML), software architecture design, and interface mockups.",
+        title: "2. Scoping & Design",
+        description: "Functional specifications, technical architecture and interface mockups.",
       },
       {
         title: "3. Development & Testing",
@@ -188,49 +188,62 @@ export const en: Translations = {
       },
       {
         title: "LUXEL-G",
-        outcome: "A garage manages its bookings, customers and Mobile Money payments from one dashboard.",
+        outcome: "A garage manages its bookings, customers and online payments from one dashboard.",
         description:
-          "Management system for a garage in Parakou: online booking, role-based dashboard, Mobile Money payment, SMS verification and an AI assistant.",
+          "Management system for a garage in Parakou: online booking, role-based dashboard, online payment integration, SMS verification and an AI assistant.",
       },
     ],
   },
   services: {
     titlePrefix: "What I can",
     titleHighlight: "do for you",
-    subtitle: "Practical solutions for your business, from design to launch.",
+    subtitle: "Digital solutions for businesses, startups and entrepreneurs, from design to launch.",
     quote: "Request a quote",
     learnMore: "Learn more",
     exampleLabel: "Real example",
     items: [
       {
         id: "vitrine",
-        title: "Business website",
-        outcome: "A professional website that presents your company, your services and your contact details, easy to read on a phone.",
+        title: "Corporate website and landing page",
+        outcome: "A professional website to present your company, or a landing page to launch an offer and generate leads.",
         details: [
-          "Your business lines and services",
-          "Contact form",
+          "Corporate site or conversion-focused single page",
+          "Contact form and calls to action",
           "French and English versions if needed",
-          "Ready for Google search",
+          "Search engine optimized (SEO)",
         ],
         example: "SD International Group",
         exampleNote: "",
       },
       {
         id: "plateforme",
-        title: "Custom platform: booking, management, customer accounts",
-        outcome: "An online tool built around your business: customers book and pay online, your team follows everything from a dashboard.",
+        title: "Web application and digital platform",
+        outcome: "An online tool built around your business: customers book and pay online, your team runs everything from a dashboard.",
         details: [
-          "Online booking and payment (Mobile Money)",
+          "Online booking and payment",
           "Customer accounts",
-          "Dashboard for your team",
-          "Access based on each employee's role",
+          "Dashboard and back office",
+          "Role-based access control",
         ],
         example: "Axis Transport",
         exampleNote: "",
       },
       {
+        id: "mvp",
+        title: "MVP development",
+        outcome: "A first working version of your product, to put in front of your first users and improve from there.",
+        details: [
+          "Scoping the core features",
+          "Web, mobile or both",
+          "Launch and first user feedback",
+          "A technical base ready to grow",
+        ],
+        example: "",
+        exampleNote: "",
+      },
+      {
         id: "mobile",
-        title: "Android / iOS mobile app",
+        title: "Android and iOS mobile app",
         outcome: "An app for your customers, connected to your platform, so they can use your services from their phone.",
         details: [
           "Android and iOS from a single project",
@@ -240,6 +253,32 @@ export const en: Translations = {
         ],
         example: "Axis Transport",
         exampleNote: "app in testing",
+      },
+      {
+        id: "integrations",
+        title: "API and payment integrations",
+        outcome: "I connect your website or app to the services you need: online payments, notifications, external tools.",
+        details: [
+          "Online payment method integration",
+          "SMS notifications",
+          "Third-party API integrations",
+          "REST APIs for your web and mobile apps",
+        ],
+        example: "TalenexPro, LUXEL-G",
+        exampleNote: "",
+      },
+      {
+        id: "automatisation",
+        title: "Workflow automation",
+        outcome: "I cut your team's repetitive work by automating the recurring tasks of your business.",
+        details: [
+          "Identifying the tasks to automate",
+          "Automated scripts and jobs",
+          "Connecting your tools through their APIs",
+          "Monitoring and adjustments",
+        ],
+        example: "",
+        exampleNote: "",
       },
     ],
   },
@@ -259,13 +298,13 @@ export const en: Translations = {
         text: "I handle design, development and launch. You always know who to talk to.",
       },
       {
-        id: "local",
-        title: "Built for businesses in Benin",
-        text: "Mobile Money payments, French or bilingual websites, simple communication on WhatsApp.",
+        id: "payments",
+        title: "Payments and integrated services",
+        text: "Online payment methods, SMS notifications and third-party APIs integrated on real projects.",
       },
       {
         id: "international",
-        title: "International experience too",
+        title: "International experience",
         text: "Remote technical partner for Talenex Inc. (Montreal) since 2026.",
       },
     ],
@@ -320,7 +359,7 @@ export const en: Translations = {
   },
   footer: {
     description:
-      "BONI Adjé Oladjidé Kenneth Eddy.\nFull-stack developer based in Cotonou: web apps with Django, React and Next.js, and mobile apps with Flutter. Freelancing under the EdDigital brand.",
+      "BONI Adjé Oladjidé Kenneth Eddy.\nFull-stack developer based in Cotonou: websites, web and mobile apps, and digital products for businesses. Freelancing under the EdDigital brand.",
     navTitle: "Navigation",
     servicesTitle: "Services",
     socialTitle: "Social",
@@ -335,7 +374,7 @@ export const en: Translations = {
       {
         question: "What services do you offer?",
         answer:
-          "I build web applications with Django/DRF, React and Next.js, mobile apps with Flutter, REST APIs, and corporate websites for businesses.",
+          "Corporate websites and landing pages, web applications and digital platforms, MVPs, Android and iOS mobile apps, API and payment integrations, and workflow automation.",
       },
       {
         question: "What is your tech stack?",
@@ -345,7 +384,7 @@ export const en: Translations = {
       {
         question: "Do you work remotely?",
         answer:
-          "Yes. I am based in Cotonou, Benin (UTC+1), and work fully remotely with clients in Benin and abroad. I work in French; written communication in English is possible.",
+          "Yes. I am based in Cotonou, Benin (UTC+1), and work fully remotely with businesses wherever they are. I work in French; written communication in English is possible.",
       },
       {
         question: "How does a collaboration work, and what are the timelines?",

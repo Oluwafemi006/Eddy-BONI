@@ -14,18 +14,18 @@ export const fr = {
     closeMenu: "Fermer le menu",
   },
   hero: {
-    badge: "Disponible en Freelance",
+    badge: "Disponible pour des projets freelance",
     name: "Eddy Boni",
     role: "Développeur Full-Stack",
-    headlinePrefix: "Je crée les",
-    headlineHighlight: "sites, plateformes et applications mobiles",
-    headlineSuffix: "de votre entreprise, de la conception à la mise en ligne.",
-    description: "Basé à Cotonou, je travaille avec des entreprises au Bénin et à l'étranger.",
-    descriptionStrong: "Parlons de votre projet sur WhatsApp.",
+    headlinePrefix: "Je crée des",
+    headlineHighlight: "sites web, des applications et des produits numériques",
+    headlineSuffix: "pour les entreprises.",
+    description: "De la landing page à l'application web sur mesure, je transforme des besoins métier en solutions numériques fonctionnelles.",
+    descriptionStrong: "Projets menés à distance, où que vous soyez.",
     geoSentence:
-      "Eddy Boni (BONI Adjé Oladjidé Kenneth Eddy) est un développeur full-stack basé à Cotonou, au Bénin. Il conçoit des applications web avec Django/DRF, React et Next.js, et des applications mobiles avec Flutter. Titulaire d'une Licence Professionnelle en Informatique de Gestion (IUT de Parakou, 2026), il travaille en freelance sous la marque EdDigital.",
-    ctaWhatsapp: "Discuter sur WhatsApp",
-    ctaProjects: "Voir mes réalisations",
+      "Eddy Boni (BONI Adjé Oladjidé Kenneth Eddy) est un développeur full-stack basé à Cotonou, au Bénin. Il conçoit des sites web, des applications web et mobiles et des produits numériques pour les entreprises, avec Django/DRF, React, Next.js et Flutter. Titulaire d'une Licence Professionnelle en Informatique de Gestion (IUT de Parakou, 2026), il travaille en freelance sous la marque EdDigital.",
+    ctaWhatsapp: "Parlons de votre projet",
+    ctaProjects: "Découvrir mes réalisations",
     ctaContact: "Me contacter",
     ctaComeup: "Commander sur ComeUp",
     imageAlt: "Portrait d'Eddy Boni",
@@ -37,7 +37,7 @@ export const fr = {
   },
   about: {
     badge: "À propos de moi",
-    title: "Je construis et je mets en production des applications web et mobiles pour des entreprises au Bénin et à l'étranger.",
+    title: "Je conçois, développe et mets en production des sites web, des applications et des produits numériques pour les entreprises.",
     facts: {
       location: "Cotonou, Bénin · disponible en remote",
       experience: "2 ans d'expérience en développement",
@@ -53,7 +53,7 @@ export const fr = {
   stack: {
     title: "Technologies utilisées",
     subtitle: "Pour les profils techniques : les outils avec lesquels je construis vos projets.",
-    items: ["React", "Next.js", "TypeScript", "Python", "Django", "Django REST Framework", "PostgreSQL", "Flutter", "Docker", "Nginx", "Stripe", "Mobile Money", "Git"],
+    items: ["React", "Next.js", "TypeScript", "Python", "Django", "Django REST Framework", "PostgreSQL", "Flutter", "Docker", "Nginx", "Stripe", "API de paiement", "Git"],
   },
   experience: {
     titlePrefix: "Expérience",
@@ -140,8 +140,8 @@ export const fr = {
         description: "Analyse approfondie de vos besoins, définition des objectifs et étude de faisabilité technique.",
       },
       {
-        title: "2. Architecture & Design",
-        description: "Modélisation des données (UML), conception de l'architecture logicielle et maquettage de l'interface.",
+        title: "2. Cadrage & Conception",
+        description: "Spécifications fonctionnelles, architecture technique et maquettes de l'interface.",
       },
       {
         title: "3. Développement & Tests",
@@ -188,50 +188,63 @@ export const fr = {
       },
       {
         title: "LUXEL-G",
-        outcome: "Un garage gère ses réservations, ses clients et ses paiements Mobile Money depuis un tableau de bord.",
+        outcome: "Un garage gère ses réservations, ses clients et ses paiements en ligne depuis un tableau de bord.",
         description:
-          "Système de gestion pour un garage de Parakou : réservation en ligne, tableau de bord par rôles, paiement Mobile Money, vérification par SMS et assistant IA.",
+          "Système de gestion pour un garage de Parakou : réservation en ligne, tableau de bord par rôles, intégration du paiement en ligne, vérification par SMS et assistant IA.",
       },
     ],
   },
   services: {
     titlePrefix: "Ce que je peux",
     titleHighlight: "faire pour vous",
-    subtitle: "Des solutions concrètes pour votre entreprise, de la conception à la mise en ligne.",
+    subtitle: "Des solutions numériques pour les entreprises, les startups et les entrepreneurs, de la conception à la mise en ligne.",
     quote: "Demander un devis",
     learnMore: "En savoir plus",
     exampleLabel: "Exemple réel",
-    // Only services backed by a real project. Landing page / online shop: add once confirmed.
+    // Only services Eddy has delivered (confirmed: landing page, MVP, automation). `example` stays empty until a real one is named.
     items: [
       {
         id: "vitrine",
-        title: "Site vitrine pour entreprise",
-        outcome: "Un site professionnel qui présente votre entreprise, vos services et vos coordonnées, agréable à consulter sur téléphone.",
+        title: "Site web d'entreprise et landing page",
+        outcome: "Un site professionnel pour présenter votre entreprise, ou une landing page pour lancer une offre et générer des demandes de contact.",
         details: [
-          "Présentation de vos activités et de vos services",
-          "Formulaire de contact",
+          "Site vitrine ou page unique orientée conversion",
+          "Formulaire de contact et appels à l'action",
           "Version française et anglaise si besoin",
-          "Préparé pour le référencement sur Google",
+          "Optimisé pour le référencement (SEO)",
         ],
         example: "SD International Group",
         exampleNote: "",
       },
       {
         id: "plateforme",
-        title: "Plateforme sur mesure : réservation, gestion, espace client",
-        outcome: "Un outil en ligne adapté à votre activité : vos clients réservent et paient en ligne, votre équipe suit tout depuis un tableau de bord.",
+        title: "Application web métier et plateforme numérique",
+        outcome: "Un outil en ligne adapté à votre activité : vos clients réservent et paient en ligne, votre équipe pilote tout depuis un tableau de bord.",
         details: [
-          "Réservation et paiement en ligne (Mobile Money)",
+          "Réservation et paiement en ligne",
           "Espace client avec compte",
-          "Tableau de bord pour votre équipe",
-          "Accès adapté au rôle de chaque employé",
+          "Tableau de bord et back-office",
+          "Gestion des rôles et des accès",
         ],
         example: "Axis Transport",
         exampleNote: "",
       },
       {
+        id: "mvp",
+        title: "Développement de MVP",
+        outcome: "Une première version fonctionnelle de votre produit, pour le présenter à vos premiers utilisateurs et le faire évoluer ensuite.",
+        details: [
+          "Cadrage des fonctionnalités essentielles",
+          "Version web, mobile ou les deux",
+          "Mise en ligne et premiers retours utilisateurs",
+          "Base technique prête à évoluer",
+        ],
+        example: "",
+        exampleNote: "",
+      },
+      {
         id: "mobile",
-        title: "Application mobile Android / iOS",
+        title: "Application mobile Android et iOS",
         outcome: "Une application pour vos clients, reliée à votre plateforme, pour utiliser vos services depuis leur téléphone.",
         details: [
           "Android et iOS à partir d'un seul projet",
@@ -241,6 +254,32 @@ export const fr = {
         ],
         example: "Axis Transport",
         exampleNote: "application en test",
+      },
+      {
+        id: "integrations",
+        title: "Intégration d'API et de moyens de paiement",
+        outcome: "Je connecte votre site ou votre application aux services dont vous avez besoin : paiement en ligne, notifications, outils externes.",
+        details: [
+          "Intégration de moyens de paiement en ligne",
+          "Notifications par SMS",
+          "Connexion à des API tierces",
+          "API REST pour vos applications web et mobiles",
+        ],
+        example: "TalenexPro, LUXEL-G",
+        exampleNote: "",
+      },
+      {
+        id: "automatisation",
+        title: "Automatisation de processus métier",
+        outcome: "Je réduis les tâches répétitives de votre équipe en automatisant les traitements récurrents de votre activité.",
+        details: [
+          "Analyse des tâches à automatiser",
+          "Scripts et traitements automatiques",
+          "Connexion entre vos outils via leurs API",
+          "Suivi et ajustements",
+        ],
+        example: "",
+        exampleNote: "",
       },
     ],
   },
@@ -260,13 +299,13 @@ export const fr = {
         text: "Je m'occupe de la conception, du développement et de la mise en ligne. Vous savez toujours à qui parler.",
       },
       {
-        id: "local",
-        title: "Adapté aux entreprises du Bénin",
-        text: "Paiement Mobile Money, sites en français ou bilingues, échanges simples sur WhatsApp.",
+        id: "payments",
+        title: "Paiements et services intégrés",
+        text: "Intégration de moyens de paiement en ligne, de notifications SMS et d'API tierces sur des projets réels.",
       },
       {
         id: "international",
-        title: "Aussi à l'international",
+        title: "Expérience internationale",
         text: "Partenaire technique en remote pour Talenex Inc. (Montréal) depuis 2026.",
       },
     ],
@@ -322,7 +361,7 @@ export const fr = {
   },
   footer: {
     description:
-      "BONI Adjé Oladjidé Kenneth Eddy.\nDéveloppeur full-stack basé à Cotonou : applications web avec Django, React et Next.js, et mobiles avec Flutter. Freelance sous la marque EdDigital.",
+      "BONI Adjé Oladjidé Kenneth Eddy.\nDéveloppeur full-stack basé à Cotonou : sites web, applications web et mobiles, et produits numériques pour les entreprises. Freelance sous la marque EdDigital.",
     navTitle: "Navigation",
     servicesTitle: "Services",
     socialTitle: "Réseaux",
@@ -337,7 +376,7 @@ export const fr = {
       {
         question: "Quels services proposez-vous ?",
         answer:
-          "Je développe des applications web avec Django/DRF, React et Next.js, des applications mobiles avec Flutter, des API REST et des sites vitrines pour les entreprises.",
+          "Sites web d'entreprise et landing pages, applications web et plateformes numériques, MVP, applications mobiles Android et iOS, intégration d'API et de moyens de paiement, et automatisation de processus métier.",
       },
       {
         question: "Quelle est votre stack technique ?",
@@ -347,7 +386,7 @@ export const fr = {
       {
         question: "Travaillez-vous à distance ?",
         answer:
-          "Oui. Je suis basé à Cotonou, au Bénin (UTC+1), et je travaille 100 % à distance avec des clients au Bénin et à l'international. Je travaille en français ; échanges écrits possibles en anglais.",
+          "Oui. Je suis basé à Cotonou, au Bénin (UTC+1), et je travaille 100 % à distance, avec des entreprises où qu'elles se trouvent. Je travaille en français ; échanges écrits possibles en anglais.",
       },
       {
         question: "Comment se déroule une collaboration, et quels sont les délais ?",
