@@ -243,6 +243,37 @@ export const en: Translations = {
       },
     ],
   },
+  whyMe: {
+    titlePrefix: "Why",
+    titleHighlight: "work with me",
+    subtitle: "Facts you can check, not promises.",
+    items: [
+      {
+        id: "live",
+        title: "Live projects, not mockups",
+        text: "Axis Transport and SD International Group are in production: you can visit them right now.",
+      },
+      {
+        id: "single",
+        title: "One point of contact, start to finish",
+        text: "I handle design, development and launch. You always know who to talk to.",
+      },
+      {
+        id: "local",
+        title: "Built for businesses in Benin",
+        text: "Mobile Money payments, French or bilingual websites, simple communication on WhatsApp.",
+      },
+      {
+        id: "international",
+        title: "International experience too",
+        text: "Remote technical partner for Talenex Inc. (Montreal) since 2026.",
+      },
+    ],
+  },
+  ctaBand: {
+    title: "Have a project in mind?",
+    text: "Tell me what you need on WhatsApp: I'll get back to you with a clear proposal.",
+  },
   sectors: {
     titlePrefix: "Who I",
     titleHighlight: "work with",
