@@ -16,9 +16,8 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 pb-8 pt-14 sm:px-6">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-5">
           <div className="md:col-span-2">
-            <a href={home} className="mb-4 flex items-center gap-2.5 font-bold text-white">
+            <a href={home} className="mb-4 inline-flex">
               <Logo size="sm" />
-              Eddy Boni
             </a>
             <p className="max-w-sm whitespace-pre-line text-sm leading-relaxed text-muted-foreground">{t.footer.description}</p>
           </div>

@@ -1,5 +1,6 @@
-import { useState, type ChangeEvent, type FormEvent } from "react";
-import { Mail, Github, Linkedin, MapPin, Send, Loader2, Globe, MessageCircle } from "lucide-react";
+import { useState, type ChangeEvent, type CSSProperties, type FormEvent } from "react";
+import { ArrowRight, ExternalLink, Mail, Github, Linkedin, MapPin, Send, Loader2, MessageCircle } from "lucide-react";
+import { Eyebrow } from "@/components/sections/SectionHeader";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { CONTACT, whatsappLink } from "@/content/contact";
 
@@ -37,69 +38,80 @@ export function Contact() {
   };
 
   const links = [
-    { icon: MessageCircle, label: t.whatsapp.label, value: "+229 01 96 62 06 95", href: whatsappLink(t.whatsapp.message) },
     { icon: Mail, label: t.contact.emailTitle, value: CONTACT.email, href: `mailto:${CONTACT.email}` },
-    { icon: Github, label: t.contact.githubTitle, value: CONTACT.githubLabel, href: CONTACT.github },
+    { icon: MessageCircle, label: t.whatsapp.label, value: "+229 01 96 62 06 95", href: whatsappLink(t.whatsapp.message) },
     { icon: Linkedin, label: t.contact.linkedinTitle, value: "Eddy Boni", href: CONTACT.linkedin },
+    { icon: Github, label: t.contact.githubTitle, value: CONTACT.githubLabel, href: CONTACT.github },
+    { icon: ExternalLink, label: "ComeUp", value: "@eddy-boni", href: CONTACT.comeup },
+    { icon: MapPin, label: t.contact.locationTitle, value: t.about.facts.location, href: null },
   ];
 
   return (
-    <section id="contact" className="border-t border-line">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="reveal rounded-3xl border border-border bg-card p-6 sm:p-10 lg:p-14">
-          <div className="mx-auto mb-10 flex max-w-xl flex-col items-center gap-4 text-center">
-            <span aria-hidden="true" className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-brand">
-              <Send size={22} />
-            </span>
-            <h2 className="text-[28px] font-extrabold text-white sm:text-4xl">
-              {t.contact.titlePrefix} {t.contact.titleHighlight}
-            </h2>
-            <p className="leading-relaxed text-muted-foreground">{t.contact.subtitle}</p>
-            <div className="flex flex-wrap justify-center gap-3 pt-2">
-              <a href={whatsappLink(t.whatsapp.message)} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center gap-2.5 rounded-lg bg-primary px-5 text-[15px] font-semibold text-white transition-colors hover:bg-[#3B74F0]">
-                <MessageCircle size={16} aria-hidden="true" /> {t.hero.ctaWhatsapp}
-              </a>
-              <a href={CONTACT.github} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center gap-2.5 rounded-lg border border-[#3A4E73] px-5 text-[15px] font-semibold text-foreground transition-colors hover:border-brand hover:text-white">
-                {t.contact.githubCta} <Github size={16} aria-hidden="true" />
-              </a>
-            </div>
+    <section id="contact" className="border-t border-line bg-[linear-gradient(180deg,#0A1530_0%,#060B18_100%)]">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-[88px] lg:grid-cols-2 lg:gap-12">
+        <div className="reveal flex flex-col gap-5">
+          <Eyebrow>{t.contact.eyebrow}</Eyebrow>
+          <h2 className="text-[30px] font-extrabold leading-[1.1] tracking-[-0.03em] text-white sm:text-[40px]">
+            {t.contact.titlePrefix} <span className="text-brand">{t.contact.titleHighlight}</span>
+          </h2>
+          <p className="text-base leading-relaxed text-muted-foreground">{t.contact.subtitle}</p>
+          <div className="flex flex-wrap gap-3 pt-1">
+            <a
+              href={whatsappLink(t.whatsapp.message)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-[52px] items-center gap-2.5 rounded-full bg-primary px-6 text-[15px] font-bold text-white transition-[background-color,translate] duration-300 hover:-translate-y-0.5 hover:bg-[#3B74F0]"
+            >
+              <MessageCircle size={17} aria-hidden="true" /> {t.contact.whatsappCta}
+            </a>
+            <a
+              href={`mailto:${CONTACT.email}`}
+              className="group inline-flex h-[52px] items-center gap-2.5 rounded-full border border-[#2A3B62] px-6 text-[15px] font-semibold text-foreground transition-[border-color,color,translate] duration-300 hover:-translate-y-0.5 hover:border-brand hover:text-white"
+            >
+              {t.contact.emailCta} <ArrowRight size={16} className="nudge" aria-hidden="true" />
+            </a>
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
-            <div className="flex flex-col gap-3">
-              {links.map(({ icon: Icon, label, value, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className="flex items-center gap-4 rounded-xl border border-border px-4 py-3.5 transition-colors hover:border-brand"
-                >
-                  <Icon size={18} className="shrink-0 text-brand" aria-hidden="true" />
+          <ul className="mt-3 grid gap-4 rounded-[20px] border border-[#1C2A48] bg-[rgba(11,20,40,0.8)] p-5 sm:grid-cols-2">
+            {links.map(({ icon: Icon, label, value, href }) => {
+              const content = (
+                <>
+                  <span aria-hidden="true" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-secondary text-brand-soft">
+                    <Icon size={17} />
+                  </span>
                   <span className="flex min-w-0 flex-col">
+                    <span className="truncate text-sm font-bold text-white transition-colors group-hover:text-brand-soft">{value}</span>
                     <span className="text-xs text-subtle">{label}</span>
-                    <span className="truncate text-sm font-medium text-foreground">{value}</span>
                   </span>
-                </a>
-              ))}
-              <div className="flex items-start gap-4 rounded-xl border border-border px-4 py-3.5">
-                <MapPin size={18} className="mt-0.5 shrink-0 text-brand" aria-hidden="true" />
-                <span className="flex flex-col gap-1">
-                  <span className="text-xs text-subtle">{t.contact.locationTitle}</span>
-                  <span className="text-sm text-foreground">{t.contact.locationDesc}</span>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-brand">
-                    <Globe size={12} aria-hidden="true" /> {t.contact.remoteFirst}
-                  </span>
-                </span>
-              </div>
-            </div>
+                </>
+              );
+              return (
+                <li key={label}>
+                  {href ? (
+                    <a
+                      href={href}
+                      {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      className="group flex min-h-11 items-center gap-3 rounded-lg"
+                    >
+                      {content}
+                    </a>
+                  ) : (
+                    <div className="flex min-h-11 items-center gap-3">{content}</div>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
 
+        <div style={{ "--d": "0.15s" } as CSSProperties} className="reveal">
             <form
               name={FORM_NAME}
               method="POST"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
-              className="flex flex-col gap-4 rounded-2xl border border-border bg-background/60 p-5 sm:p-6"
+              className="flex flex-col gap-4 rounded-[20px] border border-border bg-card p-5 sm:p-7"
             >
               <h3 className="text-base font-bold text-white">{t.contact.formTitle}</h3>
               <input type="hidden" name="form-name" value={FORM_NAME} />
@@ -125,7 +137,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="inline-flex h-12 items-center justify-center gap-2 self-start rounded-lg bg-primary px-6 text-[15px] font-semibold text-white transition-colors hover:bg-[#3B74F0] disabled:cursor-not-allowed disabled:opacity-70"
+                className="inline-flex h-12 items-center justify-center gap-2 self-start rounded-full bg-primary px-6 text-[15px] font-semibold text-white transition-colors hover:bg-[#3B74F0] disabled:cursor-not-allowed disabled:opacity-70"
               >
                 {status === "sending" ? (
                   <>
@@ -150,7 +162,6 @@ export function Contact() {
                 )}
               </p>
             </form>
-          </div>
         </div>
       </div>
     </section>

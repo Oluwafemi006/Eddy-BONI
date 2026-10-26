@@ -20,14 +20,14 @@ export function Services() {
   const { t, language } = useLanguage();
 
   return (
-    <Section id="services">
-      <SectionHeader title={`${t.services.titlePrefix} ${t.services.titleHighlight}`} subtitle={t.services.subtitle} />
-      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+    <Section id="services" tone="alt">
+      <SectionHeader eyebrow={t.services.eyebrow} title={t.services.titlePrefix} highlight={t.services.titleHighlight} subtitle={t.services.subtitle} />
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {t.services.items.map((offer, i) => {
           const meta = OFFER_LINKS[offer.id];
           const Icon = ICONS[offer.id];
           return (
-            <article key={offer.id} style={stagger(i, 0.15)} className="reveal lift flex flex-col gap-4 rounded-2xl border border-border bg-card p-6 hover:border-[#2F4A7A] sm:p-7">
+            <article key={offer.id} style={stagger(i, 0.15)} className="reveal lift flex flex-col gap-4 rounded-[20px] border border-border bg-card p-6 hover:border-[#2C4680] hover:bg-[#0F1A33] sm:p-7">
               <span aria-hidden="true" className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white">
                 <Icon size={22} />
               </span>
@@ -59,13 +59,13 @@ export function Services() {
                   href={whatsappLink(`${t.whatsapp.quoteMessage}${offer.title}`)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-11 items-center gap-2 rounded-lg bg-primary px-4 text-sm font-semibold text-white transition-colors hover:bg-[#3B74F0]"
+                  className="inline-flex h-11 items-center gap-2 rounded-full bg-primary px-5 text-sm font-bold text-white transition-colors hover:bg-[#3B74F0]"
                 >
                   <MessageCircle size={16} aria-hidden="true" />
                   {t.services.quote}
                   <span className="sr-only"> : {offer.title}</span>
                 </a>
-                <a href={pathFor({ kind: "service", id: meta.page }, language)} className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-brand hover:text-white">
+                <a href={pathFor({ kind: "service", id: meta.page }, language)} className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-brand-soft hover:text-white">
                   {t.services.learnMore}
                   <span className="sr-only"> : {SERVICE_PAGES[meta.page].content[language].h1}</span>
                   <ArrowRight size={14} aria-hidden="true" />

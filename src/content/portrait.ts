@@ -3,6 +3,6 @@
 export const PORTRAIT = {
   avif: "/images/eddy-boni-v2-240.avif 240w, /images/eddy-boni-v2-480.avif 480w",
   webp: "/images/eddy-boni-v2-240.webp 240w, /images/eddy-boni-v2-480.webp 480w",
-  // Rendered 290px tall below 640px wide (~194px wide), 350px tall above (~234px wide).
-  sizes: "(min-width: 640px) 234px, 194px",
+  // Rendered 310px tall below 640px wide (~207px wide), 410px tall above (~273px wide).
+  sizes: "(min-width: 640px) 273px, 207px",
 } as const;

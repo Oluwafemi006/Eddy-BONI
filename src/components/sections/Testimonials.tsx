@@ -8,7 +8,7 @@ export function Testimonials() {
 
   return (
     <Section id="testimonials">
-      <SectionHeader title={t.testimonials.title} />
+      <SectionHeader title={t.testimonials.title} size="md" />
       <ul className="grid gap-5 md:grid-cols-2">
         {t.testimonials.items.map((review) => (
           <li key={review.author} className="reveal flex flex-col gap-4 rounded-2xl border border-border bg-card p-6">
