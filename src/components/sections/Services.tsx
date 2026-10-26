@@ -1,4 +1,4 @@
-import { Globe, LayoutDashboard, Smartphone, ArrowRight, Check, MessageCircle } from "lucide-react";
+import { Globe, LayoutDashboard, Smartphone, Rocket, PlugZap, Workflow, ArrowRight, Check, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { pathFor } from "@/seo/routes";
 import { SERVICES as SERVICE_PAGES } from "@/content/services";
@@ -7,7 +7,14 @@ import { whatsappLink } from "@/content/contact";
 import { Section, SectionHeader } from "@/components/sections/SectionHeader";
 import { stagger } from "@/components/layout/useReveal";
 
-const ICONS: Record<string, typeof Globe> = { vitrine: Globe, plateforme: LayoutDashboard, mobile: Smartphone };
+const ICONS: Record<string, typeof Globe> = {
+  vitrine: Globe,
+  plateforme: LayoutDashboard,
+  mvp: Rocket,
+  mobile: Smartphone,
+  integrations: PlugZap,
+  automatisation: Workflow,
+};
 
 export function Services() {
   const { t, language } = useLanguage();
@@ -15,7 +22,7 @@ export function Services() {
   return (
     <Section id="services">
       <SectionHeader title={`${t.services.titlePrefix} ${t.services.titleHighlight}`} subtitle={t.services.subtitle} />
-      <div className="grid gap-5 lg:grid-cols-3">
+      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {t.services.items.map((offer, i) => {
           const meta = OFFER_LINKS[offer.id];
           const Icon = ICONS[offer.id];
@@ -34,13 +41,19 @@ export function Services() {
                   </li>
                 ))}
               </ul>
-              <p className="rounded-lg bg-background/60 px-3 py-2.5 text-sm text-muted-foreground">
-                <span className="text-subtle">{t.services.exampleLabel} : </span>
-                <a href={pathFor({ kind: "project", id: meta.caseStudy }, language)} className="font-semibold text-white hover:text-brand">
-                  {offer.example}
-                </a>
-                {offer.exampleNote && <span className="text-warning"> ({offer.exampleNote})</span>}
-              </p>
+              {offer.example && (
+                <p className="rounded-lg bg-background/60 px-3 py-2.5 text-sm text-muted-foreground">
+                  <span className="text-subtle">{t.services.exampleLabel} : </span>
+                  {meta.caseStudy ? (
+                    <a href={pathFor({ kind: "project", id: meta.caseStudy }, language)} className="font-semibold text-white hover:text-brand">
+                      {offer.example}
+                    </a>
+                  ) : (
+                    <span className="font-semibold text-white">{offer.example}</span>
+                  )}
+                  {offer.exampleNote && <span className="text-warning"> ({offer.exampleNote})</span>}
+                </p>
+              )}
               <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 pt-1">
                 <a
                   href={whatsappLink(`${t.whatsapp.quoteMessage}${offer.title}`)}

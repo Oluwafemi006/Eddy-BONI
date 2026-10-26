@@ -25,14 +25,15 @@ export type Service = {
   content: Localized<ServiceContent>;
 };
 
-export type ServiceId = "web-benin" | "django" | "flutter" | "react-nextjs";
+export type ServiceId = "web" | "django" | "flutter" | "react-nextjs";
 
 const AFRIRENT_URL = "https://afrirent.netlify.app";
 
 export const SERVICES: Record<ServiceId, Service> = {
-  "web-benin": {
-    slug: { fr: "creation-site-web-benin", en: "website-development-benin" },
-    scope: "local",
+  // Formerly "web-benin" (/services/creation-site-web-benin): old URLs 301 to the new ones in netlify.toml.
+  web: {
+    slug: { fr: "creation-site-web", en: "website-development" },
+    scope: "worldwide",
     serviceType: { fr: "Création de site web", en: "Website development" },
     stack: ["Next.js", "React", "Django", "PostgreSQL"],
     related: [
@@ -50,34 +51,36 @@ export const SERVICES: Record<ServiceId, Service> = {
     ],
     content: {
       fr: {
-        metaTitle: "Création de site web au Bénin (Cotonou) | Eddy Boni, développeur",
+        metaTitle: "Création de site web et landing page | Eddy Boni, développeur",
         metaDescription:
-          "Développeur full-stack basé à Cotonou : création de sites vitrines et d'applications web pour les entreprises au Bénin, avec Next.js, React et Django.",
-        h1: "Création de site web au Bénin",
+          "Développeur full-stack freelance : sites web d'entreprise, landing pages et applications web avec Next.js, React et Django. Projets menés à distance.",
+        h1: "Création de site web et landing page",
         intro: [
-          "Développeur full-stack basé à Cotonou, je crée des sites web et des applications web pour les entreprises au Bénin : sites vitrines, plateformes de réservation, espaces clients.",
-          "J'ai notamment réalisé le site de SD International Group et la plateforme Axis Transport, deux entreprises béninoises.",
+          "Je crée des sites web d'entreprise, des landing pages et des applications web : sites vitrines, plateformes de réservation, espaces clients.",
+          "J'ai notamment réalisé le site de SD International Group et la plateforme Axis Transport.",
         ],
         offers: [
-          "Sites vitrines pour entreprises, bilingues français / anglais si besoin",
-          "Plateformes web sur mesure : réservation, espace client, back-office",
-          "SEO de base : balises meta, Open Graph, sitemap",
+          "Sites web d'entreprise, bilingues français / anglais si besoin",
+          "Landing pages pour lancer une offre et générer des demandes de contact",
+          "Applications web sur mesure : réservation, espace client, back-office",
+          "SEO technique : balises meta, Open Graph, sitemap",
           "Mise en ligne du site",
         ],
       },
       en: {
-        metaTitle: "Website development in Benin (Cotonou) | Eddy Boni, developer",
+        metaTitle: "Website and landing page development | Eddy Boni, developer",
         metaDescription:
-          "Full-stack developer based in Cotonou: corporate websites and web applications for businesses in Benin, built with Next.js, React and Django.",
-        h1: "Website development in Benin",
+          "Freelance full-stack developer: corporate websites, landing pages and web applications built with Next.js, React and Django. Fully remote projects.",
+        h1: "Website and landing page development",
         intro: [
-          "As a full-stack developer based in Cotonou, I build websites and web applications for businesses in Benin: corporate websites, booking platforms, customer portals.",
-          "Past work includes the SD International Group website and the Axis Transport platform, both for Beninese companies.",
+          "I build corporate websites, landing pages and web applications: business websites, booking platforms, customer portals.",
+          "Past work includes the SD International Group website and the Axis Transport platform.",
         ],
         offers: [
           "Corporate websites, bilingual French / English when needed",
-          "Custom web platforms: booking, customer accounts, back office",
-          "SEO essentials: meta tags, Open Graph, sitemap",
+          "Landing pages to launch an offer and generate leads",
+          "Custom web applications: booking, customer accounts, back office",
+          "Technical SEO: meta tags, Open Graph, sitemap",
           "Going live with your website",
         ],
       },
@@ -150,8 +153,8 @@ export const SERVICES: Record<ServiceId, Service> = {
       {
         caseStudy: "axis-transport",
         note: {
-          fr: "Application mobile Flutter, en phase de test",
-          en: "Flutter mobile app, currently in testing",
+          fr: "Application mobile Flutter (Android et iOS)",
+          en: "Flutter mobile app (Android and iOS)",
         },
       },
     ],
@@ -169,7 +172,7 @@ export const SERVICES: Record<ServiceId, Service> = {
           "Applications mobiles iOS et Android avec Flutter",
           "Connexion à une API REST",
           "Authentification et espace utilisateur",
-          "Phase de test avant publication sur les stores",
+          "Accompagnement jusqu'à la publication sur les stores",
         ],
       },
       en: {
@@ -185,7 +188,7 @@ export const SERVICES: Record<ServiceId, Service> = {
           "iOS and Android mobile apps with Flutter",
           "REST API integration",
           "Authentication and user accounts",
-          "Testing phase before store release",
+          "Support through to app store release",
         ],
       },
     },

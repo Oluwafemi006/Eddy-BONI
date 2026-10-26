@@ -8,6 +8,17 @@
 # No SPA fallback: every page is prerendered to its own HTML file (scripts/prerender.mjs),
 # and unknown URLs get a real 404 status from dist/404.html.
 
+# The Benin-only website service page became a general one (international positioning).
+[[redirects]]
+  from = "/services/creation-site-web-benin"
+  to = "/services/creation-site-web"
+  status = 301
+
+[[redirects]]
+  from = "/en/services/website-development-benin"
+  to = "/en/services/website-development"
+  status = 301
+
 # Vite fingerprints everything in /assets, so those files can be cached forever.
 [[headers]]
   for = "/assets/*"

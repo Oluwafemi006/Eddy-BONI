@@ -8,14 +8,14 @@ import { absoluteUrl, LANGUAGES, pathFor, SITE_URL, type Page } from "@/seo/rout
 
 const HOME_META: Record<Language, { title: string; description: string }> = {
   fr: {
-    title: "Sites web et apps mobiles au Bénin | Eddy Boni, développeur full-stack",
+    title: "Eddy Boni, développeur full-stack | Sites web, applications et MVP",
     description:
-      "Sites vitrines, plateformes sur mesure et apps mobiles, de la conception à la mise en ligne. Développeur full-stack freelance (Django, React, Flutter), Cotonou.",
+      "Sites web, landing pages, applications web et mobiles, MVP et intégrations d'API. Développeur full-stack freelance, projets menés à distance.",
   },
   en: {
-    title: "Websites and mobile apps in Benin | Eddy Boni, full-stack developer",
+    title: "Eddy Boni, full-stack developer | Websites, web apps and MVPs",
     description:
-      "Business websites, custom platforms and mobile apps, from design to launch. Freelance full-stack developer (Django, React, Flutter) in Cotonou, Benin.",
+      "Corporate websites, landing pages, web and mobile apps, MVPs and API integrations. Freelance full-stack developer working remotely with businesses.",
   },
 };
 

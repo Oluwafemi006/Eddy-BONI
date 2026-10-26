@@ -57,8 +57,8 @@ export const CASE_STUDIES: Record<CaseStudyId, CaseStudy> = {
           "Étude de cas : plateforme de transport sur l'axe Parakou – Cotonou (Bénin). Billetterie de bus, envoi et suivi de colis, location. Django/DRF et Flutter.",
         h1: "Axis Transport : billetterie, colis et location de véhicules",
         summary:
-          "Plateforme de transport sur l'axe Parakou – Cotonou : billetterie de bus, envoi et suivi de colis, location de véhicules. Backend Django/DRF, application web en production et application mobile Flutter en phase de test.",
-        status: "Web en production · Mobile (Flutter) en phase de test",
+          "Plateforme de transport sur l'axe Parakou – Cotonou : billetterie de bus, envoi et suivi de colis, location de véhicules. Backend Django/DRF, application web en production et application mobile Flutter.",
+        status: "Plateforme web en production · application mobile Flutter",
         context: [
           "Axis Transport est une compagnie de transport qui opère sur l'axe Parakou – Savè – Kétou – Porto-Novo – Cotonou, au Bénin.",
           "Son activité réunit trois services : le transport de voyageurs en bus, l'envoi de colis et la location de véhicules.",
@@ -73,7 +73,7 @@ export const CASE_STUDIES: Record<CaseStudyId, CaseStudy> = {
           "Location de véhicules",
           "Espace client avec connexion et profil",
           "Backend Django / Django REST Framework",
-          "Application mobile Flutter, actuellement en phase de test",
+          "Application mobile Flutter (Android et iOS)",
         ],
       },
       en: {
@@ -82,8 +82,8 @@ export const CASE_STUDIES: Record<CaseStudyId, CaseStudy> = {
           "Case study: transport platform on the Parakou – Cotonou route in Benin. Bus ticketing, parcel shipping and tracking, vehicle rental. Django/DRF and Flutter.",
         h1: "Axis Transport: bus tickets, parcels and vehicle rental",
         summary:
-          "Transport platform on the Parakou – Cotonou route: bus ticketing, parcel shipping and tracking, and vehicle rental. Django/DRF back end, web app live in production, Flutter mobile app in testing.",
-        status: "Web live in production · Mobile (Flutter) in testing",
+          "Transport platform on the Parakou – Cotonou route: bus ticketing, parcel shipping and tracking, and vehicle rental. Django/DRF back end, web app live in production and a Flutter mobile app.",
+        status: "Web platform live in production · Flutter mobile app",
         context: [
           "Axis Transport is a transport company operating on the Parakou – Savè – Kétou – Porto-Novo – Cotonou route in Benin.",
           "The business combines three services: bus passenger transport, parcel shipping, and vehicle rental.",
@@ -96,7 +96,7 @@ export const CASE_STUDIES: Record<CaseStudyId, CaseStudy> = {
           "Vehicle rental",
           "Customer accounts with login and profile",
           "Django / Django REST Framework back end",
-          "Flutter mobile app, currently in testing",
+          "Flutter mobile app (Android and iOS)",
         ],
       },
     },
