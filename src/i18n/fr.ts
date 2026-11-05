@@ -7,14 +7,17 @@ export const fr = {
     services: "Services",
     process: "Process",
     contact: "Contact",
-    contactCta: "Me contacter",
+    contactCta: "Discutons-en",
     home: "Accueil",
     label: "Navigation principale",
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
   },
   hero: {
-    badge: "Disponible pour des projets freelance",
+    badge: "Disponible pour des projets freelance et des opportunités professionnelles.",
+    chipLiveTitle: "Projets en production",
+    chipLiveText: "Axis Transport, SD International",
+    chipPayments: "Paiements en ligne intégrés",
     name: "Eddy Boni",
     role: "Développeur Full-Stack",
     headlinePrefix: "Je crée des",
@@ -56,10 +59,12 @@ export const fr = {
     items: ["React", "Next.js", "TypeScript", "Python", "Django", "Django REST Framework", "PostgreSQL", "Flutter", "Docker", "Nginx", "Stripe", "API de paiement", "Git"],
   },
   experience: {
-    titlePrefix: "Expérience",
-    titleHighlight: "professionnelle",
+    titlePrefix: "Des projets réels,",
+    titleHighlight: "en entreprise et en freelance",
     subtitle: "Une expérience pratique sur des projets réels, en entreprise et en freelance.",
     caseStudyLink: "Voir l'étude de cas",
+    linkedin: "Voir mon profil LinkedIn",
+    eyebrow: "Expérience",
     cv: "Télécharger mon CV",
     // Most recent first. Single source for professional experience (the About section only shows education).
     items: [
@@ -132,6 +137,7 @@ export const fr = {
   process: {
     titlePrefix: "Méthodologie de",
     titleHighlight: "travail",
+    eyebrow: "Méthode",
     subtitle:
       "Une approche structurée en 4 étapes pour garantir la réussite de vos projets, de l'idée au déploiement.",
     steps: [
@@ -154,13 +160,18 @@ export const fr = {
     ],
   },
   projects: {
-    titlePrefix: "Mes",
-    titleHighlight: "réalisations",
-    subtitle: "Des projets réels, présentés par ce qu'ils permettent de faire.",
-    allProjects: "Tous mes dépôts sur GitHub",
+    eyebrow: "Mes réalisations",
+    titlePrefix: "Des projets concrets,",
+    titleHighlight: "en ligne",
+    subtitle: "Une sélection de projets réels, du besoin au produit livré.",
+    allProjects: "Voir tous mes projets",
     inProgressTitle: "En cours de développement",
     statusLive: "En ligne",
     statusDone: "Terminé",
+    statusDemo: "Démo en ligne",
+    filterLabel: "Filtrer les projets",
+    filters: { all: "Tous", web: "Sites web", plateforme: "Plateformes", mobile: "Mobile" },
+    previewLabel: "Aperçu du projet",
     statusInProgress: "En cours",
     caseStudy: "Étude de cas",
     liveDemo: "Voir le site",
@@ -170,32 +181,37 @@ export const fr = {
       {
         title: "Axis Transport",
         outcome: "Les clients d'Axis réservent leurs billets de bus et suivent leurs colis en ligne.",
+        kind: "Billetterie de bus et envoi de colis",
         description:
           "Plateforme de transport sur l'axe Parakou – Savè – Kétou – Porto-Novo – Cotonou : billetterie de bus, envoi et suivi de colis, location de véhicules. Backend Django/DRF, web en production et application mobile Flutter.",
       },
       {
         title: "SD International Group",
         outcome: "SD International Group présente ses activités (BTP, énergie, logistique, import-export) en français et en anglais.",
+        kind: "Site institutionnel bilingue",
         description:
           "Site vitrine Next.js bilingue FR/EN pour un groupe multisectoriel de Cotonou (BTP, énergie, logistique, import-export) : pages services, HSE & qualité, contact, SEO et Open Graph.",
       },
       {
         title: "AfriRent Marketplace",
         outcome: "Les particuliers publient leurs biens à louer et trouvent une location en ligne.",
+        kind: "Location entre particuliers",
         description:
           "Marketplace type Leboncoin pour la location entre particuliers avec authentification, annonces, favoris, panier et API backend sécurisée.",
       },
       {
         title: "LUXEL-G",
         outcome: "Un garage gère ses réservations, ses clients et ses paiements en ligne depuis un tableau de bord.",
+        kind: "Gestion de garage automobile",
         description:
           "Système de gestion pour un garage de Parakou : réservation en ligne, tableau de bord par rôles, intégration du paiement en ligne, vérification par SMS et assistant IA.",
       },
     ],
   },
   services: {
-    titlePrefix: "Ce que je peux",
-    titleHighlight: "faire pour vous",
+    eyebrow: "Mes services",
+    titlePrefix: "Ce que je peux construire",
+    titleHighlight: "pour vous",
     subtitle: "Des solutions numériques pour les entreprises, les startups et les entrepreneurs, de la conception à la mise en ligne.",
     quote: "Demander un devis",
     learnMore: "En savoir plus",
@@ -283,9 +299,10 @@ export const fr = {
     ],
   },
   whyMe: {
-    titlePrefix: "Pourquoi",
-    titleHighlight: "travailler avec moi",
-    subtitle: "Des faits que vous pouvez vérifier, pas des promesses.",
+    eyebrow: "Mes atouts",
+    titlePrefix: "Plus qu'un codeur,",
+    titleHighlight: "un partenaire de projet",
+    subtitle: "Des faits que vous pouvez vérifier.",
     items: [
       {
         id: "live",
@@ -309,30 +326,18 @@ export const fr = {
       },
     ],
   },
-  ctaBand: {
-    title: "Un projet en tête ?",
-    text: "Décrivez-moi votre besoin sur WhatsApp : je reviens vers vous avec une proposition claire.",
-  },
-  sectors: {
-    titlePrefix: "Pour",
-    titleHighlight: "qui je travaille",
-    subtitle: "Les secteurs dans lesquels j'ai déjà réalisé des projets.",
-    items: [
-      { id: "transport", title: "Transport", text: "Billetterie de bus et envoi de colis", example: "Axis Transport" },
-      { id: "btp", title: "BTP & énergie", text: "Site vitrine d'un groupe multisectoriel", example: "SD International Group" },
-      { id: "garage", title: "Garage automobile", text: "Réservations et gestion de l'atelier", example: "Luxury Élégance Garage" },
-      { id: "online", title: "Plateformes en ligne", text: "Échange de compétences entre professionnels", example: "TalenexPro" },
-    ],
-  },
   testimonials: {
     title: "Ce qu'en disent mes clients",
     // TODO: add real client reviews ({ quote, author, company }). The section stays hidden while empty.
     items: [] as { quote: string; author: string; company: string }[],
   },
   contact: {
-    titlePrefix: "Travaillons",
-    titleHighlight: "ensemble",
-    subtitle: "Vous avez un projet, une opportunité ou simplement une question ? N'hésitez pas à me contacter.",
+    eyebrow: "Contact",
+    titlePrefix: "Vous avez un projet ?",
+    titleHighlight: "Parlons-en.",
+    subtitle: "Un site web, une application ou une intégration à développer : décrivez-moi votre besoin.",
+    whatsappCta: "Discuter sur WhatsApp",
+    emailCta: "Envoyer un e-mail",
     githubTitle: "GitHub",
     githubCta: "Voir mon GitHub",
     linkedinTitle: "LinkedIn",
@@ -370,6 +375,7 @@ export const fr = {
   faq: {
     titlePrefix: "Questions",
     titleHighlight: "fréquentes",
+    eyebrow: "FAQ",
     subtitle: "L'essentiel à savoir avant de démarrer un projet ensemble.",
     items: [
       {

@@ -7,7 +7,7 @@ export function Process() {
 
   return (
     <Section id="process">
-      <SectionHeader title={`${t.process.titlePrefix} ${t.process.titleHighlight}`} subtitle={t.process.subtitle} />
+      <SectionHeader eyebrow={t.process.eyebrow} title={t.process.titlePrefix} highlight={t.process.titleHighlight} subtitle={t.process.subtitle} size="md" />
       <ol className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {t.process.steps.map((step, i) => (
           <li key={step.title} style={stagger(i, 0.15)} className="reveal flex flex-col gap-2 border-t-2 border-primary pt-5">

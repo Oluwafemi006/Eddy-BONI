@@ -9,14 +9,17 @@ export const en: Translations = {
     services: "Services",
     process: "Process",
     contact: "Contact",
-    contactCta: "Get in touch",
+    contactCta: "Let's talk",
     home: "Home",
     label: "Main navigation",
     openMenu: "Open menu",
     closeMenu: "Close menu",
   },
   hero: {
-    badge: "Available for freelance projects",
+    badge: "Available for freelance projects and professional opportunities.",
+    chipLiveTitle: "Projects in production",
+    chipLiveText: "Axis Transport, SD International",
+    chipPayments: "Online payments integrated",
     name: "Eddy Boni",
     role: "Full-Stack Developer",
     headlinePrefix: "I build",
@@ -58,10 +61,12 @@ export const en: Translations = {
     items: ["React", "Next.js", "TypeScript", "Python", "Django", "Django REST Framework", "PostgreSQL", "Flutter", "Docker", "Nginx", "Stripe", "Payment APIs", "Git"],
   },
   experience: {
-    titlePrefix: "Professional",
-    titleHighlight: "experience",
+    titlePrefix: "Real projects,",
+    titleHighlight: "in companies and as a freelancer",
     subtitle: "Hands-on experience on real projects, in companies and as a freelancer.",
     caseStudyLink: "Read the case study",
+    linkedin: "View my LinkedIn profile",
+    eyebrow: "Experience",
     cv: "Download my CV",
     items: [
       {
@@ -133,6 +138,7 @@ export const en: Translations = {
   process: {
     titlePrefix: "How I",
     titleHighlight: "work",
+    eyebrow: "Process",
     subtitle: "A structured 4-step approach to ensure your project's success, from idea to deployment.",
     steps: [
       {
@@ -154,13 +160,18 @@ export const en: Translations = {
     ],
   },
   projects: {
-    titlePrefix: "My",
-    titleHighlight: "work",
-    subtitle: "Real projects, described by what they let people do.",
-    allProjects: "All my repositories on GitHub",
+    eyebrow: "Selected work",
+    titlePrefix: "Real projects,",
+    titleHighlight: "live online",
+    subtitle: "A selection of real projects, from business need to delivered product.",
+    allProjects: "See all my projects",
     inProgressTitle: "In development",
     statusLive: "Live",
     statusDone: "Completed",
+    statusDemo: "Live demo",
+    filterLabel: "Filter projects",
+    filters: { all: "All", web: "Websites", plateforme: "Platforms", mobile: "Mobile" },
+    previewLabel: "Project preview",
     statusInProgress: "In Progress",
     caseStudy: "Case study",
     liveDemo: "Visit the site",
@@ -170,32 +181,37 @@ export const en: Translations = {
       {
         title: "Axis Transport",
         outcome: "Axis customers book bus tickets and track their parcels online.",
+        kind: "Bus ticketing and parcel shipping",
         description:
           "Transport platform on the Parakou – Savè – Kétou – Porto-Novo – Cotonou route: bus ticketing, parcel shipping and tracking, vehicle rental. Django/DRF back end, web live in production and a Flutter mobile app.",
       },
       {
         title: "SD International Group",
         outcome: "SD International Group presents its business lines (construction, energy, logistics, import-export) in French and English.",
+        kind: "Bilingual corporate website",
         description:
           "Bilingual FR/EN Next.js corporate website for a multi-sector group in Cotonou (construction, energy, logistics, import-export): service pages, HSE & quality, contact, SEO and Open Graph.",
       },
       {
         title: "AfriRent Marketplace",
         outcome: "Individuals list properties for rent and find a rental online.",
+        kind: "Peer-to-peer rentals",
         description:
           "A Leboncoin-style marketplace for peer-to-peer rentals with authentication, listings, favorites, cart, and a secure backend API.",
       },
       {
         title: "LUXEL-G",
         outcome: "A garage manages its bookings, customers and online payments from one dashboard.",
+        kind: "Car repair shop management",
         description:
           "Management system for a garage in Parakou: online booking, role-based dashboard, online payment integration, SMS verification and an AI assistant.",
       },
     ],
   },
   services: {
-    titlePrefix: "What I can",
-    titleHighlight: "do for you",
+    eyebrow: "Services",
+    titlePrefix: "What I can build",
+    titleHighlight: "for you",
     subtitle: "Digital solutions for businesses, startups and entrepreneurs, from design to launch.",
     quote: "Request a quote",
     learnMore: "Learn more",
@@ -282,9 +298,10 @@ export const en: Translations = {
     ],
   },
   whyMe: {
-    titlePrefix: "Why",
-    titleHighlight: "work with me",
-    subtitle: "Facts you can check, not promises.",
+    eyebrow: "Why me",
+    titlePrefix: "More than a coder,",
+    titleHighlight: "a project partner",
+    subtitle: "Facts you can check.",
     items: [
       {
         id: "live",
@@ -308,29 +325,17 @@ export const en: Translations = {
       },
     ],
   },
-  ctaBand: {
-    title: "Have a project in mind?",
-    text: "Tell me what you need on WhatsApp: I'll get back to you with a clear proposal.",
-  },
-  sectors: {
-    titlePrefix: "Who I",
-    titleHighlight: "work with",
-    subtitle: "Sectors where I have already delivered projects.",
-    items: [
-      { id: "transport", title: "Transport", text: "Bus ticketing and parcel shipping", example: "Axis Transport" },
-      { id: "btp", title: "Construction & energy", text: "Website for a multi-sector group", example: "SD International Group" },
-      { id: "garage", title: "Car repair", text: "Bookings and workshop management", example: "Luxury Élégance Garage" },
-      { id: "online", title: "Online platforms", text: "Skill exchange between professionals", example: "TalenexPro" },
-    ],
-  },
   testimonials: {
     title: "What clients say",
     items: [] as { quote: string; author: string; company: string }[],
   },
   contact: {
-    titlePrefix: "Let's work",
-    titleHighlight: "together",
-    subtitle: "Have a project, an opportunity or just a question? Feel free to reach out.",
+    eyebrow: "Contact",
+    titlePrefix: "Have a project?",
+    titleHighlight: "Let's talk.",
+    subtitle: "A website, an app or an integration to build: tell me what you need.",
+    whatsappCta: "Chat on WhatsApp",
+    emailCta: "Send an email",
     githubTitle: "GitHub",
     githubCta: "See my GitHub",
     linkedinTitle: "LinkedIn",
@@ -368,6 +373,7 @@ export const en: Translations = {
   faq: {
     titlePrefix: "Frequently asked",
     titleHighlight: "questions",
+    eyebrow: "FAQ",
     subtitle: "What to know before we start a project together.",
     items: [
       {
