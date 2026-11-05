@@ -8,6 +8,7 @@ export const en: Translations = {
     projects: "Work",
     services: "Services",
     process: "Process",
+    remote: "Remote",
     contact: "Contact",
     contactCta: "Let's talk",
     home: "Home",
@@ -156,6 +157,32 @@ export const en: Translations = {
       {
         title: "4. Deployment & Follow-up",
         description: "Production deployment (CI/CD, Docker) and support for onboarding or maintenance.",
+      },
+    ],
+  },
+  remoteWork: {
+    eyebrow: "Remote",
+    titlePrefix: "Working with me",
+    titleHighlight: "remotely",
+    subtitle: "A way of working built for teams that don't share an office.",
+    items: [
+      {
+        id: "git",
+        title: "Version-controlled, traceable code",
+        description:
+          "Every change goes through a Git branch and a GitHub pull request: you see what changes, and nothing reaches production without approval.",
+      },
+      {
+        id: "deploy",
+        title: "Reliable deployment",
+        description:
+          "Deployment with Docker and Nginx on AWS, Railway or Netlify, followed by post-launch support.",
+      },
+      {
+        id: "updates",
+        title: "Clear, written updates",
+        description:
+          "Regular written progress updates (email, WhatsApp) and a single point of contact, from design to delivery.",
       },
     ],
   },

@@ -6,6 +6,7 @@ export const fr = {
     projects: "Réalisations",
     services: "Services",
     process: "Process",
+    remote: "Remote",
     contact: "Contact",
     contactCta: "Discutons-en",
     home: "Accueil",
@@ -156,6 +157,32 @@ export const fr = {
       {
         title: "4. Déploiement & Suivi",
         description: "Mise en production (CI/CD, Docker) et accompagnement pour la prise en main ou la maintenance.",
+      },
+    ],
+  },
+  remoteWork: {
+    eyebrow: "Remote",
+    titlePrefix: "Travailler avec moi",
+    titleHighlight: "à distance",
+    subtitle: "Une organisation pensée pour collaborer sans être dans le même bureau.",
+    items: [
+      {
+        id: "git",
+        title: "Code versionné et traçable",
+        description:
+          "Chaque évolution passe par une branche Git et une pull request sur GitHub : vous voyez ce qui change, et rien n'arrive en production sans validation.",
+      },
+      {
+        id: "deploy",
+        title: "Mise en production maîtrisée",
+        description:
+          "Déploiement avec Docker et Nginx sur AWS, Railway ou Netlify, puis accompagnement après la mise en ligne.",
+      },
+      {
+        id: "updates",
+        title: "Suivi clair, par écrit",
+        description:
+          "Points d'avancement réguliers par écrit (e-mail, WhatsApp) et un interlocuteur unique, de la conception à la livraison.",
       },
     ],
   },
