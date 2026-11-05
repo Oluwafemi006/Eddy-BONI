@@ -161,8 +161,8 @@ export function Projects() {
                 </div>
 
                 <div className="flex flex-1 flex-col gap-2 p-5">
+                  <p className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-brand-soft">{project.kind}</p>
                   <h3 className="text-[19px] font-extrabold text-white">{project.title}</h3>
-                  <p className="text-[13px] font-semibold text-brand-soft">{project.kind}</p>
                   <p className="text-sm leading-relaxed text-muted-foreground">{project.outcome}</p>
                   <p className="mt-auto pt-2.5 text-xs text-subtle">{project.tags.join(" · ")}</p>
                   <div className="flex flex-wrap items-center gap-x-4">
