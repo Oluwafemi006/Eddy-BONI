@@ -26,7 +26,7 @@ export const fr = {
     description: "De la landing page à l'application web sur mesure, je transforme des besoins métier en solutions numériques fonctionnelles.",
     descriptionStrong: "Projets menés à distance, où que vous soyez.",
     geoSentence:
-      "Eddy Boni (BONI Adjé Oladjidé Kenneth Eddy) est un développeur full-stack basé à Cotonou, au Bénin. Il conçoit des sites web, des applications web et mobiles et des produits numériques pour les entreprises, avec Django/DRF, React, Next.js et Flutter. Titulaire d'une Licence Professionnelle en Informatique de Gestion (IUT de Parakou, 2026), il travaille en freelance sous la marque EdDigital.",
+      "Eddy Boni (BONI Adjé Oladjidé Kenneth Eddy) est un développeur full-stack qui travaille 100 % à distance. Il conçoit des sites web, des applications web et mobiles et des produits numériques pour les entreprises, avec Django/DRF, React, Next.js et Flutter. Titulaire d'une Licence Professionnelle en Informatique de Gestion (IUT de Parakou, 2026), il travaille en freelance sous la marque EdDigital.",
     ctaWhatsapp: "Parlons de votre projet",
     ctaProjects: "Découvrir mes réalisations",
     ctaContact: "Me contacter",
@@ -42,7 +42,7 @@ export const fr = {
     badge: "À propos de moi",
     title: "Je conçois, développe et mets en production des sites web, des applications et des produits numériques pour les entreprises.",
     facts: {
-      location: "Cotonou, Bénin · disponible en remote",
+      location: "100 % remote · disponible dans le monde entier",
       experience: "2 ans d'expérience en développement",
       availability: "Disponible pour des opportunités",
       languages: "Français ; échanges écrits possibles en anglais",
@@ -345,7 +345,9 @@ export const fr = {
     emailTitle: "Email",
     emailDesc: "Contactez-moi directement à l'adresse suivante :",
     locationTitle: "Localisation",
-    locationDesc: "Basé à Cotonou (Bénin, UTC+1). Disponible en remote partout dans le monde.",
+    locationDesc: "Disponible en remote, partout dans le monde.",
+    remoteValue: "100 % remote",
+    remoteLabel: "Partout dans le monde",
     remoteFirst: "Remote First",
     form: {
       nameLabel: "Nom complet",
@@ -365,7 +367,7 @@ export const fr = {
   },
   footer: {
     description:
-      "BONI Adjé Oladjidé Kenneth Eddy.\nDéveloppeur full-stack basé à Cotonou : sites web, applications web et mobiles, et produits numériques pour les entreprises. Freelance sous la marque EdDigital.",
+      "BONI Adjé Oladjidé Kenneth Eddy.\nDéveloppeur full-stack : sites web, applications web et mobiles, et produits numériques pour les entreprises. Freelance sous la marque EdDigital.",
     navTitle: "Navigation",
     servicesTitle: "Services",
     socialTitle: "Réseaux",
@@ -391,7 +393,7 @@ export const fr = {
       {
         question: "Travaillez-vous à distance ?",
         answer:
-          "Oui. Je suis basé à Cotonou, au Bénin (UTC+1), et je travaille 100 % à distance, avec des entreprises où qu'elles se trouvent. Je travaille en français ; échanges écrits possibles en anglais.",
+          "Oui. Je travaille 100 % à distance, avec des entreprises où qu'elles se trouvent. Je travaille en français ; échanges écrits possibles en anglais.",
       },
       {
         question: "Comment se déroule une collaboration, et quels sont les délais ?",
@@ -429,13 +431,11 @@ export const fr = {
     remoteHighlights: [
       "Travail 100 % à distance",
       "En français ; échanges écrits possibles en anglais",
-      "Fuseau horaire UTC+1",
       "Communication claire par WhatsApp, email et appels",
     ],
     localHighlights: [
-      "Basé à Cotonou, au Bénin",
+      "Travail 100 % à distance",
       "Sites en français, ou bilingues français / anglais",
-      "Fuseau horaire UTC+1",
       "Communication claire par WhatsApp, email et appels",
     ],
     related: "Projets liés",
