@@ -231,3 +231,61 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Spotlight glow on cards (see src/components/ui/spotlight.ts). Mouse screens only. */
+@media (hover: hover) and (pointer: fine) {
+  .spotlight {
+    --x: -999px;
+    --y: -999px;
+    position: relative;
+    background-image: radial-gradient(
+      320px circle at var(--x) var(--y),
+      hsl(var(--brand) / 0.07),
+      transparent 70%
+    );
+  }
+
+  /* Border light: a 1px ring masked to the edge, visible while the pointer is over the grid. */
+  .spotlight::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(240px circle at var(--x) var(--y), hsl(var(--brand) / 0.85), transparent 70%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .spotlight-group:hover .spotlight::after {
+    opacity: 1;
+  }
+}
+
+/* Technology band: the list scrolls slowly in a loop (the second copy is aria-hidden). */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee { mask-image: none; }
+  .marquee-track { width: auto; animation: none; }
+  .marquee-track > ul { flex-wrap: wrap; }
+  .marquee-track > ul[aria-hidden] { display: none; }
+}

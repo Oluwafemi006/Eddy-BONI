@@ -6,6 +6,7 @@ import { OFFER_LINKS } from "@/content/offers";
 import { whatsappLink } from "@/content/contact";
 import { Section, SectionHeader } from "@/components/sections/SectionHeader";
 import { stagger } from "@/components/layout/useReveal";
+import { spotlight } from "@/components/ui/spotlight";
 
 const ICONS: Record<string, typeof Globe> = {
   vitrine: Globe,
@@ -22,12 +23,12 @@ export function Services() {
   return (
     <Section id="services" tone="alt">
       <SectionHeader eyebrow={t.services.eyebrow} title={t.services.titlePrefix} highlight={t.services.titleHighlight} subtitle={t.services.subtitle} />
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="spotlight-group grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {t.services.items.map((offer, i) => {
           const meta = OFFER_LINKS[offer.id];
           const Icon = ICONS[offer.id];
           return (
-            <article key={offer.id} style={stagger(i, 0.15)} className="reveal lift flex flex-col gap-4 rounded-[20px] border border-border bg-card p-6 hover:border-[#2C4680] hover:bg-[#0F1A33] sm:p-7">
+            <article key={offer.id} ref={spotlight} style={stagger(i, 0.15)} className="spotlight reveal lift flex flex-col gap-4 rounded-[20px] border border-border bg-card p-6 hover:border-[#2C4680] hover:bg-[#0F1A33] sm:p-7">
               <span aria-hidden="true" className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white">
                 <Icon size={22} />
               </span>

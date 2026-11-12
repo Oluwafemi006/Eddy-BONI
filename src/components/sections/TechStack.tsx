@@ -11,13 +11,19 @@ export function TechStack() {
           <h2 className="text-base font-bold text-white">{t.stack.title}</h2>
           <p className="text-[13px] leading-relaxed text-subtle">{t.stack.subtitle}</p>
         </div>
-        <ul className="flex flex-wrap gap-2">
-          {t.stack.items.map((tech) => (
-            <li key={tech} className="rounded-md bg-secondary px-3 py-1.5 text-[13px] font-medium text-secondary-foreground">
-              {tech}
-            </li>
-          ))}
-        </ul>
+        <div className="marquee min-w-0 flex-1">
+          <div className="marquee-track">
+            {[false, true].map((duplicate) => (
+              <ul key={String(duplicate)} aria-hidden={duplicate || undefined} className="flex shrink-0 gap-2 pr-2">
+                {t.stack.items.map((tech) => (
+                  <li key={tech} className="whitespace-nowrap rounded-md bg-secondary px-3 py-1.5 text-[13px] font-medium text-secondary-foreground">
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -5,6 +5,7 @@ import { pathFor } from "@/seo/routes";
 import type { CaseStudyId } from "@/content/caseStudies";
 import { CONTACT } from "@/content/contact";
 import { Section, SectionHeader } from "@/components/sections/SectionHeader";
+import { spotlight } from "@/components/ui/spotlight";
 
 type Category = "web" | "plateforme" | "mobile";
 type Filter = "all" | Category;
@@ -115,7 +116,7 @@ export function Projects() {
           })}
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="spotlight-group grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {visible.map((project, i) => {
             const Icon = project.icon;
             const mainHref = project.caseStudy ? pathFor({ kind: "project", id: project.caseStudy }, language) : project.demoUrl;
@@ -124,7 +125,8 @@ export function Projects() {
             return (
               <article
                 key={project.title}
-                className="group flex flex-col overflow-hidden rounded-[20px] border border-border bg-card transition-[translate,border-color,background-color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-[#2C4680] hover:bg-[#0F1A33]"
+                ref={spotlight}
+                className="spotlight group flex flex-col overflow-hidden rounded-[20px] border border-border bg-card transition-[translate,border-color,background-color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-[#2C4680] hover:bg-[#0F1A33]"
               >
                 {/* Browser frame with the project's real address; the page inside scrolls slowly. */}
                 <div className="relative h-[180px] overflow-hidden bg-[#0E1A36] px-4 pt-4" role="img" aria-label={`${t.projects.previewLabel} : ${project.title}`}>
