@@ -8,6 +8,7 @@ export const en: Translations = {
     projects: "Work",
     services: "Services",
     process: "Process",
+    remote: "Remote",
     contact: "Contact",
     contactCta: "Let's talk",
     home: "Home",
@@ -28,7 +29,7 @@ export const en: Translations = {
     description: "From landing pages to custom web applications, I turn business needs into working digital solutions.",
     descriptionStrong: "Remote projects, wherever you are.",
     geoSentence:
-      "Eddy Boni (BONI Adjé Oladjidé Kenneth Eddy) is a full-stack developer based in Cotonou, Benin. He builds websites, web and mobile applications and digital products for businesses, with Django/DRF, React, Next.js and Flutter. He holds a Professional Bachelor's degree in Business Computing (IUT de Parakou, 2026) and works as a freelancer under the EdDigital brand.",
+      "Eddy Boni (BONI Adjé Oladjidé Kenneth Eddy) is a full-stack developer working fully remotely. He builds websites, web and mobile applications and digital products for businesses, with Django/DRF, React, Next.js and Flutter. He holds a Professional Bachelor's degree in Business Computing (IUT de Parakou, 2026) and works as a freelancer under the EdDigital brand.",
     ctaWhatsapp: "Discuss your project",
     ctaProjects: "Explore my work",
     ctaContact: "Get in touch",
@@ -44,7 +45,7 @@ export const en: Translations = {
     badge: "About me",
     title: "I design, build and ship websites, applications and digital products for businesses.",
     facts: {
-      location: "Cotonou, Benin · available remotely",
+      location: "Fully remote · available worldwide",
       experience: "2 years of development experience",
       availability: "Open to opportunities",
       languages: "French; written communication in English is possible",
@@ -156,6 +157,32 @@ export const en: Translations = {
       {
         title: "4. Deployment & Follow-up",
         description: "Production deployment (CI/CD, Docker) and support for onboarding or maintenance.",
+      },
+    ],
+  },
+  remoteWork: {
+    eyebrow: "Remote",
+    titlePrefix: "Working with me",
+    titleHighlight: "remotely",
+    subtitle: "A way of working built for teams that don't share an office.",
+    items: [
+      {
+        id: "git",
+        title: "Version-controlled, traceable code",
+        description:
+          "Every change goes through a Git branch and a GitHub pull request: you see what changes, and nothing reaches production without approval.",
+      },
+      {
+        id: "deploy",
+        title: "Reliable deployment",
+        description:
+          "Deployment with Docker and Nginx on AWS, Railway or Netlify, followed by post-launch support.",
+      },
+      {
+        id: "updates",
+        title: "Clear, written updates",
+        description:
+          "Regular written progress updates (email, WhatsApp) and a single point of contact, from design to delivery.",
       },
     ],
   },
@@ -343,7 +370,9 @@ export const en: Translations = {
     emailTitle: "Email",
     emailDesc: "Reach me directly at the following address:",
     locationTitle: "Location",
-    locationDesc: "Based in Cotonou (Benin, UTC+1). Available remotely, anywhere in the world.",
+    locationDesc: "Available remotely, worldwide.",
+    remoteValue: "Fully remote",
+    remoteLabel: "Worldwide",
     remoteFirst: "Remote First",
     form: {
       nameLabel: "Full name",
@@ -363,7 +392,7 @@ export const en: Translations = {
   },
   footer: {
     description:
-      "BONI Adjé Oladjidé Kenneth Eddy.\nFull-stack developer based in Cotonou: websites, web and mobile apps, and digital products for businesses. Freelancing under the EdDigital brand.",
+      "BONI Adjé Oladjidé Kenneth Eddy.\nFull-stack developer: websites, web and mobile apps, and digital products for businesses. Freelancing under the EdDigital brand.",
     navTitle: "Navigation",
     servicesTitle: "Services",
     socialTitle: "Social",
@@ -389,7 +418,7 @@ export const en: Translations = {
       {
         question: "Do you work remotely?",
         answer:
-          "Yes. I am based in Cotonou, Benin (UTC+1), and work fully remotely with businesses wherever they are. I work in French; written communication in English is possible.",
+          "Yes. I work fully remotely with businesses wherever they are. I work in French; written communication in English is possible.",
       },
       {
         question: "How does a collaboration work, and what are the timelines?",
@@ -427,13 +456,11 @@ export const en: Translations = {
     remoteHighlights: [
       "Fully remote work",
       "I work in French; written communication in English is possible",
-      "UTC+1 time zone",
       "Clear communication via WhatsApp, email and calls",
     ],
     localHighlights: [
-      "Based in Cotonou, Benin",
+      "Fully remote work",
       "Websites in French, or bilingual French / English",
-      "UTC+1 time zone",
       "Clear communication via WhatsApp, email and calls",
     ],
     related: "Related projects",

@@ -23,6 +23,7 @@ export function Navbar() {
     { name: t.nav.services, href: `${home}#services` },
     { name: t.nav.projects, href: `${home}#projects` },
     { name: t.nav.experience, href: `${home}#experience` },
+    { name: t.nav.remote, href: `${home}#remote` },
     { name: t.nav.contact, href: `${home}#contact` },
   ];
 

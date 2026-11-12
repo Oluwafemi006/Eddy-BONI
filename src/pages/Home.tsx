@@ -4,6 +4,7 @@ import { Services } from "@/components/sections/Services";
 import { Projects } from "@/components/sections/Projects";
 import { Experience } from "@/components/sections/Experience";
 import { Process } from "@/components/sections/Process";
+import { RemoteWork } from "@/components/sections/RemoteWork";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { About } from "@/components/sections/About";
 import { Faq } from "@/components/sections/Faq";
@@ -21,6 +22,7 @@ export default function Home() {
       <Experience />
       <Testimonials />
       <Process />
+      <RemoteWork />
       <About />
       <Faq />
       <TechStack />
